@@ -1,0 +1,1047 @@
+{
+  "source": "Peregrine 2025",
+  "url": "https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf",
+  "processed_date": "2026-01-10",
+  "mappings": [
+    {
+      "source_location": "Domain 1, #1",
+      "title": "Training Data Attribution",
+      "entry": "proposals/training-data-attribution.md"
+    },
+    {
+      "source_location": "Domain 1, #2",
+      "title": "Agent Trace Analysis",
+      "entry": "proposals/agent-trace-analysis.md"
+    },
+    {
+      "source_location": "Domain 1, #3",
+      "title": "Task Decomposition",
+      "entry": "proposals/task-decomposition.md"
+    },
+    {
+      "source_location": "Domain 1, #4",
+      "title": "Defense-in-Depth Analysis of Post-training",
+      "entry": "proposals/defense-in-depth-analysis.md"
+    },
+    {
+      "source_location": "Domain 1, #5",
+      "title": "Chain-of-Thought Fidelity Analysis",
+      "entry": "proposals/chain-of-thought-fidelity.md"
+    },
+    {
+      "source_location": "Domain 1, #6",
+      "title": "Human Labeling Service",
+      "entry": "proposals/human-labeling-service.md"
+    },
+    {
+      "source_location": "Domain 1, #7",
+      "title": "Tamper-Resistant RLHF",
+      "entry": "proposals/tamper-resistant-rlhf.md"
+    },
+    {
+      "source_location": "Domain 1, #8",
+      "title": "Probabilistic Programming",
+      "entry": "proposals/probabilistic-programming.md"
+    },
+    {
+      "source_location": "Domain 1, #9",
+      "title": "Safety by Design - Formal Guarantees",
+      "entry": "proposals/safety-by-design-formal-guarantees.md"
+    },
+    {
+      "source_location": "Domain 1, #10",
+      "title": "Safety by Design - Scientist AI",
+      "entry": "proposals/safety-by-design-scientist-ai.md"
+    },
+    {
+      "source_location": "Domain 1, #11",
+      "title": "Theoretical Alignment Research",
+      "entry": "proposals/theoretical-alignment-research.md"
+    },
+    {
+      "source_location": "Domain 1, #12",
+      "title": "Cooperative Alignment",
+      "entry": "proposals/cooperative-alignment.md"
+    },
+    {
+      "source_location": "Domain 1, #13",
+      "title": "Debate Theory",
+      "entry": "proposals/debate-theory.md"
+    },
+    {
+      "source_location": "Domain 1, #14",
+      "title": "Constitutional AI",
+      "entry": "proposals/constitutional-ai.md"
+    },
+    {
+      "source_location": "Domain 1, #15",
+      "title": "Pluralistic Alignment",
+      "entry": "proposals/pluralistic-alignment.md"
+    },
+    {
+      "source_location": "Domain 1, #16",
+      "title": "Complex Objective Functions",
+      "entry": "proposals/complex-objective-functions.md"
+    },
+    {
+      "source_location": "Domain 1, #17",
+      "title": "Automated Science - Hunch Agents",
+      "entry": "proposals/automated-science-hunch-agents.md"
+    },
+    {
+      "source_location": "Domain 1, #18",
+      "title": "AI for AI Safety Research",
+      "entry": "proposals/ai-for-ai-safety-research.md"
+    },
+    {
+      "source_location": "Domain 1, #19",
+      "title": "Unlearning Capabilities",
+      "entry": "proposals/unlearning-capabilities.md"
+    },
+    {
+      "source_location": "Domain 1, #20",
+      "title": "Low-Stakes Alignment Settings",
+      "entry": "proposals/low-stakes-alignment-settings.md"
+    },
+    {
+      "source_location": "Domain 1, #21",
+      "title": "AI Control Systems",
+      "entry": "proposals/ai-control-systems.md"
+    },
+    {
+      "source_location": "Domain 1, #22",
+      "title": "Control as a Service",
+      "entry": "proposals/control-as-a-service.md"
+    },
+    {
+      "source_location": "Domain 1, #23",
+      "title": "Loss of Control Prevention",
+      "entry": "proposals/loss-of-control-prevention.md"
+    },
+    {
+      "source_location": "Domain 1, #24",
+      "title": "Limits of Model Distillation",
+      "entry": "proposals/limits-of-model-distillation.md"
+    },
+    {
+      "source_location": "Domain 1, #25",
+      "title": "Misalignment Definitions and Measures",
+      "entry": "proposals/misalignment-definitions-measures.md"
+    },
+    {
+      "source_location": "Domain 1, #26",
+      "title": "Scalable Oversight",
+      "entry": "proposals/scalable-oversight.md"
+    },
+    {
+      "source_location": "Domain 1, #27",
+      "title": "Loss of Control Threat Modeling",
+      "entry": "proposals/loss-of-control-threat-modeling.md"
+    },
+    {
+      "source_location": "Domain 1, #28",
+      "title": "Synthesis, Consensus, and Paying Down Research Debt",
+      "entry": "proposals/synthesis-consensus-research-debt.md"
+    },
+    {
+      "source_location": "Domain 1, #29",
+      "title": "Academia-Industry Translation",
+      "entry": "proposals/academia-industry-translation.md"
+    },
+    {
+      "source_location": "Domain 1, #30",
+      "title": "Problem Mapping",
+      "entry": "proposals/problem-mapping.md"
+    },
+    {
+      "source_location": "Domain 1, #31",
+      "title": "AI Security Expert Development",
+      "entry": "proposals/ai-security-expert-development.md"
+    },
+    {
+      "source_location": "Domain 1, #32",
+      "title": "Reward Track Record in Security & Safety Organizations",
+      "entry": "proposals/reward-track-record-organizations.md"
+    },
+    {
+      "source_location": "Domain 1, #33",
+      "title": "Diversify the Security Research Portfolio",
+      "entry": "proposals/diversify-security-research-portfolio.md"
+    },
+    {
+      "source_location": "Domain 1, #34",
+      "title": "Support Academic Project Scaling",
+      "entry": "proposals/support-academic-project-scaling.md"
+    },
+    {
+      "source_location": "Domain 1, #35",
+      "title": "Computing and Infrastructure Investment for Non-Frontier Lab Research",
+      "entry": "proposals/computing-infrastructure-non-frontier.md"
+    },
+    {
+      "source_location": "Domain 1, #36",
+      "title": "Open Model Mitigations",
+      "entry": "proposals/open-model-mitigations.md"
+    },
+    {
+      "source_location": "Domain 1, #37",
+      "title": "Researcher Buy-Out",
+      "entry": "proposals/researcher-buy-out.md"
+    },
+    {
+      "source_location": "Domain 1, #38",
+      "title": "Scientific Understanding of Training AI",
+      "entry": "proposals/scientific-understanding-training.md"
+    },
+    {
+      "source_location": "Domain 1, #39",
+      "title": "Mechanistic Interpretability Infrastructure",
+      "entry": "proposals/mechanistic-interpretability-infrastructure.md"
+    },
+    {
+      "source_location": "Domain 1, #40",
+      "title": "Direct Interpretability and Model-Level Interventions",
+      "entry": "proposals/direct-interpretability-interventions.md"
+    },
+    {
+      "source_location": "Domain 1, #41",
+      "title": "Interpretable Frontier Models",
+      "entry": "proposals/interpretable-frontier-models.md"
+    },
+    {
+      "source_location": "Domain 2, #42",
+      "title": "Interactive Inspection Tools",
+      "entry": "proposals/interactive-inspection-tools.md"
+    },
+    {
+      "source_location": "Domain 2, #43",
+      "title": "End-to-End Harm Assessment",
+      "entry": "proposals/end-to-end-harm-assessment.md"
+    },
+    {
+      "source_location": "Domain 2, #44",
+      "title": "Evaluation Sandbagging Detection",
+      "entry": "proposals/evaluation-sandbagging-detection.md"
+    },
+    {
+      "source_location": "Domain 2, #45",
+      "title": "Training AI Evaluators",
+      "entry": "proposals/training-ai-evaluators.md"
+    },
+    {
+      "source_location": "Domain 2, #46",
+      "title": "Cooperative Evals: AIs Working With Humans",
+      "entry": "proposals/cooperative-evals-humans-with-ai.md"
+    },
+    {
+      "source_location": "Domain 2, #47",
+      "title": "Meta-Research on Safety Techniques",
+      "entry": "proposals/meta-research-on-safety-techniques.md"
+    },
+    {
+      "source_location": "Domain 2, #48",
+      "title": "Characterizing AI Risks with Evidence",
+      "entry": "proposals/characterizing-ai-risks-with-evidence.md"
+    },
+    {
+      "source_location": "Domain 2, #49",
+      "title": "Vulnerability Matching",
+      "entry": "proposals/vulnerability-matching.md"
+    },
+    {
+      "source_location": "Domain 2, #50",
+      "title": "Safety Benchmark Development",
+      "entry": "proposals/safety-benchmark-development.md"
+    },
+    {
+      "source_location": "Domain 2, #51",
+      "title": "Go Beyond Pre-Paradigmatic Evaluation Frameworks",
+      "entry": "proposals/evaluation-framework-consensus.md"
+    },
+    {
+      "source_location": "Domain 2, #52",
+      "title": "Risk-Model Evaluation",
+      "entry": "proposals/risk-model-evaluation.md"
+    },
+    {
+      "source_location": "Domain 2, #53",
+      "title": "Classified Red Teaming",
+      "entry": "proposals/classified-red-teaming.md"
+    },
+    {
+      "source_location": "Domain 2, #54",
+      "title": "Capability Assessment Framework",
+      "entry": "proposals/capability-assessment-framework.md"
+    },
+    {
+      "source_location": "Domain 2, #55",
+      "title": "Ultra-Reliable AI Evaluation",
+      "entry": "proposals/ultra-reliable-ai-evaluation.md"
+    },
+    {
+      "source_location": "Domain 2, #56",
+      "title": "Misuse Evaluations",
+      "entry": "proposals/misuse-evaluations.md"
+    },
+    {
+      "source_location": "Domain 2, #57",
+      "title": "Multi-Agent Interaction Framework",
+      "entry": "proposals/multi-agent-interaction-framework.md"
+    },
+    {
+      "source_location": "Domain 2, #58",
+      "title": "Evaluation Companies",
+      "entry": "proposals/evaluation-companies.md"
+    },
+    {
+      "source_location": "Domain 2, #59",
+      "title": "Public Audits",
+      "entry": "proposals/public-audits.md"
+    },
+    {
+      "source_location": "Domain 2, #60",
+      "title": "AI Auditing Institutions",
+      "entry": "proposals/ai-auditing-institutions.md"
+    },
+    {
+      "source_location": "Domain 2, #61",
+      "title": "Secure Frontier Data Centers",
+      "entry": "proposals/secure-frontier-data-centers.md"
+    },
+    {
+      "source_location": "Domain 2, #62",
+      "title": "Verified Kinetic Actuators",
+      "entry": "proposals/verified-kinetic-actuators.md"
+    },
+    {
+      "source_location": "Domain 2, #63",
+      "title": "Speed Limits in Data Centers",
+      "entry": "proposals/speed-limits-in-data-centers.md"
+    },
+    {
+      "source_location": "Domain 2, #64",
+      "title": "Physical Chokepoints",
+      "entry": "proposals/physical-chokepoints.md"
+    },
+    {
+      "source_location": "Domain 3, #65",
+      "title": "AI OSINT",
+      "entry": "proposals/ai-osint.md"
+    },
+    {
+      "source_location": "Domain 3, #66",
+      "title": "AI Diffusion Research",
+      "entry": "proposals/ai-diffusion-research.md"
+    },
+    {
+      "source_location": "Domain 3, #67",
+      "title": "Usage and Incident Monitoring Systems",
+      "entry": "proposals/usage-and-incident-monitoring.md"
+    },
+    {
+      "source_location": "Domain 3, #68",
+      "title": "Global Hardware Verification",
+      "entry": "proposals/global-hardware-verification.md"
+    },
+    {
+      "source_location": "Domain 3, #69",
+      "title": "Industry Security",
+      "entry": "proposals/industry-security.md"
+    },
+    {
+      "source_location": "Domain 3, #70",
+      "title": "On-Chip Monitoring Mechanisms",
+      "entry": "proposals/on-chip-monitoring.md"
+    },
+    {
+      "source_location": "Domain 3, #71",
+      "title": "Flexible Hardware for AI Governance",
+      "entry": "proposals/flexible-hardware-governance.md"
+    },
+    {
+      "source_location": "Domain 3, #72",
+      "title": "Confidential Computing",
+      "entry": "proposals/confidential-computing.md"
+    },
+    {
+      "source_location": "Domain 3, #73",
+      "title": "Privacy-Preserving Verification Systems",
+      "entry": "proposals/privacy-preserving-verification.md"
+    },
+    {
+      "source_location": "Domain 3, #74",
+      "title": "Hardware Kill Switches and Location Tracking",
+      "entry": "proposals/hardware-kill-switches.md"
+    },
+    {
+      "source_location": "Domain 3, #75",
+      "title": "AI for Collective Decision-making",
+      "entry": "proposals/ai-collective-decision-making.md"
+    },
+    {
+      "source_location": "Domain 3, #76",
+      "title": "AI Forecasters",
+      "entry": "proposals/ai-forecasters.md"
+    },
+    {
+      "source_location": "Domain 3, #77",
+      "title": "Economic Impact Research",
+      "entry": "proposals/economic-impact-research.md"
+    },
+    {
+      "source_location": "Domain 3, #78",
+      "title": "Monitor Complex Agent Interactions",
+      "entry": "proposals/monitor-agent-interactions.md"
+    },
+    {
+      "source_location": "Domain 3, #79",
+      "title": "Open-Source AI Drift Monitoring",
+      "entry": "proposals/ai-drift-monitoring.md"
+    },
+    {
+      "source_location": "Domain 3, #80",
+      "title": "Comprehensive Incident Detection System",
+      "entry": "proposals/incident-detection-system.md"
+    },
+    {
+      "source_location": "Domain 3, #81",
+      "title": "AI Misuse Detection Systems",
+      "entry": "proposals/ai-misuse-detection.md"
+    },
+    {
+      "source_location": "Domain 3, #82",
+      "title": "Control Loss Monitoring",
+      "entry": "proposals/control-loss-monitoring.md"
+    },
+    {
+      "source_location": "Domain 3, #83",
+      "title": "AI-Enhanced Monitoring",
+      "entry": "proposals/ai-enhanced-monitoring.md"
+    },
+    {
+      "source_location": "Domain 3, #84",
+      "title": "Intelligence Explosion Monitoring",
+      "entry": "proposals/intelligence-explosion-monitoring.md"
+    },
+    {
+      "source_location": "Domain 3, #85",
+      "title": "System-Level AI Effects",
+      "entry": "proposals/system-level-ai-effects.md"
+    },
+    {
+      "source_location": "Domain 3, #86",
+      "title": "Golden Period Identification Framework",
+      "entry": "proposals/golden-period-framework.md"
+    },
+    {
+      "source_location": "Domain 4, #87",
+      "title": "Incident Reporting",
+      "entry": "proposals/incident-reporting.md"
+    },
+    {
+      "source_location": "Domain 4, #88",
+      "title": "Agent IDs and Reputation Systems",
+      "entry": "proposals/agent-ids-and-reputation-systems.md"
+    },
+    {
+      "source_location": "Domain 4, #89",
+      "title": "Technical Governance Tools",
+      "entry": "proposals/technical-governance-tools.md"
+    },
+    {
+      "source_location": "Domain 4, #90",
+      "title": "Human Verification Systems",
+      "entry": "proposals/human-verification-systems.md"
+    },
+    {
+      "source_location": "Domain 4, #91",
+      "title": "Compute Governance",
+      "entry": "proposals/compute-governance.md"
+    },
+    {
+      "source_location": "Domain 4, #92",
+      "title": "Enhanced Responsible Scaling Implementation",
+      "entry": "proposals/enhanced-responsible-scaling-implementation.md"
+    },
+    {
+      "source_location": "Domain 4, #93",
+      "title": "Barriers to Fine-tuning",
+      "entry": "proposals/barriers-to-fine-tuning.md"
+    },
+    {
+      "source_location": "Domain 4, #94",
+      "title": "Addressing AI Crawling Challenges",
+      "entry": "proposals/addressing-ai-crawling-challenges.md"
+    },
+    {
+      "source_location": "Domain 4, #95",
+      "title": "Training Data Licensing",
+      "entry": "proposals/training-data-licensing.md"
+    },
+    {
+      "source_location": "Domain 4, #96",
+      "title": "Development-Phase Accountability Tools",
+      "entry": "proposals/development-phase-accountability-tools.md"
+    },
+    {
+      "source_location": "Domain 4, #97",
+      "title": "Accountability Frameworks",
+      "entry": "proposals/accountability-frameworks.md"
+    },
+    {
+      "source_location": "Domain 4, #98",
+      "title": "Data Rights Systems",
+      "entry": "proposals/data-rights-systems.md"
+    },
+    {
+      "source_location": "Domain 4, #99",
+      "title": "Expert Collaboration",
+      "entry": "proposals/expert-collaboration.md"
+    },
+    {
+      "source_location": "Domain 4, #100",
+      "title": "Regulatory Talent",
+      "entry": "proposals/regulatory-talent.md"
+    },
+    {
+      "source_location": "Domain 4, #101",
+      "title": "Government AI Use",
+      "entry": "proposals/government-ai-use.md"
+    },
+    {
+      "source_location": "Domain 4, #102",
+      "title": "Academic-National Lab Cooperation",
+      "entry": "proposals/academic-national-lab-cooperation.md"
+    },
+    {
+      "source_location": "Domain 4, #103",
+      "title": "Policy Connection",
+      "entry": "proposals/policy-connection.md"
+    },
+    {
+      "source_location": "Domain 4, #104",
+      "title": "AI Security Institutes",
+      "entry": "proposals/ai-security-institutes.md"
+    },
+    {
+      "source_location": "Domain 4, #105",
+      "title": "Risk Assessments",
+      "entry": "proposals/risk-assessments.md"
+    },
+    {
+      "source_location": "Domain 4, #106",
+      "title": "Legal Authority Clarification",
+      "entry": "proposals/legal-authority-clarification.md"
+    },
+    {
+      "source_location": "Domain 4, #107",
+      "title": "Government Support Framework",
+      "entry": "proposals/government-support-framework.md"
+    },
+    {
+      "source_location": "Domain 4, #108",
+      "title": "Policy Studio/Competition",
+      "entry": "proposals/policy-studio-competition.md"
+    },
+    {
+      "source_location": "Domain 4, #109",
+      "title": "Increased ARIA Support",
+      "entry": "proposals/increased-aria-support.md"
+    },
+    {
+      "source_location": "Domain 4, #110",
+      "title": "AI R&D Acceleration Threat Modeling",
+      "entry": "proposals/ai-rd-acceleration-threat-modeling.md"
+    },
+    {
+      "source_location": "Domain 4, #111",
+      "title": "AI Development Lifecycle Risk Management Framework",
+      "entry": "proposals/ai-development-lifecycle-risk-management-framework.md"
+    },
+    {
+      "source_location": "Domain 4, #112",
+      "title": "Government Data Centers",
+      "entry": "proposals/government-data-centers.md"
+    },
+    {
+      "source_location": "Domain 4, #113",
+      "title": "AI Ownership",
+      "entry": "proposals/ai-ownership.md"
+    },
+    {
+      "source_location": "Domain 4, #114",
+      "title": "Democratic Support",
+      "entry": "proposals/democratic-support.md"
+    },
+    {
+      "source_location": "Domain 5, #115",
+      "title": "Cross-Border Notification Systems",
+      "entry": "proposals/cross-border-notification-systems.md"
+    },
+    {
+      "source_location": "Domain 5, #116",
+      "title": "CERN for AI",
+      "entry": "proposals/cern-for-ai.md"
+    },
+    {
+      "source_location": "Domain 5, #117",
+      "title": "International Risk Management",
+      "entry": "proposals/international-risk-management.md"
+    },
+    {
+      "source_location": "Domain 5, #118",
+      "title": "Global Frameworks for AI Development",
+      "entry": "proposals/global-frameworks-for-ai-development.md"
+    },
+    {
+      "source_location": "Domain 5, #119",
+      "title": "Strategic Coordination Frameworks",
+      "entry": "proposals/strategic-coordination-frameworks.md"
+    },
+    {
+      "source_location": "Domain 5, #120",
+      "title": "Realistic End States for AI Governance",
+      "entry": "proposals/realistic-end-states-for-ai-governance.md"
+    },
+    {
+      "source_location": "Domain 5, #121",
+      "title": "International Governance Trifecta",
+      "entry": "proposals/international-governance-trifecta.md"
+    },
+    {
+      "source_location": "Domain 5, #122",
+      "title": "Geopolitical Sense-Making",
+      "entry": "proposals/geopolitical-sense-making.md"
+    },
+    {
+      "source_location": "Domain 5, #123",
+      "title": "Compute Supply Chain",
+      "entry": "proposals/compute-supply-chain-coordination.md"
+    },
+    {
+      "source_location": "Domain 5, #124",
+      "title": "Intergovernmental Frontier Model Forum",
+      "entry": "proposals/intergovernmental-frontier-model-forum.md"
+    },
+    {
+      "source_location": "Domain 5, #125",
+      "title": "EU Diplomatic Capacity",
+      "entry": "proposals/eu-diplomatic-capacity.md"
+    },
+    {
+      "source_location": "Domain 5, #126",
+      "title": "International Protocols for AI Treaties",
+      "entry": "proposals/international-protocols-for-ai-treaties.md"
+    },
+    {
+      "source_location": "Domain 5, #127",
+      "title": "Specialized Diplomatic Corps",
+      "entry": "proposals/specialized-diplomatic-corps.md"
+    },
+    {
+      "source_location": "Domain 5, #128",
+      "title": "International Exchange Program",
+      "entry": "proposals/international-exchange-program.md"
+    },
+    {
+      "source_location": "Domain 5, #129",
+      "title": "Track 2 Diplomacy",
+      "entry": "proposals/track-2-diplomacy.md"
+    },
+    {
+      "source_location": "Domain 5, #130",
+      "title": "Consolidation of AI Development",
+      "entry": "proposals/consolidation-of-ai-development.md"
+    },
+    {
+      "source_location": "Domain 5, #131",
+      "title": "Western Multipolar AGI",
+      "entry": "proposals/western-multipolar-agi.md"
+    },
+    {
+      "source_location": "Domain 5, #132",
+      "title": "Conflict Reduction",
+      "entry": "proposals/conflict-reduction.md"
+    },
+    {
+      "source_location": "Domain 5, #133",
+      "title": "Country-Level Consolidation",
+      "entry": "proposals/country-level-consolidation.md"
+    },
+    {
+      "source_location": "Domain 6, #134",
+      "title": "CBRN Access Control",
+      "entry": "proposals/cbrn-access-control.md"
+    },
+    {
+      "source_location": "Domain 6, #135",
+      "title": "Medical Countermeasures",
+      "entry": "proposals/medical-countermeasures.md"
+    },
+    {
+      "source_location": "Domain 6, #136",
+      "title": "UV Technology",
+      "entry": "proposals/uv-technology.md"
+    },
+    {
+      "source_location": "Domain 6, #137",
+      "title": "Nucleic Acid Observatory",
+      "entry": "proposals/nucleic-acid-observatory.md"
+    },
+    {
+      "source_location": "Domain 6, #138",
+      "title": "Biological Countermeasures",
+      "entry": "proposals/biological-countermeasures.md"
+    },
+    {
+      "source_location": "Domain 6, #139",
+      "title": "Biosecurity Controls",
+      "entry": "proposals/biosecurity-controls.md"
+    },
+    {
+      "source_location": "Domain 6, #140",
+      "title": "Biorisk Thresholds for Open Models",
+      "entry": "proposals/biorisk-thresholds-for-open-models.md"
+    },
+    {
+      "source_location": "Domain 6, #141",
+      "title": "Global Immune System",
+      "entry": "proposals/global-immune-system.md"
+    },
+    {
+      "source_location": "Domain 6, #142",
+      "title": "AI for Bio-resilience",
+      "entry": "proposals/ai-for-bio-resilience.md"
+    },
+    {
+      "source_location": "Domain 6, #143",
+      "title": "Physical Security Mechanisms",
+      "entry": "proposals/physical-security-mechanisms.md"
+    },
+    {
+      "source_location": "Domain 6, #144",
+      "title": "Resilience Research",
+      "entry": "proposals/resilience-research.md"
+    },
+    {
+      "source_location": "Domain 6, #145",
+      "title": "Civilizational Resilience Measures",
+      "entry": "proposals/civilizational-resilience-measures.md"
+    },
+    {
+      "source_location": "Domain 6, #146",
+      "title": "Large Group Deliberation Systems",
+      "entry": "proposals/large-group-deliberation-systems.md"
+    },
+    {
+      "source_location": "Domain 6, #147",
+      "title": "Anti-Goodharting Tooling",
+      "entry": "proposals/anti-goodharting-tooling.md"
+    },
+    {
+      "source_location": "Domain 6, #148",
+      "title": "Citizen Assemblies for Global Catastrophic Risks",
+      "entry": "proposals/citizen-assemblies-for-global-catastrophic-risks.md"
+    },
+    {
+      "source_location": "Domain 6, #149",
+      "title": "Economic Transition",
+      "entry": "proposals/economic-transition.md"
+    },
+    {
+      "source_location": "Domain 6, #150",
+      "title": "Human Productivity",
+      "entry": "proposals/human-productivity.md"
+    },
+    {
+      "source_location": "Domain 6, #151",
+      "title": "Economic Resilience",
+      "entry": "proposals/economic-resilience.md"
+    },
+    {
+      "source_location": "Domain 6, #152",
+      "title": "AI Economy Infrastructure",
+      "entry": "proposals/ai-economy-infrastructure.md"
+    },
+    {
+      "source_location": "Domain 6, #153",
+      "title": "AI Displacement Response Planning",
+      "entry": "proposals/ai-displacement-response-planning.md"
+    },
+    {
+      "source_location": "Domain 6, #154",
+      "title": "Post-AGI Society Planning",
+      "entry": "proposals/post-agi-society-planning.md"
+    },
+    {
+      "source_location": "Domain 6, #155",
+      "title": "Attack Scenarios Analysis",
+      "entry": "proposals/attack-scenarios-analysis.md"
+    },
+    {
+      "source_location": "Domain 6, #156",
+      "title": "Backup Planning",
+      "entry": "proposals/backup-planning.md"
+    },
+    {
+      "source_location": "Domain 6, #157",
+      "title": "Build the Off Button",
+      "entry": "proposals/build-the-off-button.md"
+    },
+    {
+      "source_location": "Domain 6, #158",
+      "title": "Food Security",
+      "entry": "proposals/food-security.md"
+    },
+    {
+      "source_location": "Domain 6, #159",
+      "title": "Model Weight Security",
+      "entry": "proposals/model-weight-security.md"
+    },
+    {
+      "source_location": "Domain 6, #160",
+      "title": "AI Lab Security",
+      "entry": "proposals/ai-lab-security.md"
+    },
+    {
+      "source_location": "Domain 6, #161",
+      "title": "Defense-in-Depth for Closed Source Models",
+      "entry": "proposals/defense-in-depth-for-closed-source-models.md"
+    },
+    {
+      "source_location": "Domain 6, #162",
+      "title": "AI-Enhanced Defense Mechanisms",
+      "entry": "proposals/ai-enhanced-defense-mechanisms.md"
+    },
+    {
+      "source_location": "Domain 6, #163",
+      "title": "SL5 Data Center Pilots",
+      "entry": "proposals/sl5-data-center-pilots.md"
+    },
+    {
+      "source_location": "Domain 6, #164",
+      "title": "Vulnerability Patching Systems",
+      "entry": "proposals/vulnerability-patching-systems.md"
+    },
+    {
+      "source_location": "Domain 6, #165",
+      "title": "Anti-Poisoning Techniques",
+      "entry": "proposals/anti-poisoning-techniques.md"
+    },
+    {
+      "source_location": "Domain 6, #166",
+      "title": "Bug-Finding Democratization",
+      "entry": "proposals/bug-finding-democratization.md"
+    },
+    {
+      "source_location": "Domain 6, #167",
+      "title": "Comprehensive Infosec Framework",
+      "entry": "proposals/comprehensive-infosec-framework.md"
+    },
+    {
+      "source_location": "Domain 6, #168",
+      "title": "Verified Software for Cyber Resilience",
+      "entry": "proposals/verified-software-for-cyber-resilience.md"
+    },
+    {
+      "source_location": "Domain 6, #169",
+      "title": "AI for Formally Verified Cyberdefense",
+      "entry": "proposals/ai-for-formally-verified-cyberdefense.md"
+    },
+    {
+      "source_location": "Domain 6, #170",
+      "title": "Protection of Global Security Weak Points",
+      "entry": "proposals/protection-of-global-security-weak-points.md"
+    },
+    {
+      "source_location": "Domain 6, #171",
+      "title": "Fraud Prevention",
+      "entry": "proposals/fraud-prevention.md"
+    },
+    {
+      "source_location": "Domain 6, #172",
+      "title": "Honeypot Networks",
+      "entry": "proposals/honeypot-networks.md"
+    },
+    {
+      "source_location": "Domain 6, #173",
+      "title": "Autoverification (Lean)",
+      "entry": "proposals/autoverification-lean.md"
+    },
+    {
+      "source_location": "Domain 6, #174",
+      "title": "Formal Verification of AI Hardware",
+      "entry": "proposals/formal-verification-of-ai-hardware.md"
+    },
+    {
+      "source_location": "Domain 6, #175",
+      "title": "Cyber Weapons for AI Disruption",
+      "entry": "proposals/cyber-weapons-for-ai-disruption.md"
+    },
+    {
+      "source_location": "Domain 7, #176",
+      "title": "Political Action Organization",
+      "entry": "proposals/political-action-organization.md"
+    },
+    {
+      "source_location": "Domain 7, #177",
+      "title": "Lobbying Support Tools",
+      "entry": "proposals/lobbying-support-tools.md"
+    },
+    {
+      "source_location": "Domain 7, #178",
+      "title": "Public Demonstration Projects (Usefulness)",
+      "entry": "proposals/public-demonstration-projects-usefulness.md"
+    },
+    {
+      "source_location": "Domain 7, #179",
+      "title": "Public Demonstration Projects (Future Risks)",
+      "entry": "proposals/public-demonstration-projects-future-risks.md"
+    },
+    {
+      "source_location": "Domain 7, #180",
+      "title": "Concrete Risk Visualization",
+      "entry": "proposals/concrete-risk-visualization.md"
+    },
+    {
+      "source_location": "Domain 7, #181",
+      "title": "Build Intergovernmental Expertise",
+      "entry": "proposals/build-intergovernmental-expertise.md"
+    },
+    {
+      "source_location": "Domain 7, #182",
+      "title": "Popular Documentaries/Films",
+      "entry": "proposals/popular-documentaries-films.md"
+    },
+    {
+      "source_location": "Domain 7, #183",
+      "title": "Political Campaign Opposing Anti-Regulation Efforts",
+      "entry": "proposals/political-campaign-opposing-anti-regulation.md"
+    },
+    {
+      "source_location": "Domain 7, #184",
+      "title": "Targeted Communications Campaign",
+      "entry": "proposals/targeted-communications-campaign.md"
+    },
+    {
+      "source_location": "Domain 7, #185",
+      "title": "Consensus-Building Evidence for AI Risk",
+      "entry": "proposals/consensus-building-evidence-for-ai-risk.md"
+    },
+    {
+      "source_location": "Domain 7, #186",
+      "title": "Military and Government Awareness Campaigns",
+      "entry": "proposals/military-government-awareness-campaigns.md"
+    },
+    {
+      "source_location": "Domain 7, #187",
+      "title": "Large-Scale Media Campaigns",
+      "entry": "proposals/large-scale-media-campaigns.md"
+    },
+    {
+      "source_location": "Domain 8, #188",
+      "title": "Legal Clarity Initiatives",
+      "entry": "proposals/legal-clarity-initiatives.md"
+    },
+    {
+      "source_location": "Domain 8, #189",
+      "title": "Whistleblower Protection Fund",
+      "entry": "proposals/whistleblower-protection-fund.md"
+    },
+    {
+      "source_location": "Domain 8, #190",
+      "title": "Reduce the Alignment Tax",
+      "entry": "proposals/reduce-alignment-tax.md"
+    },
+    {
+      "source_location": "Domain 8, #191",
+      "title": "Neuroscience Moonshots for Human-Compatible AGI",
+      "entry": "proposals/neuroscience-moonshots-for-agi.md"
+    },
+    {
+      "source_location": "Domain 8, #192",
+      "title": "Access Standards",
+      "entry": "proposals/access-standards.md"
+    },
+    {
+      "source_location": "Domain 8, #193",
+      "title": "Game Theoretic AI Conflict Analysis",
+      "entry": "proposals/game-theoretic-ai-conflict-analysis.md"
+    },
+    {
+      "source_location": "Domain 8, #194",
+      "title": "Cooperative AI Mechanism Design",
+      "entry": "proposals/cooperative-ai-mechanism-design.md"
+    },
+    {
+      "source_location": "Domain 8, #195",
+      "title": "Psychological Interventions for AGI Integrity",
+      "entry": "proposals/psychological-interventions-for-agi-integrity.md"
+    },
+    {
+      "source_location": "Domain 8, #196",
+      "title": "New AI-Human Interaction Theory",
+      "entry": "proposals/new-ai-human-interaction-theory.md"
+    },
+    {
+      "source_location": "Domain 8, #197",
+      "title": "Foundations of Cooperative Agency Research",
+      "entry": "proposals/foundations-of-cooperative-agency-research.md"
+    },
+    {
+      "source_location": "Domain 8, #198",
+      "title": "Beyond Preference Models",
+      "entry": "proposals/beyond-preference-models.md"
+    },
+    {
+      "source_location": "Domain 8, #199",
+      "title": "AI Sentience Research",
+      "entry": "proposals/ai-sentience-research.md"
+    },
+    {
+      "source_location": "Domain 8, #200",
+      "title": "Personnel Reliability Programs",
+      "entry": "proposals/personnel-reliability-programs.md"
+    },
+    {
+      "source_location": "Domain 8, #201",
+      "title": "Ethics for AI Alignment",
+      "entry": "proposals/ethics-for-ai-alignment.md"
+    },
+    {
+      "source_location": "Domain 8, #202",
+      "title": "Opponent Shaping",
+      "entry": "proposals/opponent-shaping.md"
+    },
+    {
+      "source_location": "Domain 8, #203",
+      "title": "Autonomous Weapons Monitoring",
+      "entry": "proposals/autonomous-weapons-monitoring.md"
+    },
+    {
+      "source_location": "Domain 8, #204",
+      "title": "Legal Personhood Framework",
+      "entry": "proposals/legal-personhood-framework.md"
+    },
+    {
+      "source_location": "Domain 8, #205",
+      "title": "Whole Brain Emulation",
+      "entry": "proposals/whole-brain-emulation.md"
+    },
+    {
+      "source_location": "Domain 8, #206",
+      "title": "Legal Automation",
+      "entry": "proposals/legal-automation.md"
+    },
+    {
+      "source_location": "Domain 8, #207",
+      "title": "Acausal Trade Research",
+      "entry": "proposals/acausal-trade-research.md"
+    },
+    {
+      "source_location": "Domain 8, #208",
+      "title": "Defenses Against Nanotech Threats",
+      "entry": "proposals/defenses-against-nanotech-threats.md"
+    }
+  ]
+}

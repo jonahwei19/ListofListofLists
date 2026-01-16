@@ -1,0 +1,235 @@
+{
+  "sources": [
+    {
+      "id": "carlsmith-alignment",
+      "name": "How to Solve the Alignment Problem (Carlsmith)",
+      "url": "https://joecarlsmith.com/",
+      "type": "md",
+      "status": "processed",
+      "folder": "carlsmith-alignment/",
+      "notes": "9 essays. Primary source for Rogue AI category refinement: rogue vs misuse distinction, hand-off framing, option control vs motivation control, global vulnerability conditions."
+    },
+    {
+      "id": "carlsmith-otherness",
+      "name": "Otherness and Control in the Age of AGI (Carlsmith)",
+      "url": "https://joecarlsmith.com/",
+      "type": "pdf",
+      "status": "processed",
+      "folder": "otherness-agi/",
+      "notes": "192 pages. Philosophy of human-AI relations. Deep atheism, yin/yang, gentleness toward AI as 'other', liberalism/boundaries, attunement. Challenges pure control framing."
+    },
+    {
+      "id": "nielsen-wise-optimist",
+      "name": "How to be a wise optimist about science and technology (Nielsen)",
+      "url": "https://michaelnotebook.com/optimism/",
+      "type": "md",
+      "status": "processed",
+      "folder": "nielsen-wise-optimist/",
+      "notes": "Wise optimism: accepts xrisk, works to overcome it. Armageddon vs Kumbaya heuristics, market vs non-market safety, coceleration, hyper-entities."
+    },
+    {
+      "id": "macaskill-better-futures",
+      "name": "Better Futures (MacAskill)",
+      "url": "https://www.forethought.org/",
+      "type": "md",
+      "status": "processed",
+      "folder": "macaskill-better-futures/",
+      "notes": "6 essays. Primary source for Flourishing category: S×F framework, multiplicative model, path dependence, convergence skepticism."
+    },
+    {
+      "id": "peregrine-2025",
+      "name": "The 2025 Peregrine Report",
+      "url": "https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf",
+      "type": "pdf",
+      "status": "processed",
+      "folder": "peregrine-2025/",
+      "notes": "208 proposals extracted, converted to problem/intervention entries via tiling tree method"
+    },
+    {
+      "id": "cltr-defacc-uk",
+      "name": "CLTR Defensive Acceleration List (UK)",
+      "type": "xlsx",
+      "status": "processed",
+      "folder": "cltr-defacc-uk/",
+      "notes": "29 UK-centric interventions. Mostly UK-specific policy/systems. ~5 map to existing entries, ~5 could become new generalizable interventions."
+    },
+    {
+      "id": "convergent-gap-map",
+      "name": "Convergent Research Gap Map",
+      "url": "https://www.gap-map.org/?sort=rank",
+      "type": "web",
+      "status": "processed",
+      "folder": "convergent-gap-map/",
+      "notes": "101 R&D gaps across 17 fields. WARNING: Most not relevant (astrophysics, space, ecology). Filter for: AI safety, biosecurity, global health."
+    },
+    {
+      "id": "mit-risk-repository",
+      "name": "MIT AI Risk Repository",
+      "url": "https://airisk.mit.edu/",
+      "type": "xlsx",
+      "status": "processed",
+      "folder": "mit-risk-repository/",
+      "notes": "Used for taxonomy stress-test. 7 domains, 23 sub-categories. Confirms coverage, no critical gaps. Hyperwar potentially underspecified."
+    },
+    {
+      "id": "epistemic-security",
+      "name": "Epistemic Security (early thinking)",
+      "type": "md",
+      "status": "processed",
+      "folder": "epistemic-security/",
+      "notes": "Already a tiling tree! Source integrity → content integrity → distribution governance → coordination infrastructure. Could become a problem entry directly."
+    },
+    {
+      "id": "project-grasp",
+      "name": "Project GRASP (CeSIA)",
+      "url": "https://centre-securite-ia.notion.site/safe-online",
+      "type": "notion",
+      "status": "pending",
+      "folder": "project-grasp/",
+      "notes": "French AI Safety Center database. Requires JS/manual export - WebFetch won't work."
+    },
+    {
+      "id": "openagent-ecosystem",
+      "name": "Achieving a Secure AI Agent Ecosystem",
+      "url": "https://www.schmidtsciences.org/wp-content/uploads/2025/06/Achieving_a_Secure_AI_Agent_Ecosystem-3.pdf",
+      "type": "pdf",
+      "status": "processed",
+      "folder": "openagent-ecosystem/",
+      "notes": "Schmidt Sciences report on AI agent security."
+    },
+    {
+      "id": "bowman-checklist",
+      "name": "Sam Bowman's AI Safety Checklist",
+      "url": "https://sleepinyourhat.github.io/checklist/",
+      "type": "web",
+      "status": "processed",
+      "folder": "bowman-checklist/",
+      "notes": "25 goals across 3 chapters. Most map to existing 4 problems. Anthropic-specific framing (ASL levels, RSP). No new problems identified."
+    },
+    {
+      "id": "biosecurity-lists",
+      "name": "List of Lists of Biosecurity Projects",
+      "url": "https://forum.effectivealtruism.org/posts/DcKo3Hx8hzrZWjYp5/list-of-lists-of-concrete-biosecurity-project-ideas",
+      "type": "web",
+      "status": "processed",
+      "folder": "biosecurity-lists/",
+      "notes": "Meta-list processed. 4 high-priority sub-lists added as separate sources. Most consensus projects already covered."
+    },
+    {
+      "id": "concrete-biosecurity-ea",
+      "name": "Concrete Biosecurity Projects (EA Forum)",
+      "url": "https://forum.effectivealtruism.org/posts/u5JesqQ3jdLENXBtB/concrete-biosecurity-projects-some-of-which-could-be-big-1",
+      "type": "web",
+      "status": "processed",
+      "folder": "concrete-biosecurity-ea/",
+      "notes": "6 biosecurity projects. Most map to terrorism/extinction (detection, countermeasures, refuges). BWC Strengthening maps to proliferation. Gap: no proposals address AI-bio intersection."
+    },
+    {
+      "id": "apollo-biodefense",
+      "name": "Apollo Program for Biodefense",
+      "url": "https://biodefensecommission.org/reports/the-apollo-program-for-biodefense-winning-the-race-against-biological-threats/",
+      "type": "pdf",
+      "status": "processed",
+      "folder": "apollo-biodefense/",
+      "notes": "4 goals: detection, testing, treatment, vaccines—all by 2030. All map to terrorism/extinction. $10B/year. Traditional biosecurity (no AI-bio focus). PDF has more tech detail."
+    },
+    {
+      "id": "gcbr-technologies",
+      "name": "Technologies to Address GCBRs (Johns Hopkins)",
+      "url": "https://www.centerforhealthsecurity.org/our-work/publications/technologies-to-address-global-catastrophic-biological-risks",
+      "type": "pdf",
+      "status": "blocked",
+      "folder": "gcbr-technologies/",
+      "notes": "Site returns 403. Manual PDF download required. Expected: tech inventory for terrorism/extinction interventions."
+    },
+    {
+      "id": "biosecurity-engineers",
+      "name": "Biosecurity Needs Engineers (EA Forum)",
+      "url": "https://forum.effectivealtruism.org/posts/Bd7K4XCg4BGEaSetp/biosecurity-needs-engineers-and-materials-scientists",
+      "type": "web",
+      "status": "processed",
+      "folder": "biosecurity-engineers/",
+      "notes": "7 hardware interventions: PPE, Far-UVC, ventilation, UVGI, lab safety, biomonitoring, vehicle filtration. All terrorism/extinction except lab safety (proliferation). Engineering skill-gap framing."
+    },
+    {
+      "id": "atlas-ai-resilience",
+      "name": "Atlas AI Resilience Gap Map",
+      "type": "xlsx",
+      "status": "processed",
+      "folder": "atlas-ai-resilience/",
+      "notes": "119 gaps in main sheet. Check 'Related lists' tab for more sources."
+    },
+    {
+      "id": "atlas-cyber",
+      "name": "Atlas Cybersecurity Projects",
+      "url": "https://www.essentialtechnology.blog/cp/178994713",
+      "type": "xlsx",
+      "status": "processed",
+      "folder": "atlas-cyber/",
+      "notes": "23 fundable cybersecurity projects. Convergent Research willing to house efforts."
+    },
+    {
+      "id": "ai-safety-lists",
+      "name": "List of Lists of AI Safety Projects",
+      "url": "https://www.lesswrong.com/posts/mtGpdtDdmkRC3ZBuz/list-of-lists-of-project-ideas-in-ai-safety",
+      "type": "web",
+      "status": "processed",
+      "folder": "ai-safety-lists/",
+      "notes": "Meta-list processed. 3 high-priority sub-lists added. Heavy overlap with existing taxonomy."
+    },
+    {
+      "id": "evals-100-projects",
+      "name": "100+ Concrete Projects in Evals",
+      "url": "https://www.alignmentforum.org/posts/LhnqegFoykcjaXCYH/100-concrete-projects-and-open-problems-in-evals",
+      "type": "web",
+      "status": "processed",
+      "folder": "evals-100-projects/",
+      "notes": "100+ projects across scheming, autonomy, AI R&D, control, bio/cyber/persuasion, multi-agent. Maps to detect-evaluation-sandbagging, safety-benchmark-development, end-to-end-harm-assessment. Strong overlap with existing entries."
+    },
+    {
+      "id": "redwood-control-proposals",
+      "name": "Redwood Research Control Project Proposals",
+      "url": "https://www.alignmentforum.org/posts/RRxhzshdpneyTzKfq/recent-redwood-research-project-proposals",
+      "type": "web",
+      "status": "processed",
+      "folder": "redwood-control-proposals/",
+      "notes": "36 proposals, 10 tractable directions. Strong mapping to contain-unsafe-ai, multi-agent-threat-monitoring, detect-evaluation-sandbagging. 3 potential sub-interventions: synthetic honeypots, collusion prevention, elicitation without learning."
+    },
+    {
+      "id": "hazell-ten-projects",
+      "name": "Ten AI Safety Projects (Julian Hazell)",
+      "url": "https://www.lesswrong.com/posts/vxA2BnCPTaPfnJjti/ten-ai-safety-projects-i-d-like-people-to-work-on",
+      "type": "web",
+      "status": "processed",
+      "folder": "hazell-ten-projects/",
+      "notes": "Funder perspective on fundable org ideas. 6 map to existing interventions, 4 new candidates (comms, lit reviews, resilience plan, econ tracker)."
+    },
+    {
+      "id": "vitalik-dacc",
+      "name": "d/acc: Defensive Acceleration (Vitalik Buterin)",
+      "url": "https://vitalik.eth.limo/general/2023/11/27/techno_optimism.html",
+      "type": "md",
+      "status": "processed",
+      "folder": "vitalik-dacc/",
+      "notes": "3 essays. d/acc (defensive/decentralization/differential acceleration). Offense/defense balance, four domains (macro, bio, cyber, info). Defense-favoring worlds enable better governance. Balvi bio-defense work."
+    },
+    {
+      "id": "toner-dynamism",
+      "name": "Dynamism for AI Safety (Helen Toner)",
+      "url": "https://helentoner.substack.com/",
+      "type": "md",
+      "status": "processed",
+      "folder": "toner-dynamism/",
+      "notes": "4 essays. Dynamism vs stasis (Virginia Postrel), stasist tendencies in AI safety, alignment as steerability, concentration-of-power risks, dynamist rules. Former OpenAI board member."
+    },
+    {
+      "id": "ai-futures-project",
+      "name": "AI Futures Project",
+      "url": "https://blog.ai-futures.org/",
+      "type": "md",
+      "status": "processed",
+      "folder": "ai-futures-project/",
+      "notes": "12 files. Daniel Kokotajlo (ex-OpenAI), Eli Lifland, Scott Alexander. AI 2027 scenarios, short timelines (modal 2027), fast takeoff, CEO takeover pathways, multi-AI conflict, Plans A/B/C/D framework, policy priorities. Key insight: threats are entangled, even 'good' scenarios involve massive power concentration."
+    }
+  ]
+}
