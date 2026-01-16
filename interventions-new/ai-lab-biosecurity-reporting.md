@@ -1,4 +1,4 @@
-# AI Lab Biosecurity Reporting
+# Cross-lab biosecurity threat aggregation
 
 **Tag**: Security
 

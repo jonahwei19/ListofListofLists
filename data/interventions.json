@@ -169,7 +169,7 @@
   },
   {
     "filename": "ai-conflict-game-theory-institute",
-    "title": "AI conflict game theory institute",
+    "title": "Multi-agent AI game theory research",
     "tag": "Science",
     "whatItIs": "A research institute\u2014analogous to RAND Corporation's Cold War strategists\u2014analyzing multi-agent AI dynamics through rigorous game theory. Core research areas:\n\n- **Dynamic coalition formation**: How AI agents form, maintain, and dissolve strategic alliances\n- **Principal-agent problems**: Governance challenges when AI agents act on behalf of humans or other AI\n- **Emergent collusion detection**: Early-warning systems for unintended coordination between agents\n- **Sabotage and adversarial dynamics**: Strategic behavior in competitive multi-agent environments\n- **Partial observability games**: Decision-making when agents have incomplete information about others",
     "whyItMatters": [
@@ -305,7 +305,7 @@
   },
   {
     "filename": "ai-lab-biosecurity-reporting",
-    "title": "AI Lab Biosecurity Reporting",
+    "title": "Cross-lab biosecurity threat aggregation",
     "tag": "Security",
     "whatItIs": "A dedicated organization to receive, analyze, and respond to biosecurity concerns detected by AI labs. When frontier AI systems detect potential biological threat development attempts (dangerous queries, capability uplift requests, suspicious usage patterns), labs currently have no clear pathway for reporting. This creates an information silo where each lab sees fragments of potential threats but no one has the full picture.\n\nThe organization would:\n- Receive biorisk reports from participating AI labs\n- Aggregate and analyze patterns across labs (coordination problems visible only at aggregate level)\n- Interface with biosecurity agencies and law enforcement as appropriate\n- Develop and maintain response protocols\n- Provide guidance back to labs on emerging threat patterns",
     "whyItMatters": [
@@ -579,7 +579,7 @@
   },
   {
     "filename": "ai-superforecasters",
-    "title": "AI Superforecasters",
+    "title": "AI-assisted forecasting systems",
     "tag": "Science",
     "whatItIs": "AI systems that achieve human superforecaster-level accuracy through:\n\n- **Agentic search**: Automated retrieval from high-quality news sources (AskNews outperforms Perplexity on recency)\n- **Supervisor reconciliation**: Multi-agent architecture where a supervisor agent reconciles disparate forecasts\n- **Statistical calibration**: Techniques to counter behavioral biases in LLMs (overconfidence, anchoring)\n- **Reasoning transparency**: Visible reasoning trees allowing users to inspect, modify, and correct prediction logic",
     "whyItMatters": [
@@ -637,7 +637,7 @@
   },
   {
     "filename": "aria-non-llm-development",
-    "title": "ARIA non-LLM development",
+    "title": "Non-LLM AI research programs",
     "tag": "Science",
     "whatItIs": "Expand support for the UK's Advanced Research and Invention Agency (ARIA), particularly its work on hardware mechanisms and non-LLM-based agent development approaches. These represent alternatives to accelerating the LLM paradigm while still capturing economic benefits. The UK is also pioneering technical verification methods and engagement with China on AI safety that could serve as models for international coordination.",
     "whyItMatters": [
@@ -945,7 +945,7 @@
   },
   {
     "filename": "constitutional-ai",
-    "title": "Constitutional AI",
+    "title": "AI-supervised value alignment",
     "tag": "Science",
     "whatItIs": "Using existing AI systems to evaluate and supervise future AI systems for security and harmlessness. Human input is provided through a set of rules (a Constitution) that an AI assistant uses to give feedback to a more advanced system in training. The process involves:\n\n1. **Supervised learning phase**: Generate initial responses, self-critique against constitutional principles, revise responses, fine-tune on revisions\n2. **RL phase**: Train model with AI-generated feedback based on constitutional principles (RLAIF)\n\nThe constitution can include external principles (UN Universal Declaration of Human Rights) and internal guidelines. Achieves Pareto improvement: models become both more helpful AND more harmless compared to pure RLHF.",
     "whyItMatters": [
@@ -1181,7 +1181,7 @@
   },
   {
     "filename": "golden-period-coordination",
-    "title": "Golden Period Coordination",
+    "title": "Safe AI productivity window extension",
     "tag": "Society",
     "whatItIs": "Metrics and monitoring systems to detect when AI capabilities reach a 10-100x productivity enhancement threshold without compromising security. Coordination mechanisms to extend this window from weeks to months, allowing humanity to maximize benefits from relatively safe systems before advancing to potentially riskier models. Strategy frameworks for optimal exploitation of this window.",
     "whyItMatters": [
@@ -1388,7 +1388,7 @@
   },
   {
     "filename": "hunch-agents",
-    "title": "Hunch agents",
+    "title": "Automated alignment hypothesis generation",
     "tag": "Science",
     "whatItIs": "AI systems that replicate creative scientific thinking to autonomously generate novel hypotheses and alignment approaches. Rather than pursuing specific technical solutions, automates the discovery process itself. Creates a feedback loop where AI helps develop better alignment techniques for increasingly capable AI systems.",
     "whyItMatters": [
@@ -1731,7 +1731,7 @@
   },
   {
     "filename": "nucleic-acid-observatory",
-    "title": "Nucleic acid observatory",
+    "title": "Large-scale metagenomic sequencing",
     "tag": "Security",
     "whatItIs": "Metagenomic sequencing of environmental samples (wastewater, air, nasal swabs) to detect novel pathogens before clinical cases appear. Unlike targeted PCR tests that look for known pathogens, metagenomic sequencing reads all genetic material in a sample\u2014enabling detection of previously unknown or engineered pathogens. The NAO operates at scale: 270 billion read pairs sequenced in Q1 2025 alone (more than all pre-2025 sequencing combined), analyzing each billion reads for under $10 using AWS Batch.",
     "whyItMatters": [
@@ -1962,7 +1962,7 @@
   },
   {
     "filename": "rsp-implementation",
-    "title": "RSP Implementation",
+    "title": "Responsible scaling policy implementation",
     "tag": "Society",
     "whatItIs": "Transforming existing Responsible Scaling Policies (RSPs) from theoretical frameworks into actionable implementation plans. Develops concrete, tested \"if-then commitments\" with ready-to-deploy protocols for when safety boundaries are approached. Builds social mechanisms including public accountability and transparency requirements to ensure compliance. Significant focus on creating industry-wide norms and social pressure that makes non-compliance reputationally costly.",
     "whyItMatters": [

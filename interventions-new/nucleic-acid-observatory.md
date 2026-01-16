@@ -1,4 +1,4 @@
-# Nucleic acid observatory
+# Large-scale metagenomic sequencing
 
 **Tag**: Security
 

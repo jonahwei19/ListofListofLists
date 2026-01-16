@@ -1,4 +1,4 @@
-# Constitutional AI
+# AI-supervised value alignment
 
 **Tag**: Science
 

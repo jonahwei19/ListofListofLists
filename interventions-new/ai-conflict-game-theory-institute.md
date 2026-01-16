@@ -1,4 +1,4 @@
-# AI conflict game theory institute
+# Multi-agent AI game theory research
 
 **Tag**: Science
 

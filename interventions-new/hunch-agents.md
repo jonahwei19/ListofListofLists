@@ -1,4 +1,4 @@
-# Hunch agents
+# Automated alignment hypothesis generation
 
 **Tag**: Science
 

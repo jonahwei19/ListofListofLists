@@ -1,4 +1,4 @@
-# Golden Period Coordination
+# Safe AI productivity window extension
 
 **Tag**: Society
 

@@ -1,4 +1,4 @@
-# AI Superforecasters
+# AI-assisted forecasting systems
 
 **Tag**: Science
 

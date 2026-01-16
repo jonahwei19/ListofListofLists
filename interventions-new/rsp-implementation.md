@@ -1,4 +1,4 @@
-# RSP Implementation
+# Responsible scaling policy implementation
 
 **Tag**: Society
 

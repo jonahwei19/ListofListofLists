@@ -1,4 +1,4 @@
-# ARIA non-LLM development
+# Non-LLM AI research programs
 
 **Tag**: Science
 

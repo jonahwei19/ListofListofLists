@@ -354,7 +354,7 @@
         async function loadData() {
             try {
                 const [intRes, srcRes] = await Promise.all([
-                    fetch('data/interventions.json'),
+                    fetch('data/interventions.json?v=' + Date.now()),
                     fetch('data/sources.json')
                 ]);
                 interventions = await intRes.json();
@@ -432,11 +432,36 @@
         }
 
         function formatMarkdown(text) {
-            return text
-                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                .replace(/\n\n/g, '</p><p>')
-                .replace(/\n- /g, '</p><ul><li>')
-                .replace(/\n/g, '<br>');
+            if (!text) return '';
+
+            // Split into lines and process
+            const lines = text.split('\n');
+            let html = '';
+            let inList = false;
+
+            for (let line of lines) {
+                // Bold text
+                line = line.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+                if (line.trim().startsWith('- ')) {
+                    if (!inList) {
+                        html += '<ul>';
+                        inList = true;
+                    }
+                    html += '<li>' + line.trim().substring(2) + '</li>';
+                } else {
+                    if (inList) {
+                        html += '</ul>';
+                        inList = false;
+                    }
+                    if (line.trim()) {
+                        html += '<p>' + line + '</p>';
+                    }
+                }
+            }
+
+            if (inList) html += '</ul>';
+            return html;
         }
 
         // Map source file paths to GitHub internal links
