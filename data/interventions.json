@@ -125,30 +125,6 @@
     ]
   },
   {
-    "filename": "ai-biosecurity-controls",
-    "title": "AI biosecurity controls",
-    "tag": "Security",
-    "whatItIs": "Implement strong controls over biological data and DNA synthesis that could enable harmful applications. Multiple complementary approaches:\n\n**AI model controls**: Training models to exclude dangerous biological information, filtering queries for biology-related red flags, implementing Know Your Customer (KYC) guidelines. Full-specification biology-capable models available only to licensed institutions.\n\n**DNA synthesis screening**: Screening orders at synthesis providers before fulfillment. Moving beyond homology-based (BLAST) screening to function-based approaches that assess whether sequences \"do dangerous things, regardless of sequence similarity.\"\n\n**Function-based approaches**: Protein function prediction (AlphaFold, ESMFold), danger classifiers trained on dangerous vs. benign sequences, pathway analysis for biosynthesis of toxins/virulence factors.",
-    "whyItMatters": [
-      "AI models trained on biological data could provide detailed instructions for creating dangerous pathogens",
-      "October 2025 Microsoft/Science paper: AI protein design tools can redesign toxins to evade BLAST-based screening while retaining harmful function",
-      "Homology-based screening has fundamental limits against AI-designed sequences",
-      "Only ~80% of global gene synthesis capacity is produced by IGSC members (2017 estimate)"
-    ],
-    "currentState": "- **Status**: Deployed (synthesis screening), Research (function-based approaches)\n- **Recent developments (2025)**:\n  - Microsoft demonstrated AI-designed toxin variants slipping past global synthesis screening\n  - Patches deployed globally catch ~97% of AI-designed evasion attempts, but gaps remain\n  - May 2025 Trump EO created regulatory uncertainty\u201490-day deadline for new framework passed without announcement\n  - Function-based screening tools emerging: IBBIS Common Mechanism, Battelle UltraSEQ, FAST-NA, SecureDNA Random Adversarial Thresholds\n- **Bottlenecks**: Function prediction accuracy; international coordination; regulatory uncertainty; benchtop synthesis equipment bypasses provider screening",
-    "whoWorking": "- **SecureDNA**: Free screening for sequences 30+ nucleotides with AI-evasion protections\n- **IGSC (International Gene Synthesis Consortium)**: Industry screening standards\n- **IBBIS (International Biosecurity and Biosafety Initiative for Science)**: Common Mechanism baseline screening\n- **Battelle**: UltraSEQ screening tool\n- **Microsoft**: AI evasion research and patch development",
-    "sources": [
-      {
-        "text": "Peregrine 2025 #139: Biosecurity Controls",
-        "url": "../sources/peregrine-2025/interventions/peregrine-139.md"
-      },
-      {
-        "text": "Atlas AI Resilience Gap Map: Biological Threat Creation",
-        "url": "../sources/atlas-ai-resilience/proposals/biological-threat-creation.md"
-      }
-    ]
-  },
-  {
     "filename": "ai-catastrophe-backup-plans",
     "title": "AI-catastrophe backup planning",
     "tag": "Society",
@@ -1161,6 +1137,25 @@
     ]
   },
   {
+    "filename": "function-based-synthesis-screening",
+    "title": "Function-based DNA synthesis screening",
+    "tag": "Security",
+    "whatItIs": "Screening DNA synthesis orders by predicting what the sequence *does*, not just what it *looks like*. Solves the AI-evasion problem where models can redesign toxins to evade homology-based (BLAST) screening while retaining harmful function.\n\n**Mechanism**:\n- Sequence submitted to synthesis provider \u2192 screened against danger classifiers\n- Classifiers trained on dangerous vs benign sequences using protein structure prediction (AlphaFold, ESMFold)\n- Pathway analysis checks for biosynthesis of toxins, virulence factors\n- Positive hits flagged for human review or rejection\n\n**Key difference from homology screening**: BLAST catches sequences that *look like* known pathogens. Function-based screening catches sequences that *behave like* pathogens, even if they're novel or AI-designed.",
+    "whyItMatters": [
+      "October 2025 Microsoft paper demonstrated AI-designed toxin variants slipping past global BLAST-based screening while retaining harmful function",
+      "~80% of gene synthesis capacity is from IGSC members using homology screening (2017)",
+      "Function-based approaches are the only defense against AI-designed evasion sequences"
+    ],
+    "currentState": "- **Status**: Research/Pilot (function-based); Deployed (homology-based)\n- **Implementations**:\n  - SecureDNA: Free screening with AI-evasion protections\n  - IBBIS Common Mechanism: Baseline screening standard\n  - Battelle UltraSEQ, FAST-NA: Emerging tools\n- **Bottlenecks**: Function prediction accuracy; compute costs; false positive rates",
+    "whoWorking": "- **SecureDNA**: Free screening API with function-based protections\n- **IBBIS**: Common Mechanism screening standard\n- **Battelle**: UltraSEQ tool development\n- **Microsoft**: AI evasion research and patch development",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #139: Biosecurity Controls",
+        "url": "../sources/peregrine-2025/interventions/peregrine-139.md"
+      }
+    ]
+  },
+  {
     "filename": "global-security-weak-link-hardening",
     "title": "Global security weak-link hardening",
     "tag": "Security",
@@ -1563,6 +1558,25 @@
       {
         "text": "Peregrine 2025 #146: Large Group Deliberation Systems",
         "url": "../sources/peregrine-2025/interventions/peregrine-146.md"
+      }
+    ]
+  },
+  {
+    "filename": "licensed-biology-ai-access",
+    "title": "Licensed access tiers for biology-capable AI",
+    "tag": "Security",
+    "whatItIs": "Tiered access system where full-capability AI models for biology are restricted to licensed institutions. General users get models with dangerous biological knowledge filtered or gated.\n\n**Mechanism**:\n- Training: Models exclude or downweight dangerous biological information (synthesis routes for pathogens, enhancement techniques)\n- Inference: Query filters flag biology-related red flags before reaching the model\n- Access tiers: Public (filtered), Institutional (KYC-verified labs/universities), Government (full capability)\n- Audit: Usage logging for institutional/government tiers\n\n**What this doesn't solve**: Open-weight models already in circulation; knowledge reconstructible from multiple filtered queries; determined actors can train their own models.",
+    "whyItMatters": [
+      "AI models trained on biological literature could provide step-by-step pathogen creation instructions",
+      "Tiered access creates friction without blocking legitimate research",
+      "KYC for biology queries creates accountability"
+    ],
+    "currentState": "- **Status**: Partial deployment\n- **Implementations**:\n  - Most frontier models have biology-related refusals\n  - No standardized licensing or tiering system across providers\n- **Bottlenecks**: Open-weight models bypass; international coordination; defining \"dangerous\" biological knowledge",
+    "whoWorking": "- **Frontier AI labs**: Voluntary refusal training (varies by lab)\n- **No standardized licensing body exists**",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #139: Biosecurity Controls",
+        "url": "../sources/peregrine-2025/interventions/peregrine-139.md"
       }
     ]
   },
@@ -2106,6 +2120,25 @@
       {
         "text": "Peregrine 2025 #12: Cooperative Alignment",
         "url": "../sources/peregrine-2025/interventions/peregrine-012.md"
+      }
+    ]
+  },
+  {
+    "filename": "split-order-synthesis-detection",
+    "title": "Split-order synthesis detection",
+    "tag": "Security",
+    "whatItIs": "System to detect when someone orders dangerous DNA sequences by splitting them across multiple synthesis providers. Each fragment is harmless alone; combined, they form a pathogen or toxin.\n\n**Mechanism**:\n- Centralized clearinghouse receives sequence metadata from participating providers\n- Clearinghouse checks if fragments from different orders (same customer or linked accounts) could assemble into dangerous sequences\n- Uses graph-based assembly algorithms to detect potential recombinations\n- Alerts triggered when fragments match dangerous assembly patterns\n\n**Why this is hard**: Customer identity obfuscation (shell companies, false names), international orders across jurisdictions with no data sharing, benchtop synthesis equipment bypasses provider screening entirely.",
+    "whyItMatters": [
+      "Single-provider screening is trivially circumvented by splitting orders",
+      "Dangerous sequences can be assembled from innocuous fragments",
+      "No current system tracks cross-provider ordering patterns"
+    ],
+    "currentState": "- **Status**: Idea/Gap\n- **Bottlenecks**:\n  - Requires cross-provider data sharing (competitive and legal barriers)\n  - International coordination across jurisdictions\n  - Privacy concerns about centralized ordering data\n  - Benchtop synthesis equipment bypasses entirely",
+    "whoWorking": "- **No dedicated organization identified** (gap area)\n- **IGSC members**: Could implement if coordination achieved\n- **Government biosecurity agencies**: Would need to mandate participation",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #139: Biosecurity Controls",
+        "url": "../sources/peregrine-2025/interventions/peregrine-139.md"
       }
     ]
   },
