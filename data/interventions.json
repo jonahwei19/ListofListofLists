@@ -364,7 +364,7 @@
   },
   {
     "filename": "ai-osint",
-    "title": "AI Open-Source Intelligence",
+    "title": "AI development open-source monitoring",
     "tag": "Security",
     "whatItIs": "Open-source intelligence efforts for AI monitoring using AI-powered web scrapers to track compute hardware movements (especially GPUs to Russia/China via countries like Turkey), uncover hidden AI developments (like talent acquisition patterns), and detect emerging threats (AI-generated content tools, scam tools). Organizations like Sentinel and Bellingcat would be ideal operators.",
     "whyItMatters": [
@@ -777,7 +777,7 @@
   },
   {
     "filename": "bwc-verification-mechanisms",
-    "title": "BWC verification mechanisms",
+    "title": "Biological weapons treaty verification",
     "tag": "Policy",
     "whatItIs": "Strengthen the Biological Weapons Convention through verification mechanisms, whistleblower protections and incentives, and open-source monitoring of biological research activities. Unlike the Chemical Weapons Convention which has inspection provisions, the current BWC lacks verification mechanisms. This would add: inspection regimes for dual-use facilities, financial incentives for whistleblowers in bio programs, and systematic monitoring of published biological research for concerning patterns.",
     "whyItMatters": [
@@ -817,7 +817,7 @@
   },
   {
     "filename": "cbrn-misuse-evaluations",
-    "title": "CBRN Misuse Evaluations",
+    "title": "Weapons of mass destruction misuse evaluations",
     "tag": "Security",
     "whatItIs": "Standardized frameworks for red-teaming AI systems against realistic CBRN (Chemical, Biological, Radiological, Nuclear) misuse scenarios. Components include:\n\n- **Structured evaluation protocols**: Multi-tiered attack methodologies testing models against prompts designed to elicit dangerous information (e.g., Enkrypt AI's 200-prompt CBRN dataset)\n- **Risk scoring systems**: Red/Amber/Green prioritization frameworks for resource allocation (e.g., RAND-CLR Global Risk Index)\n- **Third-party verification**: Independent evaluation by organizations without commercial incentives to underreport\n- **Lifecycle testing**: Evaluation throughout model development, not just pre-deployment",
     "whyItMatters": [
@@ -966,7 +966,7 @@
   },
   {
     "filename": "control-as-a-service",
-    "title": "Control as a service",
+    "title": "AI safety implementation consulting",
     "tag": "Security",
     "whatItIs": "Third-party service providing forward-deployed engineers to implement Redwood control techniques and other safety measures. Rather than just publishing research, provides implementation expertise that removes the barrier between safety research and deployment. Makes adoption easier by doing the work for companies.",
     "whyItMatters": [
@@ -2168,7 +2168,7 @@
   },
   {
     "filename": "tamper-resistant-rlhf",
-    "title": "Tamper-resistant RLHF",
+    "title": "Tamper-resistant alignment training",
     "tag": "Security",
     "whatItIs": "Techniques to make RLHF alignment resistant to subsequent modification or reversal through fine-tuning attacks. Components:\n\n- **Adversarial training**: Train-time adversaries that simulate 64-step SFT attacks, making refusal safeguards robust to tampering\n- **Constraint-aware loss functions**: Filter harmful gradients during downstream fine-tuning\n- **Safety backdoors**: Implant alignment triggers that preserve safety even when adversarial inputs are used\n- **Safety-aligned data mixing**: Incorporate safe examples during any fine-tuning process",
     "whyItMatters": [

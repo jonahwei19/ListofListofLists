@@ -1,4 +1,4 @@
-# CBRN Misuse Evaluations
+# Weapons of mass destruction misuse evaluations
 
 **Tag**: Security
 

@@ -1,4 +1,4 @@
-# Tamper-resistant RLHF
+# Tamper-resistant alignment training
 
 **Tag**: Security
 

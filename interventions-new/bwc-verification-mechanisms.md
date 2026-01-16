@@ -1,4 +1,4 @@
-# BWC verification mechanisms
+# Biological weapons treaty verification
 
 **Tag**: Policy
 
