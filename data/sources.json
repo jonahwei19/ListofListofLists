@@ -1,0 +1,237 @@
+[
+  {
+    "id": "ai-futures-project",
+    "title": "AI Futures Project",
+    "description": "AI Futures Project produces detailed scenario models of AGI development and takeoff, with explicit probability estimates. Their flagship product is AI 2027, a detailed scenario of how the intelligence explosion might unfold. They combine quantitative forecasting with scenario fiction to make abstract risks concrete.",
+    "url": "https://blog.ai-futures.org/",
+    "type": "Substack blog, scenario models, policy analysis",
+    "authors": ["Daniel Kokotajlo", "Eli Lifland", "Scott Alexander", "Nick Marsh", "Alex Kastner", "Steven Veld"],
+    "status": "processed"
+  },
+  {
+    "id": "ai-safety-lists",
+    "title": "List of Lists of AI Safety Projects",
+    "description": "LessWrong post aggregating AI safety project idea lists. Continuously updated. Covers evals, alignment, interpretability, control, and governance.",
+    "url": "https://www.lesswrong.com/posts/mtGpdtDdmkRC3ZBuz/list-of-lists-of-project-ideas-in-ai-safety",
+    "type": "Meta-list",
+    "status": "processed"
+  },
+  {
+    "id": "apollo-biodefense",
+    "title": "Apollo Program for Biodefense",
+    "description": "Ambitious 2021 roadmap to end the era of pandemic threats by 2030. Modeled on the Apollo space program. Investment scale: ~$10 billion annually. Follow-up report 'The Athena Agenda' (2022) provides implementation details.",
+    "url": "https://biodefensecommission.org/reports/the-apollo-program-for-biodefense-winning-the-race-against-biological-threats/",
+    "type": "Commission report",
+    "authors": ["Bipartisan Commission on Biodefense", "Lieberman", "Ridge", "Daschle", "Greenwood", "Wainstein", "Monaco"],
+    "status": "processed",
+    "proposalCount": 4,
+    "mappings": [
+      {"proposal": "Detection", "intervention": "nucleic-acid-observatory"},
+      {"proposal": "Testing", "intervention": "decentralized-diagnostic-infrastructure"},
+      {"proposal": "Treatment", "intervention": "broad-spectrum-antivirals"},
+      {"proposal": "Vaccines", "intervention": "accelerated-vaccine-development"}
+    ]
+  },
+  {
+    "id": "atlas-ai-resilience",
+    "title": "Atlas AI Resilience Gap Map",
+    "description": "Gap analysis for AI resilience. Categories: AI Trustworthiness, Model Security, Biosecurity, Cybersecurity, Epistemic Security, Economic Security, Civil Resilience, AI Governance, Force Multipliers.",
+    "type": "Excel file from Atlas",
+    "proposalCount": 23,
+    "status": "processed"
+  },
+  {
+    "id": "atlas-cyber",
+    "title": "Atlas Cybersecurity Projects",
+    "description": "Fundable cybersecurity projects. Convergent Research willing to house efforts, oversee contracts, or administer grants. Several scoped as FROs.",
+    "type": "Excel file from Atlas / Convergent Research",
+    "proposalCount": 22,
+    "status": "processed"
+  },
+  {
+    "id": "biosecurity-engineers",
+    "title": "Biosecurity Needs Engineers",
+    "description": "Engineering-focused biosecurity gap analysis. Argues the field is dominated by biologists and policy people, neglecting physical/materials science interventions. 'Laughably neglected' framing.",
+    "url": "https://forum.effectivealtruism.org/posts/Bd7K4XCg4BGEaSetp/biosecurity-needs-engineers-and-materials-scientists",
+    "type": "EA Forum post",
+    "status": "processed"
+  },
+  {
+    "id": "biosecurity-lists",
+    "title": "List of Lists of Biosecurity Projects",
+    "description": "Meta-list pointing to multiple biosecurity source lists. 4 high-priority sub-lists added as separate sources. Most consensus projects already covered in existing interventions.",
+    "url": "https://forum.effectivealtruism.org/posts/DcKo3Hx8hzrZWjYp5/list-of-lists-of-concrete-biosecurity-project-ideas",
+    "type": "Meta-list",
+    "status": "processed"
+  },
+  {
+    "id": "bowman-checklist",
+    "title": "Sam Bowman's AI Safety Checklist",
+    "description": "Anthropic-centric safety roadmap organized by phase: Chapter 1 Preparation (19 goals), Chapter 2 TAI phase (6 goals), Chapter 3 Post-TAI. Covers ASL 2-5 levels.",
+    "url": "https://sleepinyourhat.github.io/checklist/",
+    "type": "Checklist",
+    "proposalCount": 25,
+    "status": "processed"
+  },
+  {
+    "id": "carlsmith-alignment",
+    "title": "How to Solve the Alignment Problem (Carlsmith)",
+    "description": "Joe Carlsmith's comprehensive analysis of AI alignment: what the problem is, what conditions create risk, and intervention strategies. Primary source for refining the Rogue AI category and the 'hand-off' framing.",
+    "url": "https://joecarlsmith.com",
+    "type": "Essay series",
+    "proposalCount": 9,
+    "status": "fully integrated"
+  },
+  {
+    "id": "cltr-defacc-uk",
+    "title": "CLTR Defensive Acceleration List - UK Context",
+    "description": "UK-focused list of defensive AI applications. Categories: Privileging access, Culture change, Chemical/biological, UKIC, AI security.",
+    "type": "Excel file",
+    "proposalCount": 29,
+    "status": "processed"
+  },
+  {
+    "id": "concrete-biosecurity-ea",
+    "title": "Concrete Biosecurity Projects (EA Forum)",
+    "description": "Six major biosecurity projects estimated to reduce catastrophic biorisk by >1% each. EA-native framing, longtermist focus. Executive talent identified as key constraint.",
+    "url": "https://forum.effectivealtruism.org/posts/u5JesqQ3jdLENXBtB/concrete-biosecurity-projects-some-of-which-could-be-big-1",
+    "type": "EA Forum post",
+    "authors": ["Andrew Snyder-Beattie", "Ethan Alley"],
+    "status": "processed"
+  },
+  {
+    "id": "convergent-gap-map",
+    "title": "Convergent Research Gap Map",
+    "description": "101 R&D gaps across 17 scientific fields. Most gaps are out of scope (astrophysics, materials science, etc.). Filtered for civilizational resilience relevance - ~10 are directly relevant.",
+    "url": "https://www.gap-map.org/",
+    "type": "Gap analysis",
+    "proposalCount": 101,
+    "status": "processed"
+  },
+  {
+    "id": "cset-harmonizing-guidance",
+    "title": "CSET Georgetown: Harmonizing AI Guidance",
+    "description": "This report distills 7,741 recommendations from 52 different guidance documents into 258 harmonized recommendations. Organized into 5 overarching categories and 34 topic areas.",
+    "url": "https://cset.georgetown.edu/publication/harmonizing-ai-guidance-distilling-voluntary-standards-and-best-practices-into-a-unified-framework/",
+    "type": "CSET report",
+    "authors": ["Kyle Crichton", "Abhiram Reddy", "Jessica Ji", "Ali Crawford", "Mia Hoffmann", "Colin Shea-Blymyer", "John Bansemer"],
+    "proposalCount": 258,
+    "status": "processed"
+  },
+  {
+    "id": "epistemic-security",
+    "title": "Epistemic Security",
+    "description": "Tiling tree for epistemic security interventions. Status: Dissolved - interventions redistributed. 'Epistemic security' is instrumental - it matters because it enables coordination on other problems.",
+    "type": "Local markdown file",
+    "status": "dissolved"
+  },
+  {
+    "id": "evals-100-projects",
+    "title": "100+ Concrete Projects and Open Problems in Evals",
+    "description": "Comprehensive list of actionable evaluation research projects. Covers building new evals, science of evals (measurement, elicitation, coverage), and conceptual foundations. Heavily weighted toward scheming/deception detection, agentic autonomy measurement, AI R&D capabilities, domain-specific evals.",
+    "url": "https://www.alignmentforum.org/posts/LhnqegFoykcjaXCYH/100-concrete-projects-and-open-problems-in-evals",
+    "type": "Project ideas for evals research",
+    "authors": ["Marius Hobbhahn (Apollo Research)"],
+    "proposalCount": 100,
+    "status": "processed"
+  },
+  {
+    "id": "gcbr-technologies",
+    "title": "Technologies to Address GCBRs (Johns Hopkins)",
+    "description": "Technical report on emerging/future technologies for pandemic preparedness. Technology inventory approach - cataloging what exists and gaps.",
+    "url": "https://www.centerforhealthsecurity.org/our-work/publications/technologies-to-address-global-catastrophic-biological-risks",
+    "type": "Technical report",
+    "authors": ["Johns Hopkins Center for Health Security"],
+    "status": "blocked - requires manual access"
+  },
+  {
+    "id": "hazell-ten-projects",
+    "title": "Ten AI Safety Projects (Julian Hazell)",
+    "description": "Ten fundable org ideas from a funder perspective. Heavy emphasis on external accountability (monitors, auditors) and knowledge synthesis. Org-building focus rather than technical research.",
+    "url": "https://www.lesswrong.com/posts/vxA2BnCPTaPfnJjti/ten-ai-safety-projects-i-d-like-people-to-work-on",
+    "type": "LessWrong post",
+    "authors": ["Julian Hazell"],
+    "proposalCount": 10,
+    "status": "processed"
+  },
+  {
+    "id": "macaskill-better-futures",
+    "title": "Better Futures (MacAskill)",
+    "description": "Will MacAskill's series on what it takes for the future to go well, beyond just surviving. Primary source for the Flourishing category. Core S*F framework (Expected Value = Survival * Flourishing).",
+    "type": "Forethought essay series",
+    "authors": ["Will MacAskill"],
+    "proposalCount": 6,
+    "status": "fully integrated"
+  },
+  {
+    "id": "mit-risk-repository",
+    "title": "MIT AI Risk Repository",
+    "description": "Systematic evidence review of AI risks. Uses two taxonomies: Causal (Entity * Intent * Timing) and Domain (7 categories with 23 sub-categories). Used to stress-test taxonomy for gaps rather than bulk import.",
+    "url": "https://airisk.mit.edu/",
+    "type": "Taxonomy stress-test",
+    "proposalCount": 2244,
+    "status": "processed"
+  },
+  {
+    "id": "nielsen-wise-optimist",
+    "title": "Michael Nielsen: How to be a wise optimist about science and technology?",
+    "description": "The central problem of the 21st century is how civilization co-evolves with science and technology. Key concepts: Armageddon vs Kumbaya heuristics, recipes for ruin, market vs non-market safety, coceleration.",
+    "url": "https://michaelnotebook.com/optimism/index.html",
+    "type": "Essay",
+    "authors": ["Michael Nielsen"],
+    "status": "processed"
+  },
+  {
+    "id": "openagent-ecosystem",
+    "title": "Achieving a Secure AI Agent Ecosystem (Schmidt Sciences)",
+    "description": "Report on securing AI agent ecosystems. Three pillars: securing agents from external compromise, securing assets entrusted to agents, securing systems from malicious agents. ~40 proposals.",
+    "type": "PDF from Schmidt Sciences",
+    "proposalCount": 40,
+    "status": "processed"
+  },
+  {
+    "id": "otherness-agi",
+    "title": "Otherness and Control in the Age of AGI",
+    "description": "Joe Carlsmith argues that mainstream AI safety discourse is animated by 'deep atheism' that creates philosophical momentum toward ever-greater control. Asks what ethical resources exist for relating to agents with different values beyond pure control.",
+    "url": "https://joecarlsmith.com",
+    "type": "Philosophy essay",
+    "authors": ["Joe Carlsmith"],
+    "status": "processed"
+  },
+  {
+    "id": "peregrine-2025",
+    "title": "The 2025 Peregrine Report",
+    "description": "208 source proposals mapped to 4 problem entries plus intervention pages. Covers technical AI alignment, evaluation & auditing, intelligence gathering, governance & policy, international coordination, preparedness & response, public communication.",
+    "url": "https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf",
+    "type": "Report",
+    "proposalCount": 208,
+    "status": "processed"
+  },
+  {
+    "id": "redwood-control-proposals",
+    "title": "Redwood Research Control Project Proposals",
+    "description": "36 project proposals across 5 categories: control projects, training-time alignment methods, better understanding and interpretability, elicitation/sandbagging/diffuse threats, and other. Includes '7+ Tractable Directions' post with higher-priority research areas.",
+    "url": "https://www.alignmentforum.org/posts/RRxhzshdpneyTzKfq/recent-redwood-research-project-proposals",
+    "type": "Project proposals",
+    "proposalCount": 36,
+    "status": "processed"
+  },
+  {
+    "id": "toner-dynamism",
+    "title": "Helen Toner: Dynamism for AI Safety",
+    "description": "Helen Toner applies Virginia Postrel's 'dynamism vs stasis' framework to AI safety debates. Key claim: Some AI safety policies have stasist tendencies, but AI itself also threatens dynamism. We need solutions that address AI risks without collapsing into stasis.",
+    "url": "https://helentoner.substack.com/",
+    "type": "Substack essays",
+    "authors": ["Helen Toner"],
+    "status": "processed"
+  },
+  {
+    "id": "vitalik-dacc",
+    "title": "Vitalik Buterin: d/acc (Defensive Acceleration)",
+    "description": "Vitalik responds to Marc Andreessen's 'Techno-Optimist Manifesto' with a nuanced position: technology's benefits are massive and delay costs are high, but direction matters as much as magnitude. The 'd' stands for Defense, Decentralization, Differential, and Democracy.",
+    "url": "https://vitalik.eth.limo/general/2023/11/27/techno_optimism.html",
+    "type": "Essay",
+    "authors": ["Vitalik Buterin"],
+    "status": "processed"
+  }
+]
