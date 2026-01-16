@@ -39,12 +39,12 @@ def parse_intervention(filepath):
         'id': filepath.stem,
         'title': title,
         'tag': tag,
-        'what_it_is': sections.get('What it is', ''),
-        'why_it_matters': sections.get('Why it matters', ''),
-        'current_state': sections.get('Current state', ''),
-        'whos_working_on_it': sections.get("Who's working on it", ''),
+        'whatItIs': sections.get('What it is', ''),
+        'whyItMatters': sections.get('Why it matters', ''),
+        'currentState': sections.get('Current state', ''),
+        'whosWorkingOnIt': sections.get("Who's working on it", ''),
         'sources': sections.get('Sources', ''),
-        'file': str(filepath.relative_to(filepath.parent.parent))
+        'filename': str(filepath.relative_to(filepath.parent.parent))
     }
 
 def main():
