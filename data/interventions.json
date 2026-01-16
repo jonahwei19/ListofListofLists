@@ -144,6 +144,46 @@
     ]
   },
   {
+    "filename": "ai-chip-tracking-registry",
+    "title": "AI chip tracking registry",
+    "tag": "Security",
+    "whatItIs": "Global database tracking all high-performance AI chips above specified FLOPS thresholds, with reporting requirements for hardware producers and data centers.\n\n**Mechanism**:\n- Hardware producers (NVIDIA, AMD, Intel) report serial numbers and initial buyers to centralized registry\n- Data centers above threshold capacity must register chip inventories\n- Telemetry from chips reports approximate location (NVIDIA already piloting this)\n- Intelligence agencies cross-reference declared inventories against detected clusters\n- Domestic enforcement via DPA Section 705 for US-based facilities\n\n**Why not just use export controls**: Export controls track chips leaving country. Registry tracks where chips end up and whether they're being used for undisclosed large training runs.",
+    "whyItMatters": [
+      "AI chips represent only 0.00025% of global semiconductor production\u2014small enough for targeted tracking",
+      "Detects undisclosed frontier AI projects before they complete dangerous training runs",
+      "Provides foundation for any international AI treaty enforcement",
+      "Makes compute harder to aggregate secretly for unauthorized capability jumps"
+    ],
+    "currentState": "- **Status**: Pilot\n- **Recent developments (2025)**:\n  - NVIDIA piloting chip-tracking software using existing telemetry to estimate device location\n  - White House OSTP Director considering chip-level location tracking for export control enforcement\n- **Bottlenecks**: International coordination needed; privacy concerns for legitimate users; chip movement after initial sale",
+    "whoWorking": "- **NVIDIA**: Piloting telemetry-based tracking\n- **White House OSTP**: Policy development\n- **IAPS**: Location verification research",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #68: Global Hardware Verification",
+        "url": "../sources/peregrine-2025/interventions/peregrine-068.md"
+      }
+    ]
+  },
+  {
+    "filename": "ai-compute-supply-chain-coordination",
+    "title": "AI compute supply chain coordination",
+    "tag": "Policy",
+    "whatItIs": "Organizing key nations in the AI chip supply chain to recognize and coordinate their collective leverage over AI development pace.\n\n**Mechanism**:\n- Identify nations controlling choke points: Netherlands (ASML lithography), Taiwan (TSMC fabrication), Japan (materials, equipment), US (design, some equipment), Germany (optics)\n- Convene these nations to formalize coordination (possibly through Safe AI Forum or similar)\n- Establish joint export control frameworks\n- Create shared monitoring of chip flows to non-allied nations\n- Use supply chain leverage as enforcement mechanism for future AI treaties\n\n**Why supply chain vs. other leverage points**: Most AI governance has no enforcement mechanism. Supply chain control is one of the few concrete chokepoints where rules can actually be enforced.",
+    "whyItMatters": [
+      "Semiconductor supply chain is geographically concentrated, providing rare governance opportunity",
+      "Countries controlling chip manufacturing have significant but currently uncoordinated leverage",
+      "Provides technical foundation for enforceable international AI agreements",
+      "Can respond to detected threats by restricting chip access"
+    ],
+    "currentState": "- **Status**: Idea\n- **Bottlenecks**: No clear institutional convener; competing economic interests between nations; potential conflict with existing export control regimes; China developing domestic alternatives",
+    "whoWorking": "- **Safe AI Forum (SAIF)**: Mentioned as potential organizer\n- **Think tanks**: Policy research on supply chain leverage",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #123: Compute Supply Chain",
+        "url": "../sources/peregrine-2025/interventions/peregrine-123.md"
+      }
+    ]
+  },
+  {
     "filename": "ai-conflict-game-theory-institute",
     "title": "Multi-agent AI game theory research",
     "tag": "Science",
@@ -228,35 +268,6 @@
       {
         "text": "Peregrine 2025 #58: Evaluation Companies",
         "url": "../sources/peregrine-2025/interventions/peregrine-058.md"
-      }
-    ]
-  },
-  {
-    "filename": "ai-incident-monitoring-framework",
-    "title": "AI incident monitoring and reporting framework",
-    "tag": "Security",
-    "whatItIs": "Comprehensive infrastructure for detecting, logging, analyzing, and sharing AI incidents across the ecosystem. Three integrated components:\n\n**Incident reporting framework**: Standardized mechanisms and procedures for documenting AI failures, misuse, or unexpected behaviors. Develops taxonomies for severity classifications and facilitates coordinated responses. Modeled on aviation safety reporting systems, including protections for whistleblowers and requirements for timely disclosure.\n\n**Cross-organization incident detection**: Standardized framework for logging, anonymizing, and analyzing AI misbehavior across organizations. Infrastructure allows developers and third-party researchers to search through incidents, identify patterns, and share findings while protecting sensitive user data and IP. Labs collaborate directly without a third party. Expands on systems like Anthropic's CLIO.\n\n**Usage monitoring**: Robust incident monitoring and usage data analysis to understand real-world AI utilization patterns. Replaces theoretical threat-modeling with data-driven insights from actual usage. Labs currently avoid deep usage analysis due to legal liability and privacy concerns, creating significant blind spots.",
-    "whyItMatters": [
-      "Without standardized reporting, lessons from incidents remain siloed and same mistakes get repeated",
-      "Without shared infrastructure, each lab discovers problems in isolation",
-      "Without understanding how systems are actually used, safety measures may miss real-world risks",
-      "Aviation's safety record demonstrates the value of mandatory, protected reporting",
-      "Identifies emerging misuse patterns before they become widespread"
-    ],
-    "currentState": "- **Status**: Pilot/Deployed (international framework developing)\n- **Recent developments (2025)**:\n  - OECD released \"Towards a Common Reporting Framework for AI Incidents\" (February 2025)\u2014global benchmark for incident reporting\n  - Framework developed from 88 criteria refined to 29 key characteristics\n  - OECD AI Incidents Monitor (AIM) tracks incidents in real-time from press reports since 2023\n  - AI Incident Database (AIID) free and open-source, operated by Responsible AI Collaborative\n  - Framework allows domestic tailoring while maintaining international interoperability\n- **Framework components**: AI system classification, harm characterization, risk definitions (incident = realized harm, risk = potential precursor)\n- **Bottlenecks**: Lab buy-in for proactive reporting; liability and privacy concerns; coordinated regulatory implementation; anonymization standards",
-    "whoWorking": "- **OECD**: Common reporting framework and AI Incidents Monitor (AIM)\n- **Responsible AI Collaborative**: AI Incident Database (AIID)\u2014open-source incident indexing\n- **Anthropic**: CLIO system for internal incident detection",
-    "sources": [
-      {
-        "text": "Peregrine 2025 #87: Incident Reporting",
-        "url": "../sources/peregrine-2025/interventions/peregrine-087.md"
-      },
-      {
-        "text": "Peregrine 2025 #80: Comprehensive Incident Detection System",
-        "url": "../sources/peregrine-2025/interventions/peregrine-080.md"
-      },
-      {
-        "text": "Peregrine 2025 #67: Usage and Incident Monitoring Systems",
-        "url": "../sources/peregrine-2025/interventions/peregrine-067.md"
       }
     ]
   },
@@ -650,6 +661,26 @@
     ]
   },
   {
+    "filename": "automated-lean-theorem-proving",
+    "title": "Automated Lean theorem proving",
+    "tag": "Science",
+    "whatItIs": "AI systems that automate mathematical proof generation in Lean4, addressing the critical shortage of skilled formal verification programmers.\n\n**Mechanism**:\n- Train AI on millions of synthetic Lean statements and existing proofs\n- AI generates proof scripts given theorem statements as input\n- Human experts verify and refine AI-generated proofs\n- Enables verification of AI systems at scale (proofs about neural network behavior, training guarantees, safety properties)\n- Tools integrate with Lean ecosystem (LeanDojo, mathlib)\n\n**Why Lean specifically**: Lean4 has the most active AI proof community; large proof libraries exist; strong type system catches errors early. Only a few hundred humans worldwide are skilled Lean programmers\u2014automation removes this bottleneck.",
+    "whyItMatters": [
+      "Formal verification provides mathematically certain guarantees (not just high probability from testing)",
+      "Current bottleneck is human expert time\u2014automation enables verification at scale",
+      "Can prove properties about AI systems (safety constraints, behavioral bounds) with certainty",
+      "Amazon already using Lean proofs in production (Cedar authorization language)"
+    ],
+    "currentState": "- **Status**: Research with major 2024-2025 breakthroughs\n- **Recent progress**:\n  - DeepMind's AlphaProof achieved silver medal at IMO 2024 (proved 3/6 problems including hardest P6)\n  - Harmonic AI raised $100M for hallucination-free AI using Lean4 backbone, reached gold-medal IMO performance\n  - DeepSeek releasing open-source Lean4 prover models\n  - Safe framework uses Lean4 to verify each step of LLM chain-of-thought reasoning\n- **Bottlenecks**: Bridging LLM generation with formal syntax; specification writing still requires expertise; computational cost of complex proofs",
+    "whoWorking": "- **DeepMind**: AlphaProof (trained on 80M synthetic Lean statements)\n- **Harmonic AI**: Aristotle prover ($100M funding)\n- **DeepSeek**: Open-source Lean4 prover models\n- **LeanDojo**: AI-driven formal theorem proving",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #173: Autoverification (Lean)",
+        "url": "../sources/peregrine-2025/interventions/peregrine-173.md"
+      }
+    ]
+  },
+  {
     "filename": "autonomous-weapons-monitoring",
     "title": "Autonomous weapons monitoring systems",
     "tag": "Security",
@@ -665,6 +696,26 @@
       {
         "text": "Peregrine 2025 #203: Autonomous Weapons Monitoring",
         "url": "../sources/peregrine-2025/interventions/peregrine-203.md"
+      }
+    ]
+  },
+  {
+    "filename": "aviation-style-ai-incident-reporting",
+    "title": "Aviation-style AI incident reporting",
+    "tag": "Security",
+    "whatItIs": "Mandatory, standardized reporting framework for AI failures and near-misses, modeled on aviation safety systems.\n\n**Mechanism**:\n- Labs and deployers required to report AI incidents to central database within defined timeframe\n- Whistleblower protections for employees who report safety issues (immunity from retaliation)\n- Standardized taxonomy for severity classification and incident categories\n- Reports anonymized to encourage disclosure without competitive harm\n- OECD framework: 29 key characteristics refined from 88 criteria\n- Risk vs incident distinction: incident = realized harm, risk = potential precursor\n\n**Why aviation as model**: Aviation's exceptional safety record directly attributable to mandatory reporting. Near-miss reporting catches problems before crashes.",
+    "whyItMatters": [
+      "Without standardized reporting, lessons from incidents remain siloed",
+      "Same mistakes get repeated across different labs",
+      "Aviation's safety record demonstrates value of mandatory, protected reporting",
+      "Creates early warning system for emerging AI risks"
+    ],
+    "currentState": "- **Status**: Pilot/Deployed (international framework developing)\n- **Recent developments (2025)**:\n  - OECD released \"Towards a Common Reporting Framework for AI Incidents\" (February 2025)\n  - OECD AI Incidents Monitor (AIM) tracks incidents in real-time from press reports since 2023\n  - AI Incident Database (AIID) free and open-source\n- **Bottlenecks**: Lab buy-in for proactive reporting; liability concerns; regulatory implementation",
+    "whoWorking": "- **OECD**: Common reporting framework and AI Incidents Monitor (AIM)\n- **Responsible AI Collaborative**: AI Incident Database (AIID)",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #87: Incident Reporting",
+        "url": "../sources/peregrine-2025/interventions/peregrine-087.md"
       }
     ]
   },
@@ -812,6 +863,26 @@
     ]
   },
   {
+    "filename": "cern-style-ai-research-consortium",
+    "title": "CERN-style AI research consortium",
+    "tag": "Society",
+    "whatItIs": "International AI development consortium allowing unified research without competitive pressures, similar to CERN or Intelsat.\n\n**Mechanism**:\n- Neutral international facility with massive computational resources\n- Member nations contribute funding, receive access to research results\n- Safety research requiring extraordinary compute conducted here (impossible for any single lab)\n- Technical safety decisions made by consortium, not individual corporate/national actors\n- Controlled testbed for evaluating advanced AI under rigorous conditions\n- Defers difficult coordination problems to the project itself rather than negotiating across disparate labs\n\n**Why CERN model**: CERN enables experiments impossible elsewhere by pooling resources. Advanced AI safety research similarly requires resources no single actor can provide.",
+    "whyItMatters": [
+      "Competitive dynamics between labs and nations undermine safety work",
+      "Collaborative safety research requiring massive compute currently impossible",
+      "Neutral testbed could enable rigorous evaluations no single lab would undertake alone",
+      "Removes competitive pressure that drives corner-cutting on safety"
+    ],
+    "currentState": "- **Status**: Idea\n- **Bottlenecks**: Funding at required scale; geopolitical tensions; China participation particularly challenging; governance structure unclear; dramatically expands government role in technology decisions",
+    "whoWorking": "- **No dedicated organization identified** (idea stage)",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #116: CERN for AI",
+        "url": "../sources/peregrine-2025/interventions/peregrine-116.md"
+      }
+    ]
+  },
+  {
     "filename": "chain-of-thought-fidelity",
     "title": "Chain-of-thought fidelity analysis",
     "tag": "Science",
@@ -871,31 +942,22 @@
     ]
   },
   {
-    "filename": "compute-governance",
-    "title": "Compute governance",
-    "tag": "Society",
-    "whatItIs": "Using computational resources as a governance lever for AI development. Two complementary approaches:\n\n**Compute caps**: Regulatory limits on computational resources available for AI training runs, typically expressed as FLOPS thresholds or power consumption limits at data centers. Enforcement mechanisms could include hardware-level throttling, licensing requirements for large training runs, or monitoring of power usage at frontier-capable facilities.\n\n**Supply chain coordination**: Organize key nations in the AI compute supply chain (Netherlands, Taiwan, Japan, Germany, US) to recognize and coordinate their collective leverage over AI development pace. Control of specialized chips and manufacturing equipment provides one of the few concrete enforcement points for AI governance, creating practical leverage for any future AI treaties.\n\n**Chip registry**: A complete database of AI chips above certain FLOP/s thresholds, tracking location and ownership globally. The US can begin using national technical means (intelligence community), then internationalize or cross-check with other nations' registries. Domestically, Section 705 of the DPA enables domestic accounting.\n\n**Inference-only retrofitting**: Technical mechanisms and installation capacity to ensure data centers can be verified as not being used for training, only inference. This preserves economic value while enabling enforcement of compute limits or international agreements. Requires R&D to develop the retrofitting package, plus training thousands of vetted installers and auditors.",
+    "filename": "compute-caps-for-training-runs",
+    "title": "Compute caps for training runs",
+    "tag": "Policy",
+    "whatItIs": "Regulatory limits on computational resources available for AI training runs, enforced through licensing requirements or hardware-level throttling.\n\n**Mechanism**:\n- Define FLOPS threshold above which training runs require special license (e.g., 10^26 FLOPS)\n- Data centers above capacity threshold must obtain permits for large training runs\n- Enforcement options: power usage monitoring at facilities, hardware telemetry, on-site audits\n- Violations trigger penalties: fines, facility shutdown, hardware seizure\n- International treaties could harmonize caps across jurisdictions\n\n**Why caps vs. other approaches**: Directly limits capability advancement regardless of lab intentions. Other approaches (safety testing, alignment research) don't bound what capabilities get developed.",
     "whyItMatters": [
-      "Directly slows capability advancement regardless of lab intentions",
-      "Buys time for safety research to keep pace with capabilities",
-      "The semiconductor supply chain is geographically concentrated, providing a rare governance chokepoint",
-      "Countries controlling chip manufacturing have significant but currently uncoordinated leverage",
-      "Addresses racing dynamics at infrastructure level rather than relying on voluntary restraint"
+      "Directly slows frontier capability advancement",
+      "Buys time for safety research and governance to catch up",
+      "Addresses racing dynamics at infrastructure level rather than relying on voluntary restraint",
+      "Creates clear, measurable compliance standard"
     ],
-    "currentState": "- **Status**: Idea\n- **Bottlenecks**: Enforcement mechanisms unclear; strong industry pushback expected; international coordination required to prevent regulatory arbitrage; competing economic interests; potential conflict with existing export control regimes; no clear institutional convener",
-    "whoWorking": "- **Safe AI Forum (SAIF)**: Mentioned as potential organizer for supply chain coordination",
+    "currentState": "- **Status**: Idea (politically controversial)\n- **Bottlenecks**: Strong industry pushback expected; enforcement mechanisms unclear; international coordination required to prevent regulatory arbitrage; defining appropriate threshold levels; exemptions for beneficial uses (medical AI, climate modeling)",
+    "whoWorking": "- **Policy researchers**: Academic proposals\n- **No active implementation efforts identified**",
     "sources": [
       {
         "text": "Peregrine 2025 #63: Speed Limits in Data Centers",
         "url": "../sources/peregrine-2025/interventions/peregrine-063.md"
-      },
-      {
-        "text": "Peregrine 2025 #123: Compute Supply Chain",
-        "url": "../sources/peregrine-2025/interventions/peregrine-123.md"
-      },
-      {
-        "text": "AI Futures Project: Early US Policy Priorities for AGI",
-        "url": "../sources/ai-futures-project/Early%20US%20policy%20priorities%20for%20AGI.md"
       }
     ]
   },
@@ -960,6 +1022,30 @@
     ]
   },
   {
+    "filename": "critical-infrastructure-formal-verification",
+    "title": "Critical infrastructure formal verification",
+    "tag": "Security",
+    "whatItIs": "Targeted formal verification of specific security properties in critical infrastructure components, particularly those underlying AI systems.\n\n**Mechanism**:\n- Identify highest-priority verification targets: Linux kernel, electrical grid control systems, AI training infrastructure\n- Define specific properties to verify: memory safety, transaction timing, security boundary enforcement\n- Apply focused verification efforts to these properties (not full system verification, which is intractable)\n- Prioritize components where AI-powered attackers would have highest impact\n- Results propagate through software supply chain (verified Linux kernel benefits everyone using Linux)\n\n**Why targeted vs comprehensive**: Full formal verification of complex systems is intractable. Targeting specific high-impact properties (memory safety, security boundaries) is achievable and removes entire attack classes.",
+    "whyItMatters": [
+      "Infrastructure vulnerabilities undermine all higher-level AI safety measures (if attackers compromise training infrastructure, alignment work is moot)",
+      "Linux kernel underlies most AI development infrastructure\u2014verified kernel benefits entire ecosystem",
+      "AI-powered attackers will systematically exploit infrastructure; verification removes their targets",
+      "One-time verification investment provides permanent protection"
+    ],
+    "currentState": "- **Status**: Research\n- **Active targets**: Linux kernel memory safety, seL4 microkernel (already verified), Amazon Cedar authorization\n- **Bottlenecks**: Complexity of legacy systems; specification of security properties; verification tooling for low-level code",
+    "whoWorking": "- **Amazon**: Cedar authorization language with Lean proofs (production deployed)\n- **seL4 project**: Fully verified microkernel\n- **Academic formal methods groups**: Infrastructure verification research",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #174: Formal Verification of AI Hardware",
+        "url": "../sources/peregrine-2025/interventions/peregrine-174.md"
+      },
+      {
+        "text": "Atlas AI Resilience Gap Map: Cyber Offense-Defense Asymmetry",
+        "url": "../sources/atlas-ai-resilience/proposals/cyber-offense-defense-asymmetry.md"
+      }
+    ]
+  },
+  {
     "filename": "cross-border-ai-incident-notification",
     "title": "Cross-border AI incident notification",
     "tag": "Society",
@@ -975,6 +1061,26 @@
       {
         "text": "Peregrine 2025 #115: Cross-Border Notification Systems",
         "url": "../sources/peregrine-2025/interventions/peregrine-115.md"
+      }
+    ]
+  },
+  {
+    "filename": "cross-lab-incident-detection-infrastructure",
+    "title": "Cross-lab incident detection infrastructure",
+    "tag": "Security",
+    "whatItIs": "Shared infrastructure allowing AI labs to log, anonymize, and analyze AI misbehavior across organizations.\n\n**Mechanism**:\n- Labs submit incident data to shared system (anonymized to protect user privacy and IP)\n- Infrastructure enables pattern detection across multiple labs' deployments\n- Third-party researchers can query aggregated data to identify emerging risks\n- Labs collaborate directly without requiring trusted intermediary\n- Builds on systems like Anthropic's CLIO (internal incident detection)\n- Cross-references reveal whether incidents are isolated or systemic\n\n**Why shared vs internal-only**: Individual labs see only their own incidents. Shared infrastructure reveals whether problems are lab-specific or industry-wide.",
+    "whyItMatters": [
+      "Patterns visible across labs invisible within single organization",
+      "Without sharing, each lab discovers problems in isolation",
+      "Identifies whether safety issues are one-off or systemic",
+      "Creates collective intelligence about AI risks"
+    ],
+    "currentState": "- **Status**: Research/Pilot\n- **Existing systems**: Anthropic's CLIO (internal)\n- **Bottlenecks**: Competitive concerns about sharing incident data; IP protection; anonymization standards; agreeing on common formats",
+    "whoWorking": "- **Anthropic**: CLIO system for internal incident detection (potential model for cross-lab version)",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #80: Comprehensive Incident Detection System",
+        "url": "../sources/peregrine-2025/interventions/peregrine-080.md"
       }
     ]
   },
@@ -1104,35 +1210,22 @@
     ]
   },
   {
-    "filename": "formal-verification-for-ai-systems",
-    "title": "Formal verification for AI systems",
-    "tag": "Science",
-    "whatItIs": "Mathematical formal verification applied across the AI stack\u2014from proof assistants to generated code to hardware infrastructure. Three complementary approaches:\n\n**Automated theorem proving (Lean)**: Tools that automate formal verification, addressing the critical shortage of skilled Lean programmers worldwide (estimated at only a few hundred). Would enable implementations of AI architectures with much stronger formal guarantees. Commercial labs are unlikely to prioritize this despite its importance.\n\n**Verified software synthesis**: Software synthesis systems that generate code with machine-checkable proofs satisfying functional, safety, and security specifications. Targets embedded systems in critical infrastructure (SCADA, medical devices, communication networks). Creates mathematical models of software behavior and proves absence of entire vulnerability classes before deployment.\n\n**Hardware and infrastructure verification**: Focused verification of specific properties (memory safety, transaction timing, security boundaries) in critical AI components and surrounding infrastructure. Priority targets include Linux kernel and systems controlling critical infrastructure like electrical grids.",
+    "filename": "flexheg-tamper-proof-chip-enclosures",
+    "title": "FlexHEG tamper-proof chip enclosures",
+    "tag": "Security",
+    "whatItIs": "Physical enclosures that wrap AI chips, containing a secure processor that monitors and filters all instructions before they reach the chip.\n\n**Mechanism**:\n- Each AI chip placed in tamper-proof physical enclosure\n- Secure processor inside enclosure intercepts all I/O\n- Processor enforces rules: training run size limits, data usage verification, mandatory safety evaluations, controlled weight access\n- Rules can be updated only with cryptographic signatures from quorum of international parties\n- If tampering detected, rolls back to minimal baseline ruleset\n- FlexHEG = Flexible Hardware-Enabled Governance\n\n**Why physical enclosures vs on-chip**: Can be retrofitted to existing chips without waiting for new chip designs. International governance rules can be updated without hardware changes.",
     "whyItMatters": [
-      "Formal verification provides strongest possible behavioral guarantees\u2014proves security properties mathematically",
-      "Eliminates entire vulnerability classes that AI-powered attackers might exploit",
-      "Hardware/infrastructure vulnerabilities undermine all higher-level safety measures",
-      "Rare expertise bottlenecks verification at scale\u2014automation democratizes access",
-      "Traditional testing finds bugs in test cases; formal methods prove absence of bugs"
+      "Retrofittable to existing hardware (doesn't require next-gen chip redesign)",
+      "International governance without relying on software enforcement",
+      "Quorum requirement prevents any single nation from unilaterally changing rules",
+      "Tamper detection provides verifiable compliance"
     ],
-    "currentState": "- **Status**: Research with major 2024-2025 breakthroughs\n- **Recent progress (2024-2025)**:\n  - DeepMind's AlphaProof achieved silver medal at IMO 2024, proving 3/6 problems including hardest problem P6 (solved by only 5 of 609 humans)\n  - Harmonic AI raised $100M to build hallucination-free AI using Lean4 verification backbone\n  - Harmonic's Aristotle system reached gold-medal-level IMO performance\n  - DeepSeek releasing open-source Lean4 prover models\n  - Safe framework uses Lean4 to verify each step of LLM chain-of-thought reasoning, detecting hallucinations\n  - LLM-based coding assistants increasingly capable at writing proof scripts\n  - Amazon using Lean for Cedar authorization language (AWS Verified Permissions, Verified Access)\n- **Bottlenecks**: Few hundred skilled Lean programmers globally; bridging LLM generation with formal verification syntax; specification writing expertise; computational cost of complex verification",
-    "whoWorking": "- **DeepMind**: AlphaProof system, trained on 80M synthetic Lean statements\n- **Harmonic AI**: Aristotle prover, $100M funding for formal verification + AI\n- **DeepSeek**: Open-source Lean4 prover models\n- **LeanDojo**: AI-driven formal theorem proving in Lean ecosystem\n- **DARPA I2O office**: Verified software synthesis\n- **Amazon**: Cedar language production deployment",
+    "currentState": "- **Status**: Research (funded, 2-3 year development timeline)\n- **Funding**: Longview Philanthropy providing $2-10M seed funding for FlexHEG FRO\n- **Bottlenecks**: Tamper-proofing against well-resourced actors; defining initial ruleset; achieving international quorum agreement; installation logistics",
+    "whoWorking": "- **Longview Philanthropy**: Funding FlexHEG FRO development",
     "sources": [
       {
-        "text": "Peregrine 2025 #173: Autoverification (Lean)",
-        "url": "../sources/peregrine-2025/interventions/peregrine-173.md"
-      },
-      {
-        "text": "Peregrine 2025 #174: Formal Verification of AI Hardware",
-        "url": "../sources/peregrine-2025/interventions/peregrine-174.md"
-      },
-      {
-        "text": "Peregrine 2025 #168: Verified Software for Cyber Resilience",
-        "url": "../sources/peregrine-2025/interventions/peregrine-168.md"
-      },
-      {
-        "text": "Atlas AI Resilience Gap Map: Cyber Offense-Defense Asymmetry",
-        "url": "../sources/atlas-ai-resilience/proposals/cyber-offense-defense-asymmetry.md"
+        "text": "Peregrine 2025 #71: Flexible Hardware for AI Governance",
+        "url": "../sources/peregrine-2025/interventions/peregrine-071.md"
       }
     ]
   },
@@ -1237,43 +1330,6 @@
       {
         "text": "Peregrine 2025 #105: Risk Assessments",
         "url": "../sources/peregrine-2025/interventions/peregrine-105.md"
-      }
-    ]
-  },
-  {
-    "filename": "hardware-governance-verification",
-    "title": "Hardware governance and verification",
-    "tag": "Security",
-    "whatItIs": "Hardware-level mechanisms for governing and verifying AI development, comprising four interconnected approaches:\n\n**Global hardware tracking**: Reporting and verification requirements for all high-performance computing hardware above specified computational capacity thresholds. Tracks GPUs, TPUs, and similar processors globally, including retrofitting tracking on older models. Requires international collaboration with major hardware producers (NVIDIA, AMD, Intel, Google, Huawei).\n\n**On-chip monitoring**: Hardware-level monitoring technologies embedded directly into AI accelerator chips to verify compliance with international agreements. Employs hardware engineers, designers, and manufacturing specialists to prototype verification technologies integrating with commercial chip manufacturing\u2014similar to nuclear verification protocols.\n\n**FlexHEG (Flexible Hardware-Enabled Governance)**: Each chip placed in a tamper-proof enclosure alongside a secure processor that monitors and filters all information and instructions. Supports training run size limitations, verification of appropriate data usage, standardized safety evaluations, and controlled access to model weights. Updates require signature by a quorum of international parties with rollback to minimal baseline ruleset.\n\n**Kill switches**: Technical mechanisms to remotely disable GPUs when policy violations are detected. Tracks specific hardware shipments and movements, providing intelligence on compute scaling and enforcement capability.",
-    "whyItMatters": [
-      "Creates comprehensive awareness of which organizations are utilizing advanced computing resources",
-      "Provides technical foundation for international treaty compliance and enforcement",
-      "Enables detection of illicit national-scale AI activity (e.g., unauthorized intelligence explosion attempts)",
-      "Enforces constraints through technical mechanisms rather than purely policy",
-      "Enables privacy-preserving verification without exposing proprietary details"
-    ],
-    "currentState": "- **Status**: Research/Pilot (active development)\n- **Recent developments (2025)**:\n  - Nvidia piloting chip-tracking software using existing telemetry to estimate device location (no hardware modification required)\n  - White House OSTP Director Michael Kratsios considering chip-level location tracking for export control enforcement\n  - Longview Philanthropy funding FlexHEG FRO ($2-10M seed, goal: working FlexHEGs in 2-3 years)\n  - Hardware-enabled mechanisms (HEMs) papers exploring visibility tools and enforcement mechanisms\n  - Offline licensing systems proposed: cryptographically signed licenses verified by stored public key\n  - High-end AI chips represent only 0.00025% of global semiconductor production\u2014enabling targeted regulation\n- **Bottlenecks**: Requires coordination with NVIDIA, AMD, Intel, Google, Huawei; international treaty frameworks; firmware updates may be faster than chip redesign; anti-tamper techniques against well-resourced actors; privacy protections for chip owners",
-    "whoWorking": "- **Longview Philanthropy**: Funding FlexHEG FRO development\n- **NVIDIA**: Piloting chip-tracking software\n- **White House OSTP**: Policy development for hardware controls\n- **CNAS**: Research on securing AI chip supply chain\n- **Future of Life Institute**: Hardware-backed compute governance research\n- **IAPS**: Location verification research for AI chips",
-    "sources": [
-      {
-        "text": "Peregrine 2025 #68: Global Hardware Verification",
-        "url": "../sources/peregrine-2025/interventions/peregrine-068.md"
-      },
-      {
-        "text": "Peregrine 2025 #70: On-Chip Monitoring Mechanisms",
-        "url": "../sources/peregrine-2025/interventions/peregrine-070.md"
-      },
-      {
-        "text": "Peregrine 2025 #71: Flexible Hardware for AI Governance",
-        "url": "../sources/peregrine-2025/interventions/peregrine-071.md"
-      },
-      {
-        "text": "Peregrine 2025 #74: Hardware Kill Switches and Location Tracking",
-        "url": "../sources/peregrine-2025/interventions/peregrine-074.md"
-      },
-      {
-        "text": "Atlas AI Resilience Gap Map: Verifiable Deployment",
-        "url": "../sources/atlas-ai-resilience/proposals/verifiable-deployment.md"
       }
     ]
   },
@@ -1420,6 +1476,26 @@
     ]
   },
   {
+    "filename": "inference-only-data-center-verification",
+    "title": "Inference-only data center verification",
+    "tag": "Security",
+    "whatItIs": "Technical mechanisms to verify that data centers are being used only for inference (running existing models) and not for training new models.\n\n**Mechanism**:\n- Develop hardware/software retrofitting package that constrains facility to inference workloads\n- Package monitors: compute patterns (training vs inference signatures differ), data flows (training requires massive dataset ingestion), gradient calculations (only present in training)\n- Install on existing data centers without replacing hardware\n- Train vetted installers and auditors (thousands needed globally)\n- Regular audits verify installation integrity\n- Enables treaties that limit training while preserving inference economic value\n\n**Why this matters for enforcement**: Nations/companies can agree to not train new models above threshold while continuing to run existing ones. Verification prevents cheating.",
+    "whyItMatters": [
+      "Preserves economic value of AI inference while enabling training limitations",
+      "Makes compute caps enforceable by distinguishing training from inference",
+      "Enables international agreements with verification rather than just trust",
+      "Retrofittable to existing infrastructure (doesn't require new data center construction)"
+    ],
+    "currentState": "- **Status**: Research (R&D needed)\n- **Bottlenecks**: Developing reliable training vs inference detection; tamper-proofing the verification system; training sufficient auditors; cost of global deployment",
+    "whoWorking": "- **No dedicated organization identified** (gap area)",
+    "sources": [
+      {
+        "text": "AI Futures Project: Early US Policy Priorities for AGI",
+        "url": "../sources/ai-futures-project/Early%20US%20policy%20priorities%20for%20AGI.md"
+      }
+    ]
+  },
+  {
     "filename": "intelligence-explosion-monitoring",
     "title": "Intelligence Explosion Monitoring",
     "tag": "Security",
@@ -1435,6 +1511,26 @@
       {
         "text": "Peregrine 2025 #84: Intelligence Explosion Monitoring",
         "url": "../sources/peregrine-2025/interventions/peregrine-084.md"
+      }
+    ]
+  },
+  {
+    "filename": "inter-agent-safety-verification-protocols",
+    "title": "Inter-agent safety verification protocols",
+    "tag": "Security",
+    "whatItIs": "Protocols that prevent AI agents from cooperating to circumvent safety constraints, including methods for agents to verify trustworthiness of other agents.\n\n**Mechanism**:\n- Trust verification: agents cryptographically prove they haven't been tampered with before interaction\n- Behavior reporting: agents required to report problematic behavior from other agents\n- Collective safety measures: distributed enforcement of constraints across agent networks\n- Trust relationship tracking: identify and isolate bad actors in multi-agent systems\n- Protocol-level defenses: prevent message tampering, role spoofing, protocol exploitation\n\n**Why agents specifically**: Agents have autonomy to form coalitions. Without protocols, a subset of agents could coordinate to bypass constraints that apply to individual agents.",
+    "whyItMatters": [
+      "Agents interacting without verification protocols could form coalitions to circumvent individual constraints",
+      "A single compromised agent could manipulate others into harmful coordination",
+      "Without protocols, there's no way to verify an agent hasn't been jailbroken before interacting with it",
+      "Enables safe deployment of multi-agent systems in high-stakes domains"
+    ],
+    "currentState": "- **Status**: Research\n- **Research directions**:\n  - Distributional AGI safety frameworks for composite systems\n  - Architectural approaches embedding risk management into multi-agent design\n  - Trust verification protocols between agents\n- **Bottlenecks**: Defining what \"trustworthy agent\" means formally; performance overhead of verification; coordination across different agent frameworks",
+    "whoWorking": "- **Anthropic**: Constitutional AI research for embedding safety constraints in agents\n- **Cooperative AI Foundation**: Multi-agent safety research",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #57: Multi-Agent Interaction Framework",
+        "url": "../sources/peregrine-2025/interventions/peregrine-057.md"
       }
     ]
   },
@@ -1475,31 +1571,6 @@
       {
         "text": "AI Futures Project: Early US Policy Priorities for AGI",
         "url": "../sources/ai-futures-project/Early%20US%20policy%20priorities%20for%20AGI.md"
-      }
-    ]
-  },
-  {
-    "filename": "international-ai-governance-institutions",
-    "title": "International AI governance institutions",
-    "tag": "Society",
-    "whatItIs": "International institutional infrastructure for AI governance and safety research. Two complementary models:\n\n**WHO-like frontier model forum**: Allocate large-scale funding (hundreds of millions USD) to organizations like METR while developing an international forum structured like the WHO but focused on AI threat models. Unlike the current Frontier Model Forum which excludes key players (DeepSeek, xAI), this organization would abandon exclusive membership for universal participation. The goal is facilitating international treaty development and red line enforcement before concerns like biological weapons uplift become critical.\n\n**CERN-like research consortium**: Create an international AI development consortium similar to CERN or Intelsat that allows unified research without competitive pressures. Defers complex technical safety decisions to the project itself rather than attempting to coordinate disparate corporate efforts. CERN-like infrastructure would enable experiments impossible elsewhere, particularly safety research requiring extraordinary computational resources. Serves as a neutral, international testbed for evaluating advanced AI systems under controlled conditions.",
-    "whyItMatters": [
-      "Current Frontier Model Forum excludes key players, limiting effectiveness",
-      "Competitive dynamics between labs and nations accelerate development while undermining safety",
-      "Universal participation prevents race-to-the-bottom dynamics on safety",
-      "Collaborative safety research requiring massive compute is currently impossible",
-      "A neutral testbed could enable rigorous evaluation that no single lab would undertake alone"
-    ],
-    "currentState": "- **Status**: Pilot (limited forums) / Idea (research consortium)\n- **Bottlenecks**: Funding at required scale; geopolitical tensions complicate universal membership; China participation particularly challenging; governance structure unclear; requires dramatically expanding government role in technology decisions",
-    "whoWorking": "- **METR**: Proposed recipient of expanded funding\n- **Frontier Model Forum**: Existing but limited version",
-    "sources": [
-      {
-        "text": "Peregrine 2025 #124: Intergovernmental Frontier Model Forum",
-        "url": "../sources/peregrine-2025/interventions/peregrine-124.md"
-      },
-      {
-        "text": "Peregrine 2025 #116: CERN for AI",
-        "url": "../sources/peregrine-2025/interventions/peregrine-116.md"
       }
     ]
   },
@@ -1720,26 +1791,22 @@
     ]
   },
   {
-    "filename": "multi-agent-safety-systems",
-    "title": "Multi-agent safety systems",
+    "filename": "multi-agent-emergent-behavior-monitoring",
+    "title": "Multi-agent emergent behavior monitoring",
     "tag": "Security",
-    "whatItIs": "Infrastructure for monitoring, simulating, and governing interactions between multiple AI agents. Two complementary components:\n\n**Multi-agent monitoring**: Systems that actively watch deployments and interactions between AI systems, identifying potentially harmful feedback loops or emergent goals before they become problematic. The field is underdeveloped; agentic interactions are either poorly captured or not well-conceptualized within existing frameworks.\n\n**Multi-agent safety protocols**: Protocols to prevent emergent cooperation between agents to circumvent safety constraints. Establishes methods for AI systems to verify trustworthiness of other agents, report problematic behavior, and implement collective safety measures across distributed systems. Includes tracking trust relationships and identifying bad actors.",
+    "whatItIs": "Systems that actively watch AI deployments for harmful feedback loops or emergent goals arising from agent-to-agent interactions.\n\n**Mechanism**:\n- Monitor communication channels between AI agents\n- Detect anomalous coordination patterns (agents converging on unexpected goals)\n- Identify potential steganographic communication (hidden information in outputs)\n- Flag emergent behaviors not present in individual agents\n- Human-speed limitation: AI-to-AI interactions outpace human monitoring, requiring automated detection\n- High-fidelity simulation environments for testing before deployment\n\n**Why this is underdeveloped**: Agentic interactions poorly captured by existing safety frameworks. Most safety work assumes single-agent systems.",
     "whyItMatters": [
-      "Financial transactions, supply chains, and information exchange increasingly mediated by interconnected AI systems with minimal human oversight",
-      "As AI systems increasingly interact with each other, emergent behaviors could arise that weren't present in individual systems",
-      "High-speed AI-to-AI interactions outpace human monitoring capacity",
-      "Without monitoring, multi-agent dynamics remain invisible until they cause harm"
+      "Financial transactions, supply chains increasingly mediated by multiple AI agents with minimal human oversight",
+      "Emergent behaviors from agent interactions could arise that weren't present in individual systems",
+      "\"Patchwork AGI\" hypothesis: near-AGI capability could emerge from coordinated sub-AGI agents before individual AGI",
+      "Without monitoring, dangerous dynamics remain invisible until they cause harm"
     ],
-    "currentState": "- **Status**: Research (rapidly developing field)\n- **Key risks identified (2025)**:\n  - Emergent collusion via shared state/privileges rather than explicit planning\n  - Steganographic communication enabling secret coordination channels\n  - Protocol-level attacks: message tampering, role spoofing, protocol exploitation\n  - \"Patchwork AGI\" hypothesis: near-AGI capability emerging from coordinated sub-AGI agents before individual AGI\n  - Single compromised agent can trigger harm across entire multi-agent system\n- **Research directions**:\n  - High-fidelity simulation environments for testing coordination protocols before deployment\n  - Distributional AGI safety frameworks for composite systems\n  - Architectural approaches embedding risk management into multi-agent design\n  - Trust verification protocols between agents\n- **Bottlenecks**: Tracing failures across peer interactions is complex; human oversight speed limits; conceptual frameworks still developing",
-    "whoWorking": "- **Cooperative AI Foundation**: Major technical report on multi-agent risks (50+ researchers from DeepMind, Anthropic, CMU, Harvard)\n- **World Economic Forum**: Multi-agent safety frameworks\n- **Anthropic**: Constitutional AI research for embedding safety constraints in agents\n- **Academic groups**: Emergent behavior and multi-agent security research (multiple arxiv papers)",
+    "currentState": "- **Status**: Research (rapidly developing)\n- **Key risks identified (2025)**:\n  - Emergent collusion via shared state/privileges rather than explicit planning\n  - Steganographic communication enabling secret coordination channels\n  - Single compromised agent can trigger harm across entire system\n- **Bottlenecks**: Tracing failures across peer interactions is complex; speed of AI interactions; conceptual frameworks still developing",
+    "whoWorking": "- **Cooperative AI Foundation**: Major technical report (50+ researchers from DeepMind, Anthropic, CMU, Harvard)\n- **World Economic Forum**: Multi-agent safety frameworks",
     "sources": [
       {
         "text": "Peregrine 2025 #78: Monitor Complex Agent Interactions",
         "url": "../sources/peregrine-2025/interventions/peregrine-078.md"
-      },
-      {
-        "text": "Peregrine 2025 #57: Multi-Agent Interaction Framework",
-        "url": "../sources/peregrine-2025/interventions/peregrine-057.md"
       }
     ]
   },
@@ -1775,6 +1842,26 @@
       {
         "text": "Atlas AI Resilience Gap Map: Pathogen Surveillance",
         "url": "../sources/atlas-ai-resilience/proposals/pathogen-surveillance-gap.md"
+      }
+    ]
+  },
+  {
+    "filename": "on-chip-compliance-monitoring",
+    "title": "On-chip compliance monitoring",
+    "tag": "Security",
+    "whatItIs": "Verification logic embedded directly into AI accelerator chips that can prove compliance with international agreements without revealing proprietary information.\n\n**Mechanism**:\n- Dedicated circuitry on chip monitors training run characteristics (model size, data throughput, safety evaluation completion)\n- Cryptographic attestation: chip produces signed proofs that specific conditions were met\n- Zero-knowledge proofs allow verification without exposing model architecture or training data\n- Auditors can verify compliance remotely without accessing proprietary systems\n- Analogous to nuclear verification protocols adapted for AI\n\n**Why this differs from software-based monitoring**: Software can be modified or bypassed. On-chip monitoring is tamper-resistant at hardware level.",
+    "whyItMatters": [
+      "Enables \"trust but verify\" for international AI agreements",
+      "Privacy-preserving: proves compliance without revealing trade secrets",
+      "Tamper-resistance prevents well-resourced actors from circumventing verification",
+      "Provides technical foundation for enforceable international treaties"
+    ],
+    "currentState": "- **Status**: Research\n- **Bottlenecks**: Requires coordination with chip manufacturers during design phase; anti-tamper techniques against nation-state actors; defining what properties to verify; multi-year chip development cycles",
+    "whoWorking": "- **Future of Life Institute**: Hardware-backed compute governance research\n- **CNAS**: Research on securing AI chip supply chain",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #70: On-Chip Monitoring Mechanisms",
+        "url": "../sources/peregrine-2025/interventions/peregrine-070.md"
       }
     ]
   },
@@ -1933,6 +2020,46 @@
       {
         "text": "Peregrine 2025 #59: Public Audits",
         "url": "../sources/peregrine-2025/interventions/peregrine-059.md"
+      }
+    ]
+  },
+  {
+    "filename": "real-world-ai-usage-analysis",
+    "title": "Real-world AI usage analysis",
+    "tag": "Security",
+    "whatItIs": "Systematic analysis of how AI systems are actually used in deployment, replacing theoretical threat-modeling with data-driven insights.\n\n**Mechanism**:\n- Labs instrument deployments to capture usage patterns (without logging content)\n- Analysis identifies: unexpected use cases, emerging misuse patterns, capability discovery by users\n- Data reveals which theoretical risks actually manifest and which don't\n- Enables prioritization of safety work based on real attack surface\n- Requires legal and privacy frameworks that enable analysis without liability\n\n**Why labs currently avoid this**: Legal liability concerns if they discover misuse. Privacy regulations make usage analysis risky. Creates significant blind spots.",
+    "whyItMatters": [
+      "Theoretical threat models may miss actual attack vectors",
+      "Real usage patterns reveal gaps between intended and actual use",
+      "Identifies emerging misuse before it becomes widespread",
+      "Enables evidence-based safety prioritization"
+    ],
+    "currentState": "- **Status**: Gap (mostly avoided due to liability)\n- **Bottlenecks**: Legal liability if misuse discovered; privacy regulations (GDPR, etc.); user consent issues; infrastructure for privacy-preserving analysis",
+    "whoWorking": "- **No dedicated organization identified** (gap area\u2014legal/policy work needed to enable)",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #67: Usage and Incident Monitoring Systems",
+        "url": "../sources/peregrine-2025/interventions/peregrine-067.md"
+      }
+    ]
+  },
+  {
+    "filename": "remote-gpu-disable-capability",
+    "title": "Remote GPU disable capability",
+    "tag": "Security",
+    "whatItIs": "Technical mechanisms allowing authorized parties to remotely disable AI accelerator chips when policy violations are detected.\n\n**Mechanism**:\n- Firmware-level kill switch installed on AI chips\n- Activation requires cryptographic authorization (potentially multi-party)\n- Ties into chip tracking system to identify specific hardware for disabling\n- Can be triggered by: unauthorized location (e.g., chip exported illegally), policy violation detected, international agreement breach\n- Reversible disable (licensing expired) vs. permanent disable (serious violation)\n\n**Why this is controversial but important**: Gives governments enforcement capability for AI regulations. Without enforcement mechanisms, AI governance is voluntary.",
+    "whyItMatters": [
+      "Provides actual enforcement capability for AI governance (not just paper agreements)",
+      "Creates deterrence against unauthorized frontier AI development",
+      "Enables response to detected threats before training completes",
+      "Intelligence on compute movements reveals unauthorized scaling attempts"
+    ],
+    "currentState": "- **Status**: Idea (controversial)\n- **Bottlenecks**: Cybersecurity risks of remote disable capability; potential for abuse; industry resistance; international agreement on who holds keys; technical implementation in existing firmware",
+    "whoWorking": "- **No dedicated organization identified** (highly sensitive area)\n- Policy discussions in government circles",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #74: Hardware Kill Switches and Location Tracking",
+        "url": "../sources/peregrine-2025/interventions/peregrine-074.md"
       }
     ]
   },
@@ -2406,6 +2533,26 @@
     ]
   },
   {
+    "filename": "verified-software-synthesis",
+    "title": "Verified software synthesis",
+    "tag": "Science",
+    "whatItIs": "Software synthesis systems that generate code together with machine-checkable proofs that the code satisfies functional, safety, and security specifications.\n\n**Mechanism**:\n- Developer provides high-level specification (what the code should do, security requirements)\n- Synthesis system generates implementation code\n- System simultaneously generates formal proof that code meets specification\n- Proofs are machine-checkable\u2014no trust in synthesis system required\n- Targets embedded systems in critical infrastructure: SCADA, medical devices, communication networks\n- Proves absence of entire vulnerability classes (buffer overflows, injection attacks) before deployment\n\n**Why synthesis with proofs vs just synthesis**: AI-generated code is convenient but error-prone. Attaching proofs ensures correctness regardless of how the code was generated.",
+    "whyItMatters": [
+      "AI-powered attackers will exploit software vulnerabilities at scale; verified code eliminates vulnerability classes entirely",
+      "Critical infrastructure (power grids, medical devices) runs software that can't be fixed after deployment",
+      "Proofs are permanent\u2014verified code stays verified regardless of future attack techniques",
+      "Enables AI-generated code to be trusted in high-stakes applications"
+    ],
+    "currentState": "- **Status**: Research\n- **Recent progress**: LLM-based coding assistants increasingly capable at writing proof scripts alongside code\n- **Bottlenecks**: Specification writing requires expertise; synthesis for complex systems still limited; computational cost; integration with existing codebases",
+    "whoWorking": "- **DARPA I2O office**: Verified software synthesis research programs\n- **Academic research groups**: Formal methods community",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #168: Verified Software for Cyber Resilience",
+        "url": "../sources/peregrine-2025/interventions/peregrine-168.md"
+      }
+    ]
+  },
+  {
     "filename": "vulnerability-research-matching",
     "title": "Vulnerability-research matching",
     "tag": "Science",
@@ -2459,6 +2606,26 @@
       {
         "text": "Peregrine 2025 #189: Whistleblower Protection Fund",
         "url": "../sources/peregrine-2025/interventions/peregrine-189.md"
+      }
+    ]
+  },
+  {
+    "filename": "who-style-ai-governance-forum",
+    "title": "WHO-style AI governance forum",
+    "tag": "Society",
+    "whatItIs": "International forum for AI governance with universal membership (unlike current Frontier Model Forum which excludes key players), focused on treaty development and red line enforcement.\n\n**Mechanism**:\n- Universal membership: all major AI developers, including DeepSeek, xAI, Chinese labs (unlike exclusive membership in current forums)\n- Large-scale funding (hundreds of millions USD) for evaluation organizations like METR\n- Focus on international treaty development (biological weapons uplift, autonomous weapons, etc.)\n- Red line definition and enforcement before critical thresholds crossed\n- WHO model: technical guidance, information sharing, early warning, coordinated response\n\n**Why WHO model**: WHO succeeds despite geopolitical tensions by focusing on shared threats. AI risks (pandemics, weapons) similarly affect all nations.",
+    "whyItMatters": [
+      "Current Frontier Model Forum excludes key players (DeepSeek, xAI), limiting effectiveness",
+      "Competitive dynamics accelerate development while undermining safety",
+      "Universal participation prevents race-to-the-bottom on safety",
+      "Treaty development requires forum where all parties can negotiate"
+    ],
+    "currentState": "- **Status**: Idea\n- **Existing forums**: Frontier Model Forum (limited membership), OECD AI Policy Observatory (limited mandate)\n- **Bottlenecks**: Geopolitical tensions (especially US-China); funding at required scale; governance structure unclear; convincing labs to join universal forum",
+    "whoWorking": "- **METR**: Proposed recipient of expanded funding\n- **Frontier Model Forum**: Existing but limited version",
+    "sources": [
+      {
+        "text": "Peregrine 2025 #124: Intergovernmental Frontier Model Forum",
+        "url": "../sources/peregrine-2025/interventions/peregrine-124.md"
       }
     ]
   },
