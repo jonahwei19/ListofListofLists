@@ -1,0 +1,7 @@
+# Private sources - not published to public repo
+# These are referenced as "private source" in interventions and can be accessed locally
+sources/cltr-defacc-uk/
+sources/entente-threats/
+
+# OS files
+.DS_Store

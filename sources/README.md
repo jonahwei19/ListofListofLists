@@ -41,10 +41,24 @@ The **Original** URL links to the public source document. This allows readers to
 ## Public vs Private Sources
 
 Most sources are public and published to the GitHub Pages site. Two sources are private:
-- `cltr-defacc-uk` - Internal CLTR document (not published)
-- `entente-threats` - Internal threat analysis (not published)
+- `cltr-defacc-uk` - Internal CLTR document (not published) — **Private Source #1**
+- `entente-threats` - Internal threat analysis (not published) — **Private Source #2**
 
-Private sources are excluded from the public repository but remain in the working copy.
+Private sources are:
+- Listed in `.gitignore` and excluded from the public repository
+- Remain in the local working copy for reference
+- Can be linked from interventions using relative paths (works locally, shows 404 on GitHub)
+
+### Linking to Private Sources
+
+When an intervention references a private source, use this format:
+```markdown
+## Sources
+- [Private Source #1: CLTR DefAcc](../sources/cltr-defacc-uk/proposals/example.md) *(local only)*
+- [Private Source #2: Entente](../sources/entente-threats/proposals/example.md) *(local only)*
+```
+
+The `*(local only)*` annotation signals to readers that this link only works in local copies.
 
 ## Adding a New Source
 
