@@ -439,6 +439,21 @@
                 .replace(/\n/g, '<br>');
         }
 
+        // Map source file paths to actual web URLs
+        function getSourceUrl(localPath) {
+            if (!localPath) return null;
+
+            // Extract source ID from path (e.g., "../sources/peregrine-2025/..." -> "peregrine-2025")
+            const match = localPath.match(/sources\/([^\/]+)\//);
+            if (!match) return null;
+
+            const sourceId = match[1];
+            const source = sources.find(s => s.id === sourceId);
+
+            // Return the source's web URL if it exists
+            return source?.url || null;
+        }
+
         function showModal(item) {
             document.getElementById('modal-title').textContent = item.title;
             const tagEl = document.getElementById('modal-tag');
@@ -483,7 +498,13 @@
                 bodyHtml += `
                     <div class="modal-section">
                         <h3>Sources</h3>
-                        <ul>${item.sources.map(s => `<li>${s.text}</li>`).join('')}</ul>
+                        <ul>${item.sources.map(s => {
+                            const sourceUrl = getSourceUrl(s.url);
+                            if (sourceUrl) {
+                                return `<li><a href="${sourceUrl}" target="_blank">${s.text}</a></li>`;
+                            }
+                            return `<li>${s.text}</li>`;
+                        }).join('')}</ul>
                     </div>
                 `;
             }

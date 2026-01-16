@@ -233,5 +233,15 @@
     "type": "Essay",
     "authors": ["Vitalik Buterin"],
     "status": "processed"
+  },
+  {
+    "id": "uk-aisi-trends",
+    "title": "UK AI Security Institute: Frontier AI Trends Report",
+    "description": "Two years of frontier AI evaluations across security-critical domains. Key finding: cyber capability doubling every 8 months. Covers biosecurity (models surpassed PhD-level), self-replication (60% success on RepliBench), and safeguard vulnerabilities (R²=0.097 capability-safeguard correlation).",
+    "url": "https://www.aisi.gov.uk/frontier-ai-trends-report",
+    "type": "Government report",
+    "authors": ["UK AI Security Institute"],
+    "proposalCount": 4,
+    "status": "processed"
   }
 ]
