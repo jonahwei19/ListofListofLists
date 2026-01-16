@@ -1,6 +1,7 @@
 # Vaccine Capability - 100 Days Mission
 
 **Source**: Apollo Program for Biodefense (2021) / CEPI 100 Days Mission
+**Original**: https://biodefensecommission.org/reports/the-apollo-program-for-biodefense-winning-the-race-against-biological-threats/
 **Authors**: Bipartisan Commission on Biodefense; CEPI
 **URLs**:
 - https://biodefensecommission.org/reports/the-apollo-program-for-biodefense-winning-the-race-against-biological-threats/

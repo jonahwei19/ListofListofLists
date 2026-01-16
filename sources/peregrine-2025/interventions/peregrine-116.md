@@ -1,6 +1,7 @@
 # CERN for AI
 
 **Source**: Peregrine 2025, Proposal #116
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Specific technique
 
 ## What it is

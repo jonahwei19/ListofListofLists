@@ -1,6 +1,7 @@
 # How to Solve the Alignment Problem (Carlsmith)
 
 **Source**: Joe Carlsmith essay series, joecarlsmith.com
+**Original**: https://joecarlsmith.com
 **Date processed**: 2026-01-11
 **Total items**: 9 essays
 

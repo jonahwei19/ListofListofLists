@@ -1,6 +1,7 @@
 # Neuroscience Moonshots for Human-Compatible AGI
 
 **Source**: Peregrine 2025, Proposal #191
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Field/category
 
 ## What it is

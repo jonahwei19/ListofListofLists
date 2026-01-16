@@ -1,6 +1,7 @@
 # Peregrine 2025 → Entry Mapping
 
 **Source**: [The 2025 Peregrine Report](https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf)
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Processed**: 2026-01-10
 **Total proposals**: 208
 

@@ -1,6 +1,7 @@
 # Technologies to Address GCBRs (Johns Hopkins)
 
 **Source**: https://www.centerforhealthsecurity.org/our-work/publications/technologies-to-address-global-catastrophic-biological-risks
+**Original**: https://www.centerforhealthsecurity.org/our-work/publications/technologies-to-address-global-catastrophic-biological-risks
 **Authors**: Johns Hopkins Center for Health Security
 **Type**: Technical report
 **Status**: Blocked (site returns 403; requires manual access)

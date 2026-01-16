@@ -1,6 +1,7 @@
 # Build the Off Button
 
 **Source**: Peregrine 2025, Proposal #157
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Specific technique
 
 ## What it is

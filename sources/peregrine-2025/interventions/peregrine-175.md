@@ -1,6 +1,7 @@
 # Cyber Weapons for AI Disruption
 
 **Source**: Peregrine 2025, Proposal #175
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Specific technique
 
 ## What it is

@@ -1,6 +1,7 @@
 # AI Control Systems
 
 **Source**: Peregrine 2025, Proposal #21
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Field/category
 
 ## What it is

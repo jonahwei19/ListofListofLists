@@ -1,6 +1,7 @@
 # Barriers to Fine-tuning
 
 **Source**: Peregrine 2025, Proposal #93
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Specific technique
 
 ## What it is

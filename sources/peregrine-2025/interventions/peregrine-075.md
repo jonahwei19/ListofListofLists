@@ -1,6 +1,7 @@
 # AI for Collective Decision-making
 
 **Source**: Peregrine 2025, Proposal #75
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Vague
 
 ## What it is

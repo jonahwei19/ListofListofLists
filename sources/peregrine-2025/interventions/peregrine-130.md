@@ -1,6 +1,7 @@
 # Consolidation of AI Development
 
 **Source**: Peregrine 2025, Proposal #130
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Vague
 
 ## What it is

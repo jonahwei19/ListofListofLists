@@ -1,6 +1,7 @@
 # Reduce the Alignment Tax
 
 **Source**: Peregrine 2025, Proposal #190
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Field/category
 
 ## What it is

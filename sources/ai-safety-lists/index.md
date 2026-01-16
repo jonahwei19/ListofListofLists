@@ -1,6 +1,7 @@
 # List of Lists of AI Safety Projects
 
 **Source**: https://www.lesswrong.com/posts/mtGpdtDdmkRC3ZBuz/list-of-lists-of-project-ideas-in-ai-safety
+**Original**: https://www.lesswrong.com/posts/mtGpdtDdmkRC3ZBuz/list-of-lists-of-project-ideas-in-ai-safety
 **Date processed**: 2026-01-11
 **Type**: Meta-list
 

@@ -1,6 +1,7 @@
 # Attack Scenarios Analysis
 
 **Source**: Peregrine 2025, Proposal #155
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Specific technique
 
 ## What it is

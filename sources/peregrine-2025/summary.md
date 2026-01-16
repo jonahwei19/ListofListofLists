@@ -1,6 +1,7 @@
 # Peregrine 2025 - Entry Index
 
 **Source**: [The 2025 Peregrine Report](https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf)
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 
 208 source proposals → 4 problem entries + governance interventions
 

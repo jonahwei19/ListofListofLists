@@ -1,6 +1,7 @@
 # AI R&D Acceleration Threat Modeling
 
 **Source**: Peregrine 2025, Proposal #110
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Field/category
 
 ## What it is

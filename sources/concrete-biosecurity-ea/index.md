@@ -1,6 +1,7 @@
 # Concrete Biosecurity Projects (EA Forum)
 
 **Source**: https://forum.effectivealtruism.org/posts/u5JesqQ3jdLENXBtB/concrete-biosecurity-projects-some-of-which-could-be-big-1
+**Original**: https://forum.effectivealtruism.org/posts/u5JesqQ3jdLENXBtB/concrete-biosecurity-projects-some-of-which-could-be-big-1
 **Authors**: Andrew Snyder-Beattie, Ethan Alley
 **Type**: EA Forum post
 **Status**: Processed

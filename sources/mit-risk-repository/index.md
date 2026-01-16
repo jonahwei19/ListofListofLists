@@ -1,6 +1,7 @@
 # MIT AI Risk Repository
 
 **Source**: https://airisk.mit.edu/
+**Original**: https://airisk.mit.edu/
 **Date processed**: 2026-01-11
 **Type**: Taxonomy stress-test (not bulk import)
 **Total items**: 2244 risk entries, 7 domains, 23 sub-domains

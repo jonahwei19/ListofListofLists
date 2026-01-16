@@ -1,6 +1,7 @@
 # AI Development Lifecycle Risk Management Framework
 
 **Source**: Peregrine 2025, Proposal #111
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Field/category
 
 ## What it is

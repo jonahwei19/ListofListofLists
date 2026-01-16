@@ -1,6 +1,7 @@
 # Vulnerability Patching Systems
 
 **Source**: Peregrine 2025, Proposal #164
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Specific technique
 
 ## What it is

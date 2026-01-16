@@ -1,6 +1,7 @@
 # Ten AI Safety Projects (Julian Hazell) - Entry Mapping
 
 **Source**: [Ten AI Safety Projects I'd Like People to Work On](https://www.lesswrong.com/posts/vxA2BnCPTaPfnJjti/ten-ai-safety-projects-i-d-like-people-to-work-on)
+**Original**: https://www.lesswrong.com/posts/vxA2BnCPTaPfnJjti/ten-ai-safety-projects-i-d-like-people-to-work-on
 **Author**: Julian Hazell (funder perspective)
 **Processed**: 2026-01-11
 **Total projects**: 10

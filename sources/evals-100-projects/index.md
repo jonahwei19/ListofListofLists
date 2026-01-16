@@ -1,6 +1,7 @@
 # 100+ Concrete Projects and Open Problems in Evals
 
 **Source**: https://www.alignmentforum.org/posts/LhnqegFoykcjaXCYH/100-concrete-projects-and-open-problems-in-evals
+**Original**: https://www.alignmentforum.org/posts/LhnqegFoykcjaXCYH/100-concrete-projects-and-open-problems-in-evals
 **Google Doc**: https://docs.google.com/document/d/1gi32-HZozxVimNg5Mhvk4CvW4zq8J12rGmK_j2zxNEg/
 **Author**: Marius Hobbhahn (Apollo Research) + 20+ contributors from METR, Redwood, RAND, AISIs, frontier labs, SecureBio, AI Futures Project
 **Date**: March 2025

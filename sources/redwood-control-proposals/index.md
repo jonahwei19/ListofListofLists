@@ -1,6 +1,7 @@
 # Redwood Research Control Project Proposals
 
 **Source**: https://www.alignmentforum.org/posts/RRxhzshdpneyTzKfq/recent-redwood-research-project-proposals
+**Original**: https://www.alignmentforum.org/posts/RRxhzshdpneyTzKfq/recent-redwood-research-project-proposals
 **Also**: https://blog.redwoodresearch.org/p/7-tractable-directions-in-ai-control
 **Date processed**: 2026-01-11
 **Total items**: 36 project proposals across 5 categories; 10 tractable directions

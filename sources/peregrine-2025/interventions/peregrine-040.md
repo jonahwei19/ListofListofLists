@@ -1,6 +1,7 @@
 # Direct Interpretability and Model-Level Interventions
 
 **Source**: Peregrine 2025, Proposal #40
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Field/category
 
 ## What it is

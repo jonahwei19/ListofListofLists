@@ -1,6 +1,7 @@
 # Foundations of Cooperative Agency Research
 
 **Source**: Peregrine 2025, Proposal #197
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Field/category
 
 ## What it is

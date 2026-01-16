@@ -12,13 +12,39 @@ sources/
 ├── README.md               # This file
 └── <source-id>/            # One folder per source
     ├── source.pdf          # Original document (or source.md, etc.)
-    ├── raw/                # Raw extractions before processing
-    │   ├── section-1.md
-    │   └── ...
-    ├── mapping.json        # Source section → entry mapping
     ├── index.md            # Human-readable TOC with entry links
-    └── summary.md          # High-level overview (optional)
+    ├── <source>-full.md    # Full extracted text (optional)
+    └── proposals/          # Individual proposal extractions
+        ├── proposal-1.md
+        └── ...
 ```
+
+## Proposal File Format
+
+Each proposal markdown file should have this header format:
+
+```markdown
+# Proposal Title
+
+**Source**: Source Name, Section/Proposal #X
+**Original**: https://original-url.com/document
+
+## Quoted passage(s)
+> Exact text from the original source...
+
+## Summary (optional)
+Brief interpretation or context.
+```
+
+The **Original** URL links to the public source document. This allows readers to verify quotes and access the full context.
+
+## Public vs Private Sources
+
+Most sources are public and published to the GitHub Pages site. Two sources are private:
+- `cltr-defacc-uk` - Internal CLTR document (not published)
+- `entente-threats` - Internal threat analysis (not published)
+
+Private sources are excluded from the public repository but remain in the working copy.
 
 ## Adding a New Source
 

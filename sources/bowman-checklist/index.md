@@ -1,6 +1,7 @@
 # Sam Bowman's AI Safety Checklist
 
 **Source**: https://sleepinyourhat.github.io/checklist/
+**Original**: https://sleepinyourhat.github.io/checklist/
 **Date processed**: 2026-01-11
 **Total items**: 25 goals across 3 chapters
 

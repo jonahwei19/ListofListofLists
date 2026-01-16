@@ -1,6 +1,7 @@
 # Ethics for AI Alignment
 
 **Source**: Peregrine 2025, Proposal #201
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Field/category
 
 ## What it is

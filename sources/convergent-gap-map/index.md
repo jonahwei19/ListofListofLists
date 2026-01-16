@@ -1,6 +1,7 @@
 # Convergent Research Gap Map
 
 **Source**: https://www.gap-map.org/
+**Original**: https://www.gap-map.org/
 **Date processed**: 2026-01-11
 **Total items**: 101 R&D gaps across 17 scientific fields
 

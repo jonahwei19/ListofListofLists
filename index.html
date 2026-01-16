@@ -439,21 +439,11 @@
                 .replace(/\n/g, '<br>');
         }
 
-        // Map source file paths to URLs
+        // Map source file paths to GitHub internal links
         function getSourceUrl(localPath) {
             if (!localPath) return null;
 
-            // Extract source ID from path (e.g., "../sources/peregrine-2025/..." -> "peregrine-2025")
-            const match = localPath.match(/sources\/([^\/]+)\//);
-            if (!match) return null;
-
-            const sourceId = match[1];
-            const source = sources.find(s => s.id === sourceId);
-
-            // If source has a web URL, use it
-            if (source?.url) return source.url;
-
-            // Otherwise, link to the internal file on GitHub
+            // Always link to internal file on GitHub (renders markdown nicely)
             const filePath = localPath.replace('../', '');
             return `https://github.com/jonahwei19/ListofListofLists/blob/main/${filePath}`;
         }

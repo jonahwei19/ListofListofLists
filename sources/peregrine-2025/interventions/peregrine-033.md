@@ -1,6 +1,7 @@
 # Diversify the Security Research Portfolio
 
 **Source**: Peregrine 2025, Proposal #33
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Vague
 
 ## What it is

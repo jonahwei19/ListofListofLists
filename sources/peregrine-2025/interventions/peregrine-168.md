@@ -1,6 +1,7 @@
 # Verified Software for Cyber Resilience
 
 **Source**: Peregrine 2025, Proposal #168
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Specific technique
 
 ## What it is

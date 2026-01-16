@@ -1,6 +1,7 @@
 # Psychological Interventions for AGI Integrity
 
 **Source**: Peregrine 2025, Proposal #195
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Field/category
 
 ## What it is

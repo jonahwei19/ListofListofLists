@@ -1,6 +1,7 @@
 # Defenses Against Nanotech Threats
 
 **Source**: Peregrine 2025, Proposal #208
+**Original**: https://riskmitigation.ai/wp-content/uploads/The-2025-Peregrine-Report.pdf
 **Specificity**: Vague
 
 ## What it is
