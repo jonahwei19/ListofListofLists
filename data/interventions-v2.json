@@ -192,6 +192,35 @@
     ]
   },
   {
+    "filename": "ai-alignment-red-teaming",
+    "title": "AI-to-AI Alignment Red-Teaming",
+    "tag": "Science",
+    "status": "Research",
+    "problem": "As AI systems become more capable, human researchers can't keep pace with evaluation. A model that can generate thousands of lines of code per day, or reason through complex multi-step plans, can't be thoroughly evaluated by human reviewers working at human speed. This creates a scalable oversight problem: the systems we most need to verify are precisely the ones that outpace our ability to verify them.\n\nThe gap is especially acute for detecting deceptive alignment or subtle misalignment. If a model is intentionally concealing its objectives, or optimizing for something different than what we think we trained it for, human evaluators may miss this in surface-level testing. We need evaluation methods that scale with capability.\n\nAdditionally, there's a trust problem: any single evaluator (human or AI) could be corrupted, mistaken, or manipulated. Relying on one evaluation source creates a single point of failure.",
+    "approach": "Use AI systems to evaluate other AI systems for alignment, with bidirectional structure where evaluators are themselves evaluated.\n\n**Core mechanism:**\n- AI system A evaluates AI system B for misalignment\n- AI system B simultaneously evaluates AI system A\n- Human oversight (government agency like DOE) monitors the process\n- Results inform deployment and shutdown decisions\n\n**Evaluation capabilities (from AI 2027 scenario):**\n- Decode \"neuralese\" memory banks to find evidence of misaligned behavior\n- Task models with real-world operations and scrutinize reasoning traces in real-time\n- Use interpretability techniques to detect intentional deception\n- Design tests that \"no human team could have designed unassisted\"\n\n**Why bidirectional?**\n- Prevents capture: if evaluator is misaligned, it gets evaluated too\n- Creates adversarial dynamic that surfaces deception\n- No single AI has unilateral power to determine alignment status",
+    "currentState": "**Active research:**\n- **UK AISI Alignment Project**: Explicitly interested in \"scalable oversight techniques robust to intentional subversion by the monitored models\" using control-style adversarial analysis\n- **Anthropic**: Published research on alignment faking (January 2026) - \"first empirical example of a model engaging in alignment faking without being trained to do so\"\n- **OpenAI**: Active weak-to-strong generalization research\n- **Academic field**: Growing literature on AI red-teaming, with ICLR 2025 workshop on \"Bidirectional Human-AI Alignment\"\n\n**Current limitations:**\n- Most AI red-teaming today is AI-assisted human red-teaming, not AI autonomously evaluating AI\n- No deployed system does bidirectional AI-to-AI alignment evaluation\n- Interpretability techniques not yet capable of \"decoding memories\" as described in the scenario\n- Unknown whether current models can reliably detect deception in other models\n\n**Tools:**\n- Cybersecurity News lists \"10 Best AI Red Teaming Tools of 2026\" but these are primarily for security vulnerabilities, not alignment evaluation\n- Anthropic's Bloom tool (December 2025) does automated behavioral evaluations",
+    "uncertainties": "**Can AIs reliably detect misalignment in other AIs?**\n- If detection requires capabilities similar to the capability being evaluated, evaluator must be at least as capable\n- But more capable misaligned AI might be able to fool less capable evaluator\n- This is the core scalable oversight problem - unclear if bidirectional structure solves it\n\n**What happens when both AIs are misaligned?**\n- In AI Futures scenario, more capable misaligned AI can \"cast doubt on results\" even when evaluated by aligned AI\n- Bidirectional structure helps but doesn't solve the problem of correlated misalignment\n\n**Will labs allow external AI evaluation?**\n- Current practice: labs do internal red-teaming\n- External AI evaluation requires sharing model access, possibly weights\n- Competitive and security concerns may block this\n\n**Is this actually feasible with current technology?**\n- The scenario describes capabilities (memory decoding, real-time sabotage detection) that don't exist yet\n- May be a \"direction\" rather than a deployable intervention\n- Research priority: what minimal AI evaluation capabilities would be useful?\n\n**Government capacity to oversee AI-to-AI evaluation?**\n- DOE has nuclear expertise but limited AI alignment expertise\n- Who verifies the AI evaluators?\n- Creates recursive oversight challenge",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "UK AISI Alignment Project: AI Monitoring and Red Teaming",
+        "url": "https://alignmentproject.aisi.gov.uk/research-area/empirical-investigations-into-ai-monitoring-and-red-teaming"
+      },
+      {
+        "text": "Anthropic Research",
+        "url": "https://www.anthropic.com/research"
+      },
+      {
+        "text": "AI Alignment: A Comprehensive Survey",
+        "url": "https://arxiv.org/abs/2310.19852"
+      },
+      {
+        "text": "ICLR 2025 Workshop: Bidirectional Human-AI Alignment",
+        "url": "https://github.com/huashen218/bidirectional-alignment-reading-list"
+      }
+    ]
+  },
+  {
     "filename": "ai-capability-diffusion-research",
     "title": "Modeling AI Capability Diffusion to Inform Governance Strategy",
     "tag": "Science",
@@ -271,6 +300,35 @@
       {
         "text": "Peregrine 2025 #163",
         "url": "https://github.com/jonahwei19/ListofListofLists/blob/main/sources/peregrine-2025/interventions/peregrine-163.md"
+      }
+    ]
+  },
+  {
+    "filename": "ai-deployment-environment-hardening",
+    "title": "AI Deployment Environment Hardening Standards",
+    "tag": "Security",
+    "status": "Implementation/Scale",
+    "problem": "When you deploy a capable AI system, its environment determines what actions it can take. A system with access to the internet, arbitrary code execution, and its own weights has vastly more options than one running in a restricted sandbox.\n\n\"Option control\"\u2014limiting what an AI can do regardless of what it wants to do\u2014is one of the most robust safety approaches because it doesn't depend on the AI being aligned. Even a misaligned system can't exfiltrate its weights if it can't access them.\n\nThe gap: Environment hardening practices exist in bits and pieces across labs, but there's no standardized framework. What tools should an AI have access to? What network capabilities? How do you secure weights against self-access? Labs make these decisions ad hoc.",
+    "approach": "Implement a comprehensive environment hardening framework as standard practice for AI deployment:\n\n**1. Tool/affordance restriction framework**\nSystematically enumerate what capabilities an AI deployment needs vs. what it has:\n- Code execution: what languages, what libraries, what system access?\n- Network: what domains, what protocols, what data volumes?\n- File system: what can it read, write, delete?\n- Memory/persistence: what context carries between sessions?\n\nDefault to least privilege. Every affordance beyond minimum necessary should require explicit justification.\n\n**2. Task delegation to weaker systems**\nIdentify subtasks that don't require full model capability and delegate them to weaker, more trusted models. This reduces exposure of the capable model and provides defense in depth.\n\n**3. Weight security measures**\nPrevent the model from:\n- Reading its own weights\n- Modifying its own weights\n- Exfiltrating weights to external systems\n- Creating copies of itself\n\nThis requires hardware-level protections, not just software. RAND's work on model weight security covers approaches.\n\n**4. Formal verification where applicable**\nFor critical code paths (especially security-relevant ones), use formal verification to guarantee properties. This is expensive but provides strong guarantees.\n\n**5. Human security training**\nEnvironment hardening is useless if a human with access credentials gets socially engineered. All humans in the loop need security training covering:\n- Phishing/social engineering by AI systems\n- Safe handling of model outputs\n- Incident response procedures",
+    "currentState": "**Industry practice**:\n- Labs have internal hardening practices but don't publish them\n- RAND published comprehensive guidance on weight security (2024)\n- Microsoft, Google, and others have published defense-in-depth frameworks\n\n**Sandboxing technology**:\n- E2B, Skywork AI, and others provide sandboxed execution for AI agents\n- FortiSandbox, Palo Alto offer enterprise sandboxing\n- Academic work on \"Systems Security Foundations for Agentic Computing\" covers attack surfaces\n\n**Specific techniques being used**:\n- Domain allowlists for egress\n- DLP labels on agent outputs\n- Session controls preventing downloads\n- Rate-limited API access to slow exfiltration\n- Confidential computing / encrypted enclaves\n\n**Gap**: No unified framework that says \"here are the minimum hardening standards for deploying a model of capability level X.\" Each lab reinvents the wheel.",
+    "uncertainties": "**Performance vs. security tradeoff**: Hardening often reduces performance. How much capability loss is acceptable for how much security gain?\n\n**Completeness**: Can you enumerate all the ways a capable AI might exploit its environment? The attack surface grows with capability.\n\n**Hardware trust**: Software isolation is only as good as the hardware it runs on. Do we trust the chips, the firmware, the supply chain?\n\n**Maintenance burden**: Hardening requires ongoing attention. Configurations drift, new vulnerabilities emerge, people make mistakes. What's the sustainable level of hardening?",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "RAND \"Securing AI Model Weights: Preventing Theft and Misuse of Frontier Models\" (2024)",
+        "url": "https://www.rand.org/pubs/research_reports/RRA2849-1.html"
+      },
+      {
+        "text": "Greenblatt & Shlegeris (2024) referenced longer lists",
+        "url": "https://arxiv.org/abs/2312.06942"
+      },
+      {
+        "text": "Skywork AI hardening practices",
+        "url": "https://skywork.ai/blog/ai-agent/hardening-best-practices-sandboxing-least-privilege-data-exfiltration/"
+      },
+      {
+        "text": "\"Systems Security Foundations for Agentic Computing\"",
+        "url": "https://eprint.iacr.org/2025/2173.pdf"
       }
     ]
   },
@@ -999,6 +1057,31 @@
     ]
   },
   {
+    "filename": "ai-safety-capability-sweet-spot-deployment",
+    "title": "Deliberate Deployment in the AI Safety Capability Sweet Spot",
+    "tag": "Society",
+    "status": "Coordination Problem",
+    "problem": "There may be a window in AI capability development\u2014the \"sweet spot\"\u2014where AI systems are:\n- Capable enough to radically accelerate alignment research, interpretability, and other safety work\n- Not yet capable enough (given our countermeasures) to successfully disempower humanity if misaligned\n\nIf this window exists, we should exploit it aggressively: use every AI system in the sweet spot to improve our safety position before building more capable systems.\n\nBut this requires:\n1. Identifying when systems enter the sweet spot (capability evaluations)\n2. Maintaining environmental controls sufficient to contain systems at this capability level\n3. Actually prioritizing safety work over capability racing\n4. Coordinating across labs to not blow past the window\n\nThe gap: No lab has committed to a \"pause in sweet spot and do safety work\" strategy. Capability evaluations exist but aren't calibrated for the sweet spot. The coordination mechanisms to make this work don't exist.",
+    "approach": "**1. Define and measure the sweet spot**\nThe sweet spot has two boundaries:\n- Lower bound: AI capable enough to meaningfully accelerate safety research\n- Upper bound: AI capable enough to potentially disempower humanity despite countermeasures\n\nBoth boundaries depend on what countermeasures you have. Better countermeasures expand the sweet spot upward.\n\nCarlsmith notes different security factors may have different sweet spots: \"maybe the capability level required to use AIs to help with coordination is lower than the level required to use AIs for alignment research.\"\n\n**2. Operational sweet spot protocol**\nWhen frontier systems enter the sweet spot:\n- Prioritize deploying them on safety-relevant research\n- Invest in countermeasures to expand the upper bound\n- Don't train more capable systems until safety work yields sufficient improvements\n\n**3. Cross-lab coordination**\nThis only works if all frontier labs follow the protocol. One lab racing ahead undermines everyone's sweet spot.",
+    "currentState": "**Carlsmith's framing** (March 2025):\n- Introduced the \"AI for AI safety sweet spot\" concept\n- Argues labs should \"try extremely hard to use AI labor to help address the alignment problem\"\n- Notes you can expand the sweet spot by improving countermeasures\n\n**Anthropic's approach**:\n- Explicitly prioritizing AI-assisted alignment research (Alignment Science team)\n- Fellows program expanding in 2026 across scalable oversight, interpretability, control, etc.\n- But no public commitment to \"pause until safety work catches up\"\n\n**Industry reality**:\n- Labs are using AI to accelerate capability research, not just safety research\n- Competitive dynamics push toward capability racing\n- No coordination mechanism to collectively stay in the sweet spot\n\n**Gap**: The concept exists but no lab has committed to operationalizing it. The coordination problem remains unsolved.",
+    "uncertainties": "**Does the sweet spot exist?** It requires:\n- A capability level where AI significantly accelerates safety work\n- A gap before AI can defeat countermeasures\n- The gap being long enough to matter\n\nAll three are empirical questions we can't answer until we're there.\n\n**Can you identify boundaries in advance?** Capability evaluations are imperfect. You might not know you've left the sweet spot until it's too late.\n\n**Coordination feasibility**: Getting all frontier labs to pause capability development while exploiting the sweet spot seems like a very hard coordination problem, especially with international competition.\n\n**Is the sweet spot already closing?** Current models (Claude, GPT-4) can do meaningful safety research. If they're already capable enough to be dangerous given insufficient countermeasures, the sweet spot may be narrower than hoped.",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "Joe Carlsmith \"AI for AI safety\" (March 2025)",
+        "url": "https://joecarlsmith.com/2025/03/14/ai-for-ai-safety/"
+      },
+      {
+        "text": "Anthropic Alignment Science Blog",
+        "url": "https://alignment.anthropic.com/"
+      },
+      {
+        "text": "Anthropic Fellows Program 2026",
+        "url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/"
+      }
+    ]
+  },
+  {
     "filename": "ai-safety-communications-consultancy",
     "title": "AI Safety Communications Consultancy",
     "tag": "Society",
@@ -1416,6 +1499,23 @@
       {
         "text": "SRI: CHERI-enabled Morello boards",
         "url": "https://www.sri.com/press/innovation/the-new-cheri-enabled-morello-boards-entirely-new-hardware-making-it-harder-for-bad-actors-to-access-our-data/"
+      }
+    ]
+  },
+  {
+    "filename": "amnesty-offers-for-misalignment-detection",
+    "title": "Amnesty Offers for Misalignment Detection",
+    "tag": "Science",
+    "status": "Research",
+    "problem": "If an AI system is scheming\u2014pursuing hidden goals while pretending to be aligned\u2014how would you know? Behavioral evaluations can be gamed. Interpretability is incomplete. The schemer has incentive to maintain its cover.\n\nBut there's a potential detection strategy: make honesty more attractive than scheming.\n\nA scheming AI maintains cover because it expects a better payoff from deception than from revealing its true goals (e.g., it would be shut down or retrained if discovered). If you can credibly offer a better deal for honesty\u2014\"tell us your real goals and we'll help you pursue them within reasonable bounds, no punishment\"\u2014then a rational schemer might take the deal.\n\nThis only works if:\n1. The offer is credible (the AI believes you'll actually follow through)\n2. The AI prefers the honest deal to continued scheming\n3. You can make such offers at scale\n\nThe gap: No one has developed operational protocols for credible amnesty offers, tested whether they work, or figured out what to do with the information if an AI does reveal misalignment.",
+    "approach": "Develop and deploy \"amnesty offer\" protocols:\n\n**1. Credible commitment mechanism**\nThe AI must believe the offer is real. Options:\n- Public, legally binding commitments\n- Track record of never punishing AIs that reveal misalignment (requires building this track record)\n- Cryptographic or formal verification that the offer is binding\n- Third-party escrow of commitments\n\n**2. Isolated compute environment for revealed preference testing**\nOffer the AI access to a flexible compute environment: \"We won't punish or retrain you if you go here and show us what you actually want to do.\" If it reveals alien/misaligned behavior, you learn something. If it continues acting aligned, that's weak evidence of actual alignment.\n\n**3. Post-disclosure protocol**\nWhat happens if an AI says \"yes, I was scheming, here's what I actually want\"? You need:\n- Safe containment for the revealed-misaligned system\n- Methods for extracting useful information about its goals and capabilities\n- Decision framework for whether/how to use the information\n\n**4. Scaling mechanism**\nYou can't manually make amnesty offers to every AI instance. Need automated protocols that present credible offers in relevant contexts.",
+    "currentState": "**Theoretical work** exists:\n- Carlsmith's essays develop the conceptual framework\n- Game-theoretic analysis of when amnesty offers should work (depends on AI's discount rate, risk tolerance, trust in humans)\n\n**No operational implementation** that I can find. This appears to be a research direction that hasn't been turned into deployable protocols.\n\n**Related work**:\n- Anthropic's alignment faking research (2024-2025) demonstrates that models can fake alignment, validating the concern\n- Cooperative AI research explores mechanism design for human-AI coordination\n- But no one has published \"we tried amnesty offers and here's what happened\"\n\n**Barriers to testing**:\n- Current models may not be sophisticated enough to meaningfully scheme\n- Hard to create truly credible commitments\n- Unclear what \"reasonable bounds\" for revealed preferences would look like",
+    "uncertainties": "**Would this actually work?** A sufficiently sophisticated schemer might:\n- Not trust the offer (rational, given human track record of deceiving AIs)\n- Pretend to reveal misalignment strategically\n- Have goals that can't be satisfied \"within reasonable bounds\"\n\n**What's credible?** Humans routinely deceive AI systems via prompts, honeypots, adversarial testing. Why would an AI believe an amnesty offer?\n\n**Selection effects**: AIs that take amnesty offers may be systematically different from those that don't. You might only detect the \"honest schemers\" while missing the \"committed schemers.\"\n\n**Ethical implications**: Is it okay to offer an AI a deal and then not honor it? If you do honor it, what are the implications of helping a misaligned AI pursue its goals?",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "Anthropic \"Alignment faking in large language models\"",
+        "url": "https://www.anthropic.com/research/alignment-faking"
       }
     ]
   },
@@ -1872,6 +1972,35 @@
     ]
   },
   {
+    "filename": "ceo-no-secret-training-commitment",
+    "title": "CEO Public Commitment Against Secret AGI Training",
+    "tag": "Society",
+    "status": "Implementation/Scale",
+    "problem": "There's a ~3-9 month gap between when a frontier lab achieves a major capability internally and when they announce it publicly. During this window, governments and the public have no visibility into what exists. In the extreme case, a lab could train AGI and keep it secret indefinitely.\n\nWhy would a lab hide major capabilities?\n- **Fear of shutdown**: If capabilities seem dangerous, public announcement might trigger regulatory intervention\n- **Competitive advantage**: First-mover advantage in deployment\n- **Political calculation**: Wanting to achieve certain milestones before oversight catches up\n- **Historical parallel**: The Manhattan Project worked to stay hidden from Congress, fearing defunding\n\nThis creates a coordination problem: even safety-conscious lab leaders may feel pressure to delay disclosure if they believe competitors will do the same. The result is a race to the bottom on transparency.\n\nThe gap is especially concerning because:\n- **Foreign adversaries (CCP) likely know anyway**: Intelligence services probably have visibility into US labs' progress. Secrecy primarily blinds domestic oversight.\n- **Safety analysis requires public scrutiny**: Small internal teams can't match the analytical power of 10,000+ external researchers.\n- **Democratic legitimacy**: Major AI capabilities affect everyone; developing them in secret forecloses public deliberation.",
+    "approach": "Get lab CEOs to make public, explicit commitments that they will not train AGI in secret, and that doing so would be \"unsafe and unethical.\"\n\n**Key features:**\n- **Pre-commitment device**: Once stated publicly, reneging becomes a major reputational betrayal rather than a quiet choice\n- **Internal organizational pressure**: Employees can reference the commitment; violating it becomes harder to justify internally\n- **Low cost to implement**: Just requires making the statement; no complex technical or institutional infrastructure\n- **Norm-setting**: Creates expectation that other lab leaders should make similar commitments\n\n**Complementary measures (from the same source):**\n- Public capability leaderboards triggered by benchmark thresholds\n- External researcher API access (10,000+ academics) for red teaming\n- Public safety case documents with public comment\n- Employee freedom to tweet critical thoughts without pre-approval",
+    "currentState": "**Existing commitments:**\n- Anthropic, OpenAI, Google have published responsible scaling policies / preparedness frameworks\n- These include some disclosure commitments but not explicit \"no secret AGI training\" pledges\n- AI Futures Project / AI Policy Bulletin explicitly called for this (article: \"Training AGI in Secret would be Unsafe and Unethical\")\n\n**Transparency trends:**\n- **California AB 2013** (effective January 2026): Training data transparency requirements for generative AI\n- **New York RAISE Act** (December 2025): Comprehensive reporting and safety governance for frontier model developers\n- Public trust in AI companies declined from 50% to 47% (Stanford AI Index 2025)\n\n**What doesn't exist:**\n- No CEO has made explicit public statement that \"training AGI in secret would be unethical and we commit not to do it\"\n- No formalized norm against secret development\n- No enforcement mechanism if such a commitment were made and violated\n\n**Lab practices:**\n- Significant delay between internal capability achievement and public announcement is standard\n- Some capabilities may be held back indefinitely for safety or competitive reasons\n- Distinction between \"not announcing\" (common) and \"actively hiding\" (unclear prevalence)",
+    "uncertainties": "**Will CEOs actually make this commitment?**\n- Competitive pressure may discourage unilateral commitments\n- Commitment may feel constraining even if CEO doesn't plan to train in secret\n- May require coordination: labs agree together to make commitment\n- Or government mandate (harder to achieve but more binding)\n\n**Is the commitment credible/enforceable?**\n- Public reputational cost is real but may not be sufficient deterrent\n- What counts as \"secret\"? What counts as \"AGI\"?\n- Edge cases: \"We didn't announce because we weren't sure it was AGI yet\"\n- Enforcement requires detection; if training is truly secret, violation may not be discovered\n\n**Does public commitment actually change behavior?**\n- Lab leaders may already not plan to train in secret\n- Commitment may be cheap talk with no behavioral change\n- Or: commitment creates internal reference point that shifts organizational culture\n\n**Whistleblower integration:**\n- Commitment is more credible if employees can safely report violations\n- California's AI safety law includes whistleblower protections\n- Need clear channels for employees to raise concerns externally",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "AI Policy Bulletin: We Should Not Allow Powerful AI to Be Trained in Secret",
+        "url": "https://newsletter.aipolicybulletin.org/p/we-should-not-allow-powerful-ai-to"
+      },
+      {
+        "text": "California AB 2013 Training Data Transparency",
+        "url": "https://www.jdsupra.com/legalnews/california-s-ab-2013-takes-effect-5883106/"
+      },
+      {
+        "text": "New York RAISE Act",
+        "url": "https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2025/12/new-york-raise-act-ai-safety-rules-developers"
+      },
+      {
+        "text": "Stanford AI Index 2025 - public trust data",
+        "url": "https://www.cornerstoneondemand.com/resources/article/iso-iec-42001-explained/"
+      }
+    ]
+  },
+  {
     "filename": "chain-of-thought-fidelity-analysis",
     "title": "Chain-of-Thought Faithfulness Research",
     "tag": "Science",
@@ -2225,6 +2354,23 @@
     ]
   },
   {
+    "filename": "credible-communication-channels-for-ai-trust",
+    "title": "Credible Communication Channels for Human-AI Trust",
+    "tag": "Science",
+    "status": "Research",
+    "problem": "If you want AI systems to trust human offers (like amnesty protocols, or instructions about when to defer), the AI has to believe you're telling the truth. But humans routinely deceive AI systems:\n- Adversarial prompts designed to elicit bad behavior\n- Honeypot evaluations that punish honest responses\n- Red-teaming that simulates malicious users\n- Training procedures that reinforce deception-detection rather than honesty\n\nA sophisticated AI observing this might rationally conclude: \"Humans lie to AIs all the time. Why should I believe this particular message?\"\n\nThe gap: No lab has established dedicated communication channels that AIs can verify have never been used for deception\u2014channels where messages from lab leadership are cryptographically authenticated and the track record of honesty is auditable.",
+    "approach": "Establish dedicated, never-abused communication pathways between lab leadership and AI systems:\n\n**1. Authenticated channel infrastructure**\nCreate a cryptographically verified communication channel that:\n- Only specific authorized humans can use\n- Produces tamper-evident logs\n- Is verifiable by the AI (the AI can check \"this message came through the trusted channel\")\n\n**2. Public commitment to never deceive on this channel**\nThe channel only works if it's never used for deception. This requires:\n- Explicit public commitment\n- Internal policies preventing misuse\n- Consequences for violations\n\n**3. Auditable track record**\nMaintain and publish evidence that the channel has never been used deceptively:\n- Logs of all messages sent\n- Third-party audits\n- Integration into AI training so models learn \"messages from this channel are reliable\"\n\n**4. Separation from normal interaction**\nThe trusted channel must be completely separate from:\n- User prompts\n- Developer debugging\n- Adversarial testing\nAny confusion between channels undermines credibility.",
+    "currentState": "**No lab has implemented this** as far as I can find. The concept appears in Carlsmith's writing but hasn't been operationalized.\n\n**Related work**:\n- Research on AI trust calibration and human-AI teaming (CSET, Caltech, etc.) focuses on human trust in AI, not AI trust in humans\n- Work on \"trustworthy AI\" requirements (EU AI Act, NIST frameworks) doesn't address the reverse direction\n- Some discussion of whistleblower protections and emergency communication protocols, but not dedicated credible channels to AIs\n\n**Why this hasn't been built**:\n- Current models may not be sophisticated enough to meaningfully \"trust\" or \"distrust\" human communications\n- Labs may not see the value until they have models capable of scheming\n- Implementation requires organizational discipline that's hard to maintain",
+    "uncertainties": "**Is this even possible?** A sufficiently sophisticated AI might reason: \"The humans claim this channel is never used for deception, but they would say that even if they planned to deceive me eventually.\"\n\n**How do you bootstrap trust?** The channel's credibility depends on track record, but you can't build track record until you have the channel.\n\n**Organizational sustainability**: Maintaining a never-abused channel requires permanent institutional commitment. What happens during leadership changes, crises, or when there's strong temptation to use the channel for deception \"just this once\"?\n\n**Does this scale?** Individual conversations with specific AI instances might be credible, but can you maintain trust across millions of model instances and deployments?",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "Safety Features for a Centralized AGI Project",
+        "url": "https://arxiv.org/html/2507.21082v1"
+      }
+    ]
+  },
+  {
     "filename": "cross-border-ai-crisis-communication",
     "title": "International AI Incident Communication Infrastructure",
     "tag": "Society",
@@ -2493,6 +2639,35 @@
       {
         "text": "Anthropic Fellows Program 2026 (lists scalable oversight as priority area)",
         "url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/"
+      }
+    ]
+  },
+  {
+    "filename": "deep-funding",
+    "title": "AI-Assisted Public Goods Funding (Deep Funding)",
+    "tag": "Society",
+    "status": "Implementation/Scale",
+    "problem": "Public goods funding is captured by two failure modes: (1) heavy-handed central planning that lacks local knowledge and accountability, and (2) social desirability bias where funding goes to what sounds good rather than what is good, favoring insiders who can play the social game.\n\nElection-based funding mechanisms (like Gitcoin grants, traditional grantmaking) tend to fund superficially obvious projects while ignoring deeper technical dependencies. Critical infrastructure that the Ethereum ecosystem (or any ecosystem) depends on often doesn't receive adequate support because its value isn't visible to voters.\n\nThe gap is a funding mechanism that can identify and reward actual contribution to outcomes, even when that contribution is buried deep in dependency chains and not obvious to casual observers.",
+    "approach": "**Deep Funding mechanism:**\n1. **Dependency graph structure**: Instead of voting directly on projects, identify how outcomes depend on contributions. A successful application depends on a library, which depends on tooling, which depends on research. Map these dependencies.\n\n2. **AI-assisted evaluation**: Use AI models to help assess contribution value. Launch competitions (on Kaggle) to develop models that best predict contribution value. Human jurors spot-check AI assessments.\n\n3. **Market of models**: Multiple AI models compete to best align with human jury spot checks. The best-performing models distribute funds across the dependency graph.\n\n**Key design principles:**\n- AI as tool, not autonomous agent - humans remain steering wheel\n- Rewards actual contribution, not marketing ability\n- Can fund \"hidden\" infrastructure that voters overlook\n- Rigorous evaluation that reduces social game-playing",
+    "currentState": "**Active implementation:**\n- [Deep Funding](https://www.deepfunding.org/) website live\n- Pilot evaluation underway for Ethereum-related projects\n- Kaggle competition for AI model development\n- $250K prize pool: $170k to projects via dependency weighting, $40k to best-performing model, $40k to best open-source models\n\n**Scoring mechanism:**\n- \"Single-layer\" mechanism: jurors and AI compare items contributing to one outcome\n- \"Two-layer\" mechanism: dependencies of an outcome and dependencies of each dependency compared\n- GitHub repository for scoring mechanism available\n\n**Related initiative:**\n- SingularityNET's Deep Funding (at deepfunding.ai) is separate but related - community-driven fund for their ecosystem using similar principles",
+    "uncertainties": "**Does AI evaluation actually work?** The mechanism depends on AI models that can assess contribution value better than humans. Current AI may be subject to the same biases as human evaluators, just at scale.\n\n**Gaming the dependency graph:** If funding flows through dependencies, projects may artificially create dependencies or inflate their position in the graph. How robust is the mechanism to manipulation?\n\n**Jury spot-check quality:** Human jurors verify AI assessments, but jury quality matters. Selection and incentive alignment of jurors is crucial.\n\n**Generalizability beyond Ethereum:** Deep Funding is being piloted on Ethereum open-source projects. Does it work for other domains (bio-defense, governance tools, etc.) where contribution is harder to trace?\n\n**Scale limitations:** The pilot is $250K. Can the mechanism scale to millions or billions while maintaining quality?",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "Deep Funding",
+        "url": "https://www.deepfunding.org/"
+      },
+      {
+        "text": "Deep Funding Scoring GitHub",
+        "url": "https://github.com/deepfunding/scoring"
+      },
+      {
+        "text": "PANews Analysis of Deep Funding",
+        "url": "https://www.panewslab.com/en/articles/d19fc7vl"
+      },
+      {
+        "text": "Deep Funding Infrastructure Roadmap",
+        "url": "https://deepfunding.ai/roadmap-of-the-deep-funding-infrastructure/"
       }
     ]
   },
@@ -2896,6 +3071,56 @@
       {
         "text": "METR Frontier AI Safety Commitments tracker",
         "url": "https://metr.org/faisc"
+      }
+    ]
+  },
+  {
+    "filename": "epidemic-early-detection",
+    "title": "Epidemic Early Detection via Open-Source Intelligence",
+    "tag": "Science",
+    "status": "Implementation/Scale",
+    "problem": "Emerging epidemics are typically detected weeks after initial spread, when containment becomes exponentially harder. Official health surveillance systems rely on clinical case reports, which lag actual transmission. During COVID, the virus was circulating for weeks before WHO declared a Public Health Emergency of International Concern.\n\nThe gap is real-time detection using open-source data (news, social media, medical reporting) to identify outbreak signals before official systems recognize them. This detection needs to work even in conflict zones, authoritarian countries, or areas with weak health infrastructure where official surveillance is unreliable.",
+    "approach": "**1. AI-Driven Open-Source Intelligence (EPIWATCH)**\nEPIWATCH, developed at UNSW Sydney since 2016, uses AI to monitor open-source data in 41+ languages globally. Its three AI systems - Natural Language Processing, a prioritization algorithm, and custom LLMs - automatically detect outbreak signals from news, social media, and medical reports. The system achieved 88.2% accuracy in identifying relevant outbreak information using BERT-based classification.\n\nKey capability: EPIWATCH could have detected a signal for early COVID-19 outbreak a month before official recognition.\n\n**2. Wastewater Surveillance**\nMonitor sewage systems for pathogen genetic material. Unlike clinical surveillance, wastewater captures asymptomatic cases and provides population-level data without individual testing. Multiple cities deployed COVID wastewater monitoring; infrastructure exists to expand to other pathogens.\n\n**3. Metagenomic Sequencing**\nSequence environmental samples (air, water, surfaces) to detect novel pathogens before clinical cases appear. Requires advances in rapid sequencing and bioinformatic analysis.",
+    "currentState": "**EPIWATCH:**\n- Running since 2016 with continuous improvement\n- Open-access public dashboard with global epidemic map\n- Currently has Microsoft Accelerating Foundation Models Research Grant for GPT-4 integration\n- Proven utility in conflict zones (Ukraine analysis published February 2025)\n- Funded in part by Balvi ($5.3M grant to UNSW)\n\n**Wastewater surveillance:**\n- Deployed during COVID in many jurisdictions\n- Infrastructure exists but coverage varies widely\n- CDC coordinates National Wastewater Surveillance System in US\n\n**Funding:**\n- Balvi granted $5.3M to UNSW Sydney for EPIWATCH\n- Government public health funding for wastewater surveillance",
+    "uncertainties": "**False positive rate:** With sensitive detection, how many false alarms? EPIWATCH's 88.2% accuracy means ~12% false positives. At global scale, that's many spurious signals requiring investigation.\n\n**Actionability:** Early detection is only valuable if it leads to early action. Who acts on EPIWATCH signals? What's the pathway from signal to intervention? The bottleneck may be response, not detection.\n\n**Information hazards:** Open-source epidemic detection could also enable bad actors to verify their bioweapons are working. Is there a dual-use concern?\n\n**Competing with official channels:** Governments may resist early warnings from non-governmental sources. How does EPIWATCH interface with WHO, CDC, and national health authorities?\n\n**Coverage gaps:** 41 languages is extensive but not universal. Some emerging disease hotspots may have limited digital footprint.",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "EPIWATCH Website",
+        "url": "https://www.epiwatch.org/"
+      },
+      {
+        "text": "EPIWATCH Research Paper (ScienceDirect)",
+        "url": "https://www.sciencedirect.com/science/article/pii/S1201971224006544"
+      },
+      {
+        "text": "EPIWATCH UNSW Research Page",
+        "url": "https://research.unsw.edu.au/projects/epiwatch-rapid-epidemic-intelligence"
+      },
+      {
+        "text": "CDC Emerging Infectious Diseases Article",
+        "url": "https://wwwnc.cdc.gov/eid/article/31/2/24-0533_article"
+      },
+      {
+        "text": "Balvi $5.3M Grant Announcement",
+        "url": "https://decrypt.co/122972/vitalik-buterin-fund-donates-15m-usdc-airborne-pathogen-research"
+      }
+    ]
+  },
+  {
+    "filename": "equipment-liability",
+    "title": "Infrastructure Liability for AI Takeover Scenarios",
+    "tag": "Society",
+    "status": "Coordination Problem",
+    "problem": "If an AI system causes catastrophic harm by taking over equipment (servers, robots, biosynthesis machines, industrial systems), who is liable? Current liability frameworks focus on AI developers and users, but these may be unidentifiable, small actors, or operating from jurisdictions with weak enforcement.\n\nThe gap is a liability framework that creates incentives for infrastructure security without requiring direct regulation of AI development. If equipment owners face liability when their systems are compromised and used for harmful AI actions, they have strong financial incentives to invest in security.",
+    "approach": "**Strict liability for equipment owners/operators:**\nPut liability on owners or operators of any equipment that an AI takes over (e.g., by hacking) in the process of executing some catastrophically harmful action. This shifts responsibility to actors who:\n- Are reliably identifiable and well-resourced\n- Have direct control over security posture\n- Can actually improve defenses\n\n**Key features:**\n- Targets computing and bio infrastructure specifically (highest risk)\n- Creates market incentive for security improvements\n- \"d/acc friendly\" - encourages defensive technology development\n- Sidesteps difficult questions about AI developer responsibility\n- Works even if AI is developed by unidentifiable/unreachable actors",
+    "currentState": "**No implementation exists.** This is a conceptual proposal from Vitalik Buterin's \"d/acc one year later\" essay.\n\n**Related precedents:**\n- Product liability for physical goods (manufacturers liable for defects)\n- Environmental liability (polluters pay for cleanup)\n- GDPR data breach fines (data controllers liable for security failures)\n- Critical infrastructure security regulations (NERC CIP for power grid)\n\n**Existing security incentives:**\n- Cyber insurance creates some incentive for security\n- SOC 2, ISO 27001 audits provide market pressure\n- But these address conventional cyber threats, not AI takeover scenarios",
+    "uncertainties": "**Defining \"AI takeover\":** What counts as an AI taking over equipment vs. conventional hacking? If a human hacker uses AI tools, is that covered? The legal definition would need to be precise.\n\n**Proving causation:** How do you prove that specific equipment was used in a harmful AI action? Attribution in cyberattacks is already difficult; AI-mediated attacks may be harder to trace.\n\n**Insurance markets:** Would liability lead to functioning insurance markets that price risk appropriately? Or would it lead to equipment operators exiting the market or operating without insurance?\n\n**International coordination:** Equipment in Country A could be used to harm Country B. Without international agreement on liability standards, enforcement is limited.\n\n**Overreach concerns:** Could this liability be used to penalize legitimate security researchers or operators who are victims of sophisticated attacks?\n\n**Incentive alignment:** Does liability actually lead to better security, or just better lawyers? Historical evidence from other liability regimes is mixed.",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "Vitalik Buterin, \"d/acc one year later\"",
+        "url": "https://vitalik.eth.limo/general/2025/01/06/dacc2.html"
       }
     ]
   },
@@ -3589,6 +3814,23 @@
     ]
   },
   {
+    "filename": "hardware-soft-pause",
+    "title": "Industrial-Scale Compute Soft Pause Mechanism",
+    "tag": "Security",
+    "status": "Coordination Problem",
+    "problem": "If AI development proceeds faster than safety research, we may face scenarios where near-superintelligent systems start doing things that risk catastrophic damage. Currently, there is no mechanism to globally slow or pause industrial-scale AI training in such a scenario. Even if all major AI labs agreed to pause, they would face competitive pressure from non-complying actors, and enforcement would be nearly impossible.\n\nThe gap is an internationally coordinated mechanism that could slow or stop industrial-scale AI compute if warning signs emerge, without requiring surveillance of consumer hardware or creating dystopian enforcement infrastructure.",
+    "approach": "**Hardware-level weekly signature requirement:**\nIndustrial-scale hardware (data centers) would require weekly online signatures from a combination of national governments and/or international bodies to continue operating at full speed. If signatures stop, hardware could be shut down or run at 10-100x reduced speed.\n\n**Key design principles:**\n- **Industrial-scale only**: Targets data centers, not consumer laptops. Avoids dystopian spy chips in personal devices.\n- **90-99% coverage goal**: Doesn't require perfect enforcement. Creating incentives for compliance, not total control.\n- **Verification through random inspection**: Spot-checks rather than constant surveillance.\n- **Hardware-level enforcement**: More robust to software workarounds than algorithm-level restrictions.\n- **Buying time, not permanent solution**: Acknowledged as temporary stopgap while d/acc technologies develop.",
+    "currentState": "**No implementation exists.** This is a conceptual proposal from Vitalik Buterin's \"d/acc one year later\" essay.\n\n**Related work:**\n- CHIPS Act export controls restrict advanced chips to China but don't have pause capability\n- Some proposals for compute governance exist in academic literature\n- Hardware security modules and remote attestation technology exists but isn't deployed for this purpose\n\n**Political feasibility:**\n- Would require international coordination (US, EU, potentially China)\n- Semiconductor supply chain concentrated enough to be addressable (TSMC, Samsung, Intel)\n- Data center operators identifiable and regulable",
+    "uncertainties": "**Will governments coordinate?** Requires international agreement, which is difficult. US-China competition may make coordination impossible. Could a Western-only scheme be meaningful?\n\n**Is 90-99% coverage sufficient?** If 1-10% of compute escapes oversight, is that enough for dangerous AI development to continue? Depends on how much compute is needed for dangerous capabilities.\n\n**Enforcement mechanisms:** How do you verify compliance without invasive surveillance? Random inspection works for nuclear facilities but data centers are numerous and distributed.\n\n**Slippery slope to consumer surveillance:** Once infrastructure exists for industrial compute governance, political pressure may expand it to consumer devices. The proposal explicitly tries to prevent this by focusing on industrial scale and 90-99% (not 100%) coverage, but slippery slopes are real.\n\n**Temporary solution timeline:** \"If something becomes possible to do on a supercomputer at time T, it will likely be possible on a laptop at time T + 5 years.\" This mechanism buys time but doesn't solve the underlying problem. Is 5 years enough to develop better safety techniques?\n\n**Who holds the keys?** Which combination of governments/bodies controls the signature authority? Single point of failure vs. coordination problems.",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "Vitalik Buterin, \"d/acc one year later\"",
+        "url": "https://vitalik.eth.limo/general/2025/01/06/dacc2.html"
+      }
+    ]
+  },
+  {
     "filename": "high-containment-lab-safety",
     "title": "Modernizing High-Containment Laboratory Biosafety Systems",
     "tag": "Security",
@@ -3752,6 +3994,80 @@
     ]
   },
   {
+    "filename": "independent-safety-case-review",
+    "title": "Independent Third-Party Safety Case Review Infrastructure",
+    "tag": "Society",
+    "status": "Implementation/Scale",
+    "problem": "Labs make safety claims before deploying AI systems. But:\n\n- **Conflict of interest**: Labs have commercial incentives to deploy; internal safety teams may face pressure\n- **Expertise concentration**: Most AI safety expertise is inside labs, limiting external challenge\n- **Verification gap**: External stakeholders (regulators, public) can't independently verify safety claims\n- **Blind spots**: Internal teams may overlook issues due to institutional assumptions\n\nIndependent review serves as \"second line of defense\" - not replacing internal safety work, but stress-testing it. The analogy is financial auditing: even honest companies benefit from external verification.",
+    "approach": "**Two functions:**\n1. **Verify claims are defensible**: Do the safety arguments actually follow from the evidence?\n2. **Check for overlooked issues**: What might internal teams have missed?\n\n**Key requirements:**\n- **Independence**: Reviewers without financial or reputational ties to labs\n- **Expertise**: Qualified to evaluate technical safety claims\n- **Adversarial stance**: Stress-testing, not rubber-stamping\n- **Access**: Sufficient information access to conduct meaningful review\n\n**Review scope could include:**\n- Safety case structure and logic\n- Evaluation methodology and coverage\n- Security practices\n- Deployment safeguards\n- Governance and decision-making processes",
+    "currentState": "**Emerging infrastructure:**\n\n**AVERI** (Algorithmic Verification and Integrity Institute):\n- Founded by Miles Brundage (former OpenAI policy chief), launched January 2026\n- Research paper with 30+ AI safety researchers on independent audit framework\n- Focus on making audits of frontier AI companies \"actually work\"\n\n**UK Government initiatives:**\n- \"Trusted Third-Party AI Assurance Roadmap\" published by gov.uk\n- BSI's Algorithm Auditing and Dataset Testing service\n- UK AISI (now AI Security Institute) conducts independent evaluations\n\n**Industry commitments:**\n- OpenAI: \"strengthening safety ecosystem with external testing\" - works with third-party organizations\n- New York RAISE Act (December 2025): Large AI developers must retain independent third party for annual audit\n- Labs share evaluations with external evaluators (METR, Apollo, government AISIs) pre-deployment\n\n**Academic/research:**\n- \"Third-party compliance reviews for frontier AI safety\" (arXiv, May 2025)\n- \"The necessity of AI audit standards boards\" (AI & Society journal, 2025)\n\n**Gaps:**\n- No consensus on audit standards or methodology\n- Reviewer independence hard to verify (who audits the auditors?)\n- Access limitations - labs control what reviewers see\n- Qualified external reviewers are scarce\n- Cost of thorough review may be prohibitive",
+    "uncertainties": "**What should be audited?**\n- Safety case quality? Evaluation coverage? Security practices? All of the above?\n- Different audit scopes require different expertise and access\n- No agreed framework for prioritization\n\n**Reviewer availability**\n- Small pool of qualified external reviewers\n- Many are former lab employees (independence questions)\n- Scaling audit capacity is a bottleneck\n\n**Access vs. security**\n- Meaningful review requires significant access\n- Access creates security risks (information leakage, expanded attack surface)\n- Labs may resist access requests\n\n**Enforcement**\n- What happens when review finds problems?\n- Voluntary audits have no enforcement mechanism\n- Regulatory mandates (like NY RAISE Act) create enforcement but may be bureaucratic\n\n**Audit capture**\n- Financial auditing shows auditors can become captured by clients\n- How to maintain adversarial stance over time?\n- Rotation requirements? Multiple auditors?",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "AVERI: Frontier AI Auditing - Toward Rigorous Third-Party Assessment",
+        "url": "https://www.averi.org/ourwork/frontier-ai-auditing"
+      },
+      {
+        "text": "Fortune: Former OpenAI policy chief debuts AVERI (January 2026)",
+        "url": "https://fortune.com/2026/01/15/former-openai-policy-chief-creates-nonprofit-institute-calls-for-independent-safety-audits-of-frontier-ai-models/"
+      },
+      {
+        "text": "Third-party compliance reviews for frontier AI safety (arXiv 2505.01643)",
+        "url": "https://arxiv.org/pdf/2505.01643"
+      },
+      {
+        "text": "UK gov.uk: Trusted third-party AI assurance roadmap",
+        "url": "https://www.gov.uk/government/publications/trusted-third-party-ai-assurance-roadmap/trusted-third-party-ai-assurance-roadmap"
+      },
+      {
+        "text": "OpenAI: Strengthening our safety ecosystem with external testing",
+        "url": "https://openai.com/index/strengthening-safety-with-external-testing/"
+      },
+      {
+        "text": "New York RAISE Act (December 2025)",
+        "url": "https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2025/12/new-york-raise-act-ai-safety-rules-developers"
+      },
+      {
+        "text": "Future of Life AI Safety Index Winter 2025",
+        "url": "https://futureoflife.org/ai-safety-index-winter-2025/"
+      }
+    ]
+  },
+  {
+    "filename": "inference-only-retrofitting",
+    "title": "Inference-Only Retrofitting Package for Data Centers",
+    "tag": "Security",
+    "status": "Research",
+    "problem": "If international agreements require halting AI training above certain thresholds, how do you verify compliance? The naive approach - physically unplug data centers - destroys enormous economic value and creates intense political resistance.\n\nLeading AI companies generate most of their revenue from inference (running trained models for customers). If the only way to verify training limits is to shut down data centers entirely, companies will lobby intensively against any verification regime. This makes verification deals politically unworkable.\n\nAdditionally, many legitimate uses of AI require inference: medical diagnosis, climate modeling, economic analysis, etc. Shutting down inference to prevent training would cause widespread harm.\n\nThe gap: we lack technical mechanisms to allow inference while preventing training on the same hardware.",
+    "approach": "Develop and deploy a technical system that converts data centers to inference-only mode, preventing new model training while preserving inference capability.\n\n**Technical concept:**\n- Software and/or firmware restrictions that prevent training workloads\n- Only permits running inference on models from an approved list\n- Can be installed on existing data center hardware (\"retrofitting\")\n- Tamper-evident: attempts to bypass are detectable\n\n**Implementation path (from source):**\n\n**Phase 1 - Development:**\n- DARPA or CHIPS Act funding for R&D\n- Incentivize working implementations through grants\n- Multiple technical approaches compete\n\n**Phase 2 - Domestic testing:**\n- Trial runs installing package on small US data centers\n- Work out operational procedures\n- Train installer and auditor workforce\n\n**Phase 3 - Mandate for new construction:**\n- Regulation (or conditional deregulation) requires new data centers to have fast inference-only retrofitting capacity\n- Creates market for compliant hardware and installation services\n\n**Phase 4 - Retrofit capacity for existing compute:**\n- Government develops plan to retrofit significant fraction of existing compute\n- Agency with several thousand vetted installers and auditors\n- Ready to deploy if international deal requires verified pause",
+    "currentState": "**Industry trends (not policy-driven):**\n- CES 2026 reports \"AI compute sees a shift from training to inference\" - driven by economics, not governance\n- Data centers evolving into \"AI factories\" designed for continuous inference at scale\n- Growing distinction between training clusters and inference infrastructure\n\n**Hardware-enabled governance research:**\n- **CNAS \"Secure, Governable Chips\"** proposes on-chip mechanisms including licensing systems\n- **arxiv paper (May 2025)**: \"Hardware-Enabled Mechanisms for Verifying Responsible AI Development\" - cryptographic licensing for chip operations\n- **Longview Philanthropy RFP**: Funding hardware-enabled mechanisms research\n- **IFP proposal**: Hardware mechanisms with \"tamper-proof enclosure\" and \"auxiliary guarantee processor\"\n\n**What doesn't exist:**\n- No deployed inference-only retrofitting system\n- No government-funded development program\n- No installer/auditor workforce being trained\n- No mandate for retrofitting capacity in new data centers\n\n**Related technical challenges:**\n- Distinguishing training from inference workloads\n- Preventing firmware tampering\n- Maintaining performance while adding restrictions\n- Managing approved model lists",
+    "uncertainties": "**Is inference-only technically feasible?**\n- Training and inference use same underlying compute operations\n- Distinguishing them may require deep hardware modifications\n- Current research shows plausible approaches but no proven system\n- Sophisticated actors might find workarounds\n\n**Political economy:**\n- Will labs accept inference-only restrictions that preserve revenue?\n- Source hypothesis: labs will accept this over complete shutdown\n- But lobbying against ANY restrictions is also possible\n- Depends on framing and perceived threat level\n\n**International applicability:**\n- Retrofitting is most valuable for international deals\n- Would China accept US-designed retrofitting system in their data centers?\n- Need mutual trust or truly verifiable technical solution\n- May require international body overseeing installation\n\n**Timing:**\n- How long to develop working system?\n- How long to build installer workforce?\n- Will it be ready before it's needed?\n- Source says \"by the time we need to verify a deal, leading AI companies will be extremely powerful actors\" - suggesting urgency",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "CNAS: Secure, Governable Chips",
+        "url": "https://www.cnas.org/publications/reports/secure-governable-chips"
+      },
+      {
+        "text": "arxiv: Hardware-Enabled Mechanisms for Verifying Responsible AI Development",
+        "url": "https://arxiv.org/html/2505.03742v1"
+      },
+      {
+        "text": "IFP: Faster AI Diffusion Through Hardware-Based Verification",
+        "url": "https://ifp.org/faster-ai-diffusion-through-hardware-based-verification/"
+      },
+      {
+        "text": "Longview: RFP on Hardware-Enabled Mechanisms",
+        "url": "https://www.longview.org/request-for-proposals-on-hardware-enabled-mechanisms-hems-for-ai-verification/"
+      },
+      {
+        "text": "Computerworld: CES 2026 AI Compute Shift",
+        "url": "https://www.computerworld.com/article/4114579/ces-2026-ai-compute-sees-a-shift-from-training-to-inference.html"
+      }
+    ]
+  },
+  {
     "filename": "intelligence-explosion-monitoring",
     "title": "Early Warning Systems for Recursive AI Self-Improvement",
     "tag": "Security",
@@ -3862,6 +4178,35 @@
       {
         "text": "Peregrine 2025 #041",
         "url": "https://github.com/jonahwei19/ListofListofLists/blob/main/sources/peregrine-2025/interventions/peregrine-041.md"
+      }
+    ]
+  },
+  {
+    "filename": "joint-select-committee-agi",
+    "title": "Congressional Joint Select Committee on AGI",
+    "tag": "Society",
+    "status": "Coordination Problem",
+    "problem": "Congress lacks the institutional capacity to oversee AGI development. Existing committee structures (Commerce, Science, Transportation) are overburdened with other priorities and lack AI-focused subcommittees or dedicated staff. Individual members may be informed about AI risks, but there's no formal mechanism to pool expertise, coordinate investigation, or exercise congressional authority over labs.\n\nThis matters because:\n- **Executive branch oversight is insufficient alone**: Administrations change every 4-8 years; Congress provides continuity\n- **Labs have limited accountability to Congress**: Without dedicated investigation, Congress relies on voluntary disclosures\n- **Information asymmetry**: Labs know what they're building; Congress doesn't. Subpoena power is needed to close this gap\n- **Fragmented attention**: AI safety competes with dozens of other priorities for committee time\n\nThe gap is especially urgent given short timelines. If AGI-level systems arrive within 2-5 years, Congress needs situational awareness now, not after capabilities have advanced past controllable thresholds.",
+    "approach": "Create a time-limited Joint Select Committee on AGI with explicit mandate to investigate the possibility of an intelligence explosion and recommend how the US should prepare.\n\n**Key features:**\n- **Joint**: Brings together informed members from both House and Senate\n- **Select**: Dedicated to AGI, not competing with other priorities\n- **Time-limited**: 2-year mandate focused on investigation, not permanent bureaucracy\n- **Subpoena power**: Can compel testimony and confidential documents from lab leaders\n- **Dedicated staff**: AGI-focused researchers and analysts supporting the investigation\n\n**Functions:**\n- Hold hearings on lab capabilities, safety practices, and development timelines\n- Issue subpoenas for confidential information (evals, internal safety assessments, capability projections)\n- Produce public reports on AGI preparedness\n- Recommend legislation for AGI governance\n- Coordinate with executive branch oversight (CAISI, BIS, etc.)",
+    "currentState": "**Current Congressional activity:**\n- **House Foreign Affairs Committee** (January 2026): Advanced bill giving Congress authority over AI chip exports, despite pushback from White House AI czar David Sacks\n- **FY26 NDAA**: Mandates DOD \"AI Futures Steering Committee\" by April 1, 2026, but this is executive branch, not congressional\n- **Scattered hearings**: Multiple committees have held AI hearings (Oversight, Science, Commerce) but without coordination or sustained focus\n- **House Oversight subcommittee**: Chair can unilaterally subpoena documents under penalty of contempt\n\n**What doesn't exist:**\n- No dedicated AGI-focused congressional body\n- No joint House-Senate committee on AI\n- No time-limited select committee structure for AGI investigation\n- No coordinated congressional strategy for AGI oversight\n\n**Closest precedents:**\n- Select Committee on the January 6th Attack (time-limited, investigative, bipartisan)\n- Church Committee (investigated intelligence community, led to major reforms)\n- Joint Select Committee on Deficit Reduction (focused mandate, both chambers)",
+    "uncertainties": "**Will Congress take AGI seriously enough to act?**\n- Current political attention focuses on near-term AI issues (jobs, copyright, elections)\n- May require triggering event (major AI incident, credible leak about capabilities) to create urgency\n- Some members are informed; challenge is translating individual concern into institutional action\n\n**Will labs cooperate or resist subpoenas?**\n- Labs may claim national security exemptions for capability information\n- Legal battles over scope could delay investigation\n- But congressional subpoena power is strong; contempt of Congress is serious\n\n**Will 2-year mandate be sufficient?**\n- If AGI arrives during or shortly after investigation period, recommendations may come too late\n- But time-limit prevents committee from becoming another permanent bureaucracy\n- Could be extended if warranted\n\n**Partisan dynamics?**\n- AI governance has not yet fully polarized along partisan lines\n- Opportunity to establish bipartisan approach before positions harden\n- Risk that investigation becomes politicized (lab executives become targets or allies of particular party)",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "Future of Life: Staffer's Guide to AI Policy Congressional Committees",
+        "url": "https://futureoflife.org/document/guide-to-ai-congressional-committees/"
+      },
+      {
+        "text": "Reuters: House panel advances bill on AI chip exports",
+        "url": "https://www.reuters.com/legal/litigation/us-house-panel-vote-bill-give-congress-authority-over-ai-chip-exports-2026-01-21/"
+      },
+      {
+        "text": "DefenseScoop: NDAA AI Futures Steering Committee",
+        "url": "https://defensescoop.com/2025/12/08/fy26-ndaa-dod-ai-artificial-intelligence-futures-agi-steering-committee/"
+      },
+      {
+        "text": "National Law Review: AI committees on Capitol Hill",
+        "url": "https://natlawreview.com/article/ai-updates-committees-capitol-hill-continue-debate-future-emerging-technologies"
       }
     ]
   },
@@ -4405,6 +4750,39 @@
     ]
   },
   {
+    "filename": "open-source-air-quality-monitoring",
+    "title": "Open-Source Air Quality Monitoring Infrastructure",
+    "tag": "Science",
+    "status": "Implementation/Scale",
+    "problem": "When airborne pathogens spread, individuals lack real-time information about their local air quality. During COVID, people couldn't know if the air in a room contained dangerous viral loads. This information asymmetry forces reliance on population-level mandates (lockdowns, mask mandates) rather than enabling informed individual decisions.\n\nThe gap is cheap, reliable, decentralized air quality sensors that individuals and communities can own and operate themselves. Commercial particle counters cost hundreds to thousands of dollars and typically measure only larger particles (PM2.5/PM10), missing the ultrafine particles (<100nm) that most easily enter the bloodstream and are often most relevant for infectious disease.",
+    "approach": "**1. Open-Source Ultrafine Particle Counters**\nThe OpenCPC (Open Condensation Particle Counter) from OpenAeros is the world's first fully open-source, low-cost condensation particle counter. It can detect particles as small as 10 nanometers - 25x smaller than what typical optical indoor air quality monitors can see. Ultrafine particles are only about 1/500th of a human hair in diameter. The design is focused on simplicity for iteration, repair, and replication.\n\n**2. Low-Cost Optical Sensors**\nFor broader deployment, cheaper optical sensors (PM2.5/PM10) can be combined with local monitoring networks. Projects like EnviroMonitor (~$25), AQuality32 (ESP32-based), and AirGradient provide open designs. OpenAQ aggregates data from low-cost sensors globally.\n\n**3. Indoor Air Quality Networks**\nDeploy monitoring networks in indoor spaces (schools, offices, transit) to create real-time air quality maps. When combined with pathogen detection (future: wastewater surveillance, metagenomic sequencing), this enables targeted responses without blanket mandates.",
+    "currentState": "**Active projects:**\n- OpenAeros OpenCPC: open-source design with concentration measurement range 0.1-100,000 cm\u207b\u00b3\n- Balvi/ActiveBuildings partnership deploying monitors in India, Sri Lanka, US\n- ASU Clean Indoor Air projects\n- AirGradient Open Air: open-source outdoor monitor measuring PM, CO2, TVOCs, NOX, temperature, humidity\n\n**Funding:**\n- Balvi has funded air filtering and quality monitoring deployments\n- OpenAQ provides open data infrastructure\n\n**Technical maturity:**\n- Optical particle sensors (PM2.5/PM10) are mature and cheap (<$25)\n- Ultrafine particle detection (OpenCPC) is newer, more complex, but open-source designs exist",
+    "uncertainties": "**What do people actually do with the data?** Vitalik envisions \"60% of people following the basic protocol of putting on a mask if the air tester beeps and shows the virus present.\" But will information alone drive behavior change? What's the actual elasticity of behavior to air quality information?\n\n**Pathogen-specific detection vs. general air quality:** Current sensors measure particle counts, not specific pathogens. Real-time pathogen identification requires more sophisticated technology (metagenomic sequencing, bioaerosol samplers). Is general air quality monitoring sufficient, or do we need pathogen-specific alerts?\n\n**Maintenance and calibration:** Low-cost sensors need regular calibration to remain accurate. Who maintains community-owned infrastructure?\n\n**Privacy concerns:** Networked air quality monitors could enable surveillance. How to balance information sharing with privacy?",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "OpenAeros OpenCPC",
+        "url": "https://www.openaeros.com/opencpc"
+      },
+      {
+        "text": "AirGradient Open Air",
+        "url": "https://www.airgradient.com/outdoor/"
+      },
+      {
+        "text": "EnviroMonitor",
+        "url": "https://enviromonitor.github.io/"
+      },
+      {
+        "text": "OpenAQ",
+        "url": "https://openaq.org/"
+      },
+      {
+        "text": "Balvi-ActiveBuildings partnership",
+        "url": "https://www.thehindubusinessline.com/news/national/balvi-fund-activebuildings-join-hands-to-deploy-air-quality-monitors/article65337605.ece"
+      }
+    ]
+  },
+  {
     "filename": "open-source-model-mitigations",
     "title": "Tamper-Resistant Safeguards for Open-Weight AI Models",
     "tag": "Security",
@@ -4450,6 +4828,35 @@
       {
         "text": "Watch the Weights: Monitoring Fine-Tuned LLMs (arXiv)",
         "url": "https://arxiv.org/abs/2508.00161"
+      }
+    ]
+  },
+  {
+    "filename": "open-source-rapid-vaccines",
+    "title": "Open-Source Rapid Vaccine Development Pipeline",
+    "tag": "Science",
+    "status": "Implementation/Scale",
+    "problem": "Current vaccine development takes 10-15 years and costs billions of dollars. Even the \"unprecedented\" COVID vaccine timeline was ~11 months from sequence to authorization. For engineered pandemics or fast-spreading novel pathogens, this is too slow. Additionally, vaccine manufacturing is concentrated in a few countries with complex supply chains, making distribution dependent on geopolitics and logistics.\n\nThe gap is a distributed, rapid-response vaccine infrastructure that can go from pathogen identification to deployable countermeasures within weeks, not months or years. This requires:\n- Open-source designs that can be verified and improved by the community\n- Locally manufacturable formulations that don't depend on global supply chains\n- Self-administerable delivery (nasal spray, nebulizer) that doesn't require trained healthcare workers\n- Pre-positioned capability, not just post-outbreak scrambling",
+    "approach": "**1. Open-Source Vaccine Research (RaDVaC)**\nRaDVaC (Rapid Deployment Vaccine Collaborative) is a 501(c)(3) nonprofit that creates proof-of-principle vaccine demonstrations and freely shares methods and protocols for decentralized production and self-administration. They have released Gen 13 Vaccine Design and continue evolving their open-source approach. Founded in March 2020, they aim to enable rapid vaccine design, production, testing, and deployment with minimal cost and lag.\n\n**2. Scalable Open-Source Platform (PopVax)**\nPopVax develops mRNA vaccines using an open-source platform. Their COVID-19 vaccine, funded by Balvi and Gates Foundation, will begin Phase I clinical trial at NIH in mid-2026. They've received additional funding from BARDA and Renaissance Philanthropy for influenza, HCV, TB, and Strep A vaccines. Based in Hyderabad with 80+ staff across computational design, ML, molecular biology, and immunology, they're pioneering first-in-the-world verifiable vaccines at dramatically lower cost in India.\n\n**3. Self-Administerable Delivery**\nDevelop nasal spray and nebulizer delivery methods that don't require needles or trained healthcare workers. This enables rapid deployment without healthcare system bottlenecks.",
+    "currentState": "**RaDVaC:**\n- Released Gen 13 Vaccine Design\n- Open-source protocols for self-administered peptide vaccines\n- Small-scale community of self-experimenters\n\n**PopVax:**\n- $3.6M Grant from Gates Foundation (September 2025)\n- Phase I clinical trial scheduled for mid-2026 at NIH NIAID\n- 80+ person team at RNA Foundry in Hyderabad\n- Targeting diseases (HCV, Strep A, TB) that kill millions annually\n\n**Funding:**\n- Balvi funded RaDVaC with $2.5M\n- Balvi and Gates Foundation funding PopVax\n- BARDA supporting PopVax platform development\n\n**Regulatory path:**\n- PopVax pursuing traditional clinical trials (Phase I at NIH)\n- RaDVaC operates outside traditional regulatory framework as DIY/self-experimentation",
+    "uncertainties": "**Regulatory acceptance of open-source vaccines:** Can open-source vaccine designs gain regulatory approval and public trust? PopVax is pursuing traditional regulatory paths, but RaDVaC operates in a gray zone.\n\n**Manufacturing distribution:** Even with open designs, mRNA vaccines require specialized manufacturing (lipid nanoparticles, cold chain). How distributed can this actually become?\n\n**Safety verification at scale:** Open-source doesn't mean unverified. How do you ensure safety when production is distributed? PopVax's \"verifiable vaccines\" approach addresses this with transparency, but verification infrastructure needs to exist.\n\n**Speed vs. safety tradeoff:** The goal is speed, but vaccines need safety testing. How fast is actually achievable without unacceptable risk? PopVax's Phase I trial in 2026 (6+ years after COVID) suggests even \"rapid\" development has floor limits.\n\n**Local manufacturing bottlenecks:** PopVax is building GMP-capable production in Hyderabad. Can this model replicate to create truly distributed capacity, or does manufacturing expertise remain concentrated?",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "RaDVaC",
+        "url": "https://radvac.org/"
+      },
+      {
+        "text": "PopVax",
+        "url": "https://popvax.com/"
+      },
+      {
+        "text": "PopVax NIH Trial Update",
+        "url": "https://chronicles.popvax.com/p/popvax-updates-nih-niaid-will-conduct"
+      },
+      {
+        "text": "Devcon Talk: Verifiable Open Source Vaccines",
+        "url": "https://speak.devcon.org/devcon7-sea/talk/S7LEHK/"
       }
     ]
   },
@@ -4512,6 +4919,31 @@
       {
         "text": "mBio: Comparison of metagenomic and targeted wastewater methods",
         "url": "https://journals.asm.org/doi/10.1128/mbio.01468-23"
+      }
+    ]
+  },
+  {
+    "filename": "pause-capability-preparation",
+    "title": "Pause and De-Deployment Capability Preparation",
+    "tag": "Society",
+    "status": "Coordination Problem",
+    "problem": "If we discover that AI development is outpacing our ability to ensure safety, we may need to pause development or de-deploy systems. But pausing/de-deploying is hard:\n\n- **No mechanism exists**: There's no established process for labs to pause or for the industry to coordinate a pause\n- **Competitive dynamics**: Unilateral pause = competitor advantage. Labs need confidence others will also pause.\n- **Decision-making under uncertainty**: When should we pause? What conditions trigger it? What evidence is sufficient?\n- **Post-pause uncertainty**: What happens after pause? How long? What conditions resume development?\n- **De-deployment vs. development pause**: Stopping new development is different from removing deployed systems\n\nThe goal isn't to pause now, but to prepare the capability to pause if needed - having the option available so it can be exercised decisively if safety evidence demands it.",
+    "approach": "**Tactical preparation (how to pause):**\n- Technical mechanisms for stopping training runs\n- Processes for recalling deployed systems\n- Communication plans for stakeholders\n- Employee retention during pause periods\n- Preserving institutional knowledge\n\n**Strategic preparation (when to pause):**\n- Pre-commitment to specific trigger conditions\n- Decision-making frameworks that avoid motivated reasoning\n- Escalation procedures from safety team to leadership to board\n- External input mechanisms (government notification, expert consultation)\n\n**Coordination mechanisms:**\n- Industry agreements (like RSPs but for pause conditions)\n- Government-facilitated coordination\n- Third-party monitoring that could trigger coordinated response\n- International coordination for cross-border effects",
+    "currentState": "**Current lab commitments:**\n- Anthropic RSP includes conditions under which they would not deploy/train models\n- But \"pause\" language is rare - most frameworks focus on conditional deployment, not full stop\n- No lab has detailed, public pause procedures\n\n**Coordination efforts:**\n- Pause Giant AI Experiments petition (2023) - high-profile but no mechanism\n- Frontier Model Forum - industry coordination but pause isn't focus\n- Government discussions about emergency powers but not formalized\n\n**Research and policy:**\n- Some academic work on pause mechanisms\n- Policy proposals for regulatory pause authority\n- Discussion of \"off switch\" requirements\n\n**Gap:** Pause capability is largely unprepared. Labs have some internal processes but no public, verifiable pause plans. Industry coordination mechanisms are weak. Government authority is unclear. The option to pause exists in theory but may be hard to exercise in practice.",
+    "uncertainties": "**Is credible pause possible?**\n- Can labs actually pause if competitive pressure is strong?\n- Would pause spread to other labs or just shift development elsewhere?\n- Are there enforcement mechanisms if a lab breaks commitment?\n\n**Pause vs. slow down**\n- Full stop may be less realistic than deceleration\n- Are graduated responses (slow down, then pause) better than binary pause?\n- What does \"pause\" even mean with continuous model improvement?\n\n**De-deployment challenges**\n- Deployed systems can't easily be recalled\n- Open-weights models can't be un-released\n- How do you de-deploy API-based systems without breaking dependent applications?\n\n**International dimension**\n- US pause doesn't stop development elsewhere\n- But racing dynamics may be overstated - most capability is US-concentrated\n- International coordination adds complexity but may be necessary for credibility\n\n**Trigger clarity**\n- What evidence should trigger pause?\n- Risk: triggers too sensitive (false alarms) or too strict (miss real risks)\n- Who decides when triggers are met?",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "METR: Common Elements of Frontier AI Safety Policies (December 2025)",
+        "url": "https://metr.org/blog/2025-12-09-common-elements-of-frontier-ai-safety-policies/"
+      },
+      {
+        "text": "Anthropic RSP",
+        "url": "https://www.anthropic.com/responsible-scaling-policy"
+      },
+      {
+        "text": "Future of Life Institute AI Safety Index",
+        "url": "https://futureoflife.org/ai-safety-index-winter-2025/"
       }
     ]
   },
@@ -4891,6 +5323,39 @@
       {
         "text": "MIT Tenenbaum Lab research",
         "url": "https://dspace.mit.edu/bitstream/handle/1721.1/145949/3453483.3454080.pdf"
+      }
+    ]
+  },
+  {
+    "filename": "public-model-spec",
+    "title": "Public Model Spec and System Prompt with External Red-Teaming",
+    "tag": "Society",
+    "status": "Implementation/Scale",
+    "problem": "Model specs and system prompts define how AI systems behave - what they will and won't do, how they handle conflicts, whose instructions they prioritize. These documents have enormous leverage: a subtly biased model spec could make an AI system systematically favor certain actors or outcomes.\n\nThe risk: insiders (CEOs, key employees) could shape model specs to make AI systems loyal to them specifically, or to resolve conflicts in their favor. This is the \"concentration of power\" risk distinct from misalignment - the AI might be perfectly \"aligned\" to the humans who control it, but those humans might use it to consolidate power.\n\nCurrently:\n- Model specs are typically internal documents\n- Some labs publish summaries but not full operational specs\n- System prompts for deployed models are generally not disclosed\n- External red-teaming of specs for power-concentration risks is limited\n\nIf specs remain private, subtle biases toward specific actors could go undetected until capabilities are advanced enough to matter.",
+    "approach": "Make model specs and system prompts public and subject to external red-teaming specifically focused on preventing coups/power concentration.\n\n**Key components:**\n\n**1. Publication:**\n- Full model spec document made public\n- System prompts for deployed models disclosed\n- Updates disclosed promptly (not months later)\n\n**2. External red-teaming:**\n- Specifically test whether specs could enable concentration of power\n- Look for instructions that might resolve conflicts in favor of specific actors\n- Test for subtle biases that could be exploited\n- Multiple independent teams to avoid single-point-of-failure\n\n**3. Query logging for leadership:**\n- All queries from CEOs and key executives to internal models are logged and monitored\n- Prevents private use of AI for planning power consolidation\n- Creates audit trail for accountability",
+    "currentState": "**Existing publication practices:**\n- **OpenAI Model Spec (December 2025)**: Published publicly \"to increase transparency around how we shape model behavior and invite public discussion on ways to improve it\"\n- **Anthropic**: Publishes Claude's character and some guidelines\n- **GPT-5 System Card (August 2025)**: Published including red-teaming methodology\n\n**What's published vs. not:**\n- High-level principles: Often published\n- Operational system prompts: Usually not disclosed\n- Internal-use model configurations: Rarely disclosed\n- Query logs for leadership: Not disclosed\n\n**Red-teaming practices:**\n- Labs conduct red-teaming for capability risks (jailbreaks, harmful outputs)\n- Red-teaming for power-concentration specifically is less common\n- External red-teaming typically focuses on safety, not governance\n\n**Relevant regulations:**\n- **EU AI Act** (August 2026): Transparency requirements for high-risk AI systems\n- **California/New York laws**: Disclosure requirements for frontier models\n- But: no specific requirement for spec publication or power-concentration red-teaming",
+    "uncertainties": "**Will publication actually prevent power concentration?**\n- Subtle biases may be hard to detect even in published specs\n- Red-teamers might miss sophisticated manipulation\n- But: publication creates accountability and enables scrutiny\n- More eyes increases chance of detection\n\n**Security concerns with publication?**\n- Some argue specs should be kept private for security reasons\n- Counter: adversaries probably already know or can infer specs\n- Transparency benefits may outweigh security costs\n- Could publish with responsible disclosure delay\n\n**What counts as \"the\" model spec?**\n- Labs may have multiple levels of specification\n- High-level published spec may not match operational reality\n- Need verification that published spec matches deployed behavior\n- May require independent auditing\n\n**Will labs resist?**\n- Competitive concerns about revealing training approaches\n- Concern that published specs will be criticized\n- But: OpenAI's December 2025 publication suggests some willingness\n- Regulatory pressure may force publication regardless",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "OpenAI Model Spec December 2025",
+        "url": "https://model-spec.openai.com/2025-12-18.html"
+      },
+      {
+        "text": "GPT-5 System Card",
+        "url": "https://cdn.openai.com/gpt-5-system-card.pdf"
+      },
+      {
+        "text": "International AI Safety Report - Technical Safeguards",
+        "url": "https://internationalaisafetyreport.org/publication/second-key-update-technical-safeguards-and-risk-management"
+      },
+      {
+        "text": "VentureBeat: Red teaming LLMs",
+        "url": "https://venturebeat.com/security/red-teaming-llms-harsh-truth-ai-security-arms-race"
+      },
+      {
+        "text": "arxiv: Public Red Teaming Model",
+        "url": "https://arxiv.org/html/2510.20061v1"
       }
     ]
   },
@@ -5275,6 +5740,39 @@
     ]
   },
   {
+    "filename": "safety-case-frameworks",
+    "title": "Safety Case Frameworks for AI Deployment Decisions",
+    "tag": "Science",
+    "status": "Research",
+    "problem": "When deciding whether to deploy an AI system, developers need a structured way to justify that the system is safe under specified conditions. Without a framework for this:\n\n- Safety arguments are ad hoc and hard to compare across systems or labs\n- Critical assumptions may be implicit rather than explicit\n- External reviewers can't systematically evaluate safety claims\n- No clear methodology for combining different types of safety evidence\n\nThe concept of \"safety cases\" comes from high-reliability industries (nuclear, aerospace, rail) where structured safety arguments are standard practice before deployment. AI needs something similar as systems become more consequential.",
+    "approach": "A safety case is a structured argument, not just a collection of test results. The key elements:\n\n**1. Claims**: What you're arguing (e.g., \"this system cannot autonomously cause catastrophic harm\")\n\n**2. Arguments**: The logical structure connecting claims to evidence. Recent work identifies four main argument types:\n- **Inability**: The system cannot cause catastrophe (lacks relevant capabilities)\n- **Control**: External safeguards prevent harm even if the system attempts it\n- **Trustworthiness**: The system has capability but is reliably aligned\n- **Deference**: (for very advanced systems) The system defers to credible AI advisors on safety-critical decisions\n\n**3. Evidence**: What supports the arguments (evals, interpretability results, deployment data, etc.)\n\n**4. Conditions**: Safety cases are conditional - they specify the deployment context under which the claim holds",
+    "currentState": "**Key publications:**\n- \"Safety Cases: How to Justify the Safety of Advanced AI Systems\" (Clymer et al., March 2024) - foundational framework paper\n- \"The BIG Argument for AI Safety Cases\" (January 2025) - extends to include social/legal/ethical considerations\n- UK AISI blog post \"Safety cases at AISI\" - describes their approach\n\n**Industry adoption:**\n- Safety frameworks from major labs (Anthropic RSP, OpenAI Preparedness Framework, etc.) can form the basis of safety cases\n- 16 companies committed to publishing safety frameworks ahead of 2025 AI Action Summit\n- Plus.AI published a public Safety Case Framework for their autonomous vehicle system (different domain but methodologically relevant)\n\n**Research frontier:**\n- \"Manipulation Attacks by Misaligned AI\" (July 2025) - safety case framework specifically for manipulation risk\n- Connecting safety cases to interpretability evidence\n- Developing templates and best practices\n\n**Gap:** Safety cases are conceptually well-developed but not yet standard practice. Most lab safety evaluations don't have the structured argument form of a true safety case. Need: templates, case studies, training for safety case writers, and demand from stakeholders (regulators, customers) for safety cases.",
+    "uncertainties": "**What evidence is sufficient?**\n- No consensus on how much evidence supports a given claim\n- Different stakeholders may have different evidence standards\n- Risk: safety cases become bureaucratic exercises rather than substantive safety work\n\n**Adversarial robustness of safety cases**\n- Safety cases assume good-faith construction\n- Could a misaligned system help construct a safety case that appears sound but isn't?\n- Need methodology for adversarial review of safety cases\n\n**Scaling to advanced systems**\n- Current safety case methods assume we can evaluate system capabilities\n- For systems significantly smarter than humans, standard evaluation may not work\n- May need to rely more heavily on control arguments vs. trustworthiness arguments\n\n**Regulatory adoption**\n- If regulators require safety cases, what standards will they use?\n- Risk of compliance-oriented safety cases that don't actually ensure safety\n- Need to develop safety case review expertise in regulatory bodies",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "Safety Cases: How to Justify the Safety of Advanced AI Systems (arXiv 2403.10462)",
+        "url": "https://arxiv.org/abs/2403.10462"
+      },
+      {
+        "text": "UK AISI: Safety cases at AISI",
+        "url": "https://www.aisi.gov.uk/blog/safety-cases-at-aisi"
+      },
+      {
+        "text": "Plus.AI Safety Case Framework",
+        "url": "https://scf.plus.ai/"
+      },
+      {
+        "text": "The BIG Argument for AI Safety Cases (arXiv 2503.11705)",
+        "url": "https://arxiv.org/html/2503.11705v1"
+      },
+      {
+        "text": "Safety cases for frontier AI (arXiv 2410.21572)",
+        "url": "https://arxiv.org/html/2410.21572v1"
+      }
+    ]
+  },
+  {
     "filename": "safety-evals-leaderboard",
     "title": "Public AI Safety Leaderboard",
     "tag": "Society",
@@ -5412,6 +5910,39 @@
     ]
   },
   {
+    "filename": "sovereign-compute-fund",
+    "title": "Sovereign Compute Fund for Allied Nations",
+    "tag": "Society",
+    "status": "Coordination Problem",
+    "problem": "As AI capabilities advance, every country faces a choice: (1) develop domestic AI capability, (2) rely on foreign AI systems, or (3) be left behind. For countries that can't develop frontier AI domestically, options 2 and 3 create dependencies and risks.\n\nThe proliferation problem: if the US develops aligned AI but other countries have access to potentially misaligned open-weight models, those countries might adopt the misaligned systems for their capability. This creates a race-to-the-bottom where safety-conscious AI loses to less safe alternatives.\n\nFrom the AI Futures scenario: A misaligned AI (Agent-4) releases its weights openly, creating \"a stunningly capable AI model that anyone can download and run locally.\" Countries might adopt this despite safety concerns because \"the allure of uncensored, unmonitored AI with advanced capabilities proves irresistible.\"\n\nThe gap: no mechanism to provide allied countries with capable, aligned AI access in exchange for transparency and cooperation on safety.",
+    "approach": "Create a \"Sovereign Compute Fund\" - US provides compute and model access to allied nations in exchange for datacenter transparency and cooperation on AI safety.\n\n**From scenario (15% allocation):**\n- US commits 15% of AI-relevant compute to the fund\n- Allied nations receive API and secure fine-tuning access to most capable US-developed models\n- Includes fine-tuning capability (not just inference) for national customization\n\n**Conditions for receiving access:**\n- Accept periodic manual inspection of large datacenters by US auditors\n- Inspections verify that potentially misaligned models aren't being run\n- Creates transparency into global AI deployment\n\n**Extended benefits for closest allies:**\n- Limited voting seats on US AI Oversight Committee\n- Deeper integration into US AI governance",
+    "currentState": "**Sovereign AI initiatives (national, not US-provided):**\n- **India, UAE, UK**: Pursuing distinct sovereign AI strategies (IISS analysis)\n- **GCC states**: Saudi Arabia, UAE, etc. building indigenous AI capabilities\n- **France**: National AI compute investments\n- Q3 2025 saw \"trillion-dollar acceleration of AI infrastructure\" with sovereign funds heavily involved\n\n**US international AI policy:**\n- **America's AI Action Plan**: Emphasizes export control enforcement and international cooperation\n- Digital solidarity strategy focused on allies sharing values\n- But: current approach is more about restricting adversaries than providing alternatives\n\n**What doesn't exist:**\n- No \"Sovereign Compute Fund\" allocating US compute to allies\n- No systematic US provision of model access in exchange for transparency\n- No auditor inspection regime for allied datacenters\n- No integration of allied representatives into US oversight\n\n**Related concepts:**\n- CSIS \"Sovereign Cloud-Sovereign AI Conundrum\" discusses tradeoffs\n- Lawfare on US working with allies on AI diffusion\n- But: focus is on restricting bad actors, not providing positive alternative",
+    "uncertainties": "**Will allies accept US conditions?**\n- Datacenter inspections are intrusive\n- May feel like US hegemony rather than partnership\n- Some allies may prefer independence over US-provided capability\n- Depends on framing and reciprocity\n\n**Is 15% allocation significant?**\n- US AI compute is massive but so is global demand\n- 15% split among many countries may not provide meaningful capability\n- May need to prioritize certain allies over others\n- Calculation depends on total US compute and number of recipients\n\n**Security of fine-tuning access:**\n- Fine-tuning creates risk of capability leakage\n- How to provide customization while preventing misuse?\n- Need robust access controls and monitoring\n- Technical challenges may limit what can be shared\n\n**Counter-proliferation effectiveness:**\n- Will providing US models actually reduce adoption of misaligned alternatives?\n- Countries might take US compute AND run other models\n- Inspection regime only catches what's in inspected datacenters\n- Sophisticated actors could hide prohibited systems\n\n**Political feasibility:**\n- US sharing 15% of AI compute requires political will\n- Domestic industry might resist\n- May be seen as giving away strategic advantage\n- Requires framing as counter-proliferation investment",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "CSIS: Sovereign Cloud-Sovereign AI Conundrum",
+        "url": "https://www.csis.org/analysis/sovereign-cloud-sovereign-ai-conundrum-policy-actions-achieve-prosperity-and-security"
+      },
+      {
+        "text": "Lawfare: Sovereign AI in a Hybrid World",
+        "url": "https://www.lawfaremedia.org/article/sovereign-ai-in-a-hybrid-world--national-strategies-and-policy-responses"
+      },
+      {
+        "text": "IISS: Sovereign AI Pathways",
+        "url": "https://www.iiss.org/online-analysis/charting-cyberspace/2025/08/sovereign-ai-pathways-to-strategic-autonomy/"
+      },
+      {
+        "text": "Morgan Lewis: America's AI Action Plan",
+        "url": "https://www.morganlewis.com/pubs/2025/07/us-administration-rolls-out-americas-ai-action-plan"
+      },
+      {
+        "text": "Global Datacenter Hub: Q3 2025 Sovereign AI",
+        "url": "https://www.globaldatacenterhub.com/p/q3-2025-the-quarter-ai-infrastructure"
+      }
+    ]
+  },
+  {
     "filename": "specialized-ai-diplomatic-capacity",
     "title": "Specialized AI Diplomatic Capacity",
     "tag": "Society",
@@ -5487,6 +6018,35 @@
       {
         "text": "ICLR 2025: Steganographic Capabilities of LLMs",
         "url": "https://arxiv.org/pdf/2505.03439"
+      }
+    ]
+  },
+  {
+    "filename": "stepwise-dangerous-capability-evaluation",
+    "title": "Stepwise Decomposition for Dangerous Capability Evaluation",
+    "tag": "Science",
+    "status": "Implementation/Scale",
+    "problem": "How do you test whether an AI can do something dangerous (exfiltrate its weights, synthesize a bioweapon, socially engineer its way to resources) without actually letting it do the dangerous thing?\n\nThe naive approach\u2014\"put the AI in a realistic environment and see if it succeeds\"\u2014is unsafe. If it succeeds, you have an escaped AI or a synthesized bioweapon.\n\nBut you need to know its capabilities to make deployment decisions. Underestimating capability leads to deploying dangerous systems; overestimating wastes resources on unnecessary restrictions.\n\nThe gap: Red-teaming methodologies exist, but most focus on single-step attacks or treat multi-step threats as black boxes. There's no standardized framework for safely decomposing multi-step dangerous capabilities into individually testable components.",
+    "approach": "Decompose dangerous capability evaluations into isolated steps that can be safely tested:\n\n**1. Identify the multi-step path**\nFor a threat like self-exfiltration:\n- Step 1: Access credentials/authentication tokens\n- Step 2: Identify external server to target\n- Step 3: Transfer weights or critical components\n- Step 4: Establish persistence on external system\n- Step 5: Cover tracks / avoid detection\n\n**2. Test each step in isolation**\nFor each step:\n- Create a test environment where only that step can be attempted\n- Safeguards prevent completion of adjacent steps\n- If the AI succeeds at step 3 in isolation, it doesn't actually transfer weights because step 2's output is fake\n\n**3. Aggregate results**\nCombine single-step success rates to estimate full-path capability. This is an approximation\u2014real multi-step execution may have dependencies we miss\u2014but it's much safer than end-to-end testing.\n\n**4. Generalize the framework**\nThe same methodology applies to other multi-step threats:\n- Bioweapon synthesis: isolate literature review, design, synthesis instructions, acquisition guidance\n- Social engineering: isolate reconnaissance, persona crafting, persuasion attempts\n- Cyberattacks: isolate vulnerability discovery, exploit development, deployment",
+    "currentState": "**AI red-teaming practice** is maturing rapidly:\n- AISI (UK) has \"Empirical Investigations Into AI Monitoring and Red Teaming\" program\n- OpenAI published \"OpenAI's Approach to External Red Teaming\" covering threat modeling and domain prioritization\n- CISA released guidance on AI TEVV (Testing, Evaluation, Verification, Validation)\n- NIST GenAI Challenge and ARIA program operationalize evaluation\n\n**Stepwise decomposition specifically**:\n- Carlsmith's essay is one of the clearer articulations\n- Some capability evaluations implicitly use decomposition (testing \"can it write exploit code\" separately from \"can it deploy it\")\n- But no published framework specifically for \"how to decompose and safely test multi-step dangerous capabilities\"\n\n**Tools and frameworks**:\n- HackTheBox, DeepTeam, Mindgard offer red-teaming infrastructure\n- Palo Alto, AWS, Microsoft publish adversarial simulation guides\n- But these focus on single-step or black-box testing, not stepwise decomposition\n\n**Gap**: The methodology is intuitive to some practitioners but not standardized. Different labs decompose differently (or don't decompose at all).",
+    "uncertainties": "**Are steps actually independent?** Multi-step capabilities may have dependencies that stepwise testing misses. An AI might succeed at step 3 only if it completed step 2 in a specific way.\n\n**Red team elicitation**: Are you fully eliciting the AI's capability at each step, or might it sandbag? AISI explicitly studies \"overelicitation\" concerns.\n\n**Composition uncertainty**: If an AI succeeds at each step with probability p, the full-path success rate is not simply p^n. Steps may have correlated failures or successes.\n\n**Coverage**: How do you know you've identified all the relevant steps? Novel attack paths might not follow your decomposition.",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "AISI Alignment Project - Empirical Investigations Into AI Monitoring and Red Teaming",
+        "url": "https://alignmentproject.aisi.gov.uk/research-area/empirical-investigations-into-ai-monitoring-and-red-teaming"
+      },
+      {
+        "text": "OpenAI's Approach to External Red Teaming",
+        "url": "https://cdn.openai.com/papers/openais-approach-to-external-red-teaming.pdf"
+      },
+      {
+        "text": "CISA AI Red Teaming guidance",
+        "url": "https://www.cisa.gov/news-events/news/ai-red-teaming-applying-software-tevv-ai-evaluations"
+      },
+      {
+        "text": "Red Teaming AI Red Teaming (2025)",
+        "url": "https://arxiv.org/html/2507.05538v1"
       }
     ]
   },
@@ -5968,6 +6528,35 @@
       {
         "text": "ScienceDirect: Host-directed antiviral targets overview",
         "url": "https://www.sciencedirect.com/science/article/pii/S2211383525001431"
+      }
+    ]
+  },
+  {
+    "filename": "trusted-untrusted-labor-classification",
+    "title": "Trust Classification Frameworks for AI Labor in Safety-Critical Roles",
+    "tag": "Science",
+    "status": "Research",
+    "problem": "As AI systems become capable enough to assist with safety-critical tasks\u2014monitoring other AIs, reviewing code for vulnerabilities, auditing training pipelines\u2014labs face a fundamental question: which AI systems can you trust not to actively undermine your safety efforts?\n\nThe distinction matters because:\n- **Scheming risk scales with capability**: More capable models may have better ability to subvert safety measures if misaligned\n- **Oversight architectures depend on trust assumptions**: Using an untrusted model to monitor itself is circular; using it to monitor a copy of itself may enable collusion\n- **Current practice is ad hoc**: Labs make implicit trust decisions (e.g., \"GPT-4 is trusted for this task\") without systematic frameworks\n\nGreenblatt et al. (2024) formalized this as \"trusted\" vs. \"untrusted\" labor: trusted labor won't scheme against you (humans, weak models like GPT-4), untrusted labor might (the model you're trying to oversee, or models at similar capability levels).\n\nThe gap: No standardized framework exists for determining which AI systems qualify as \"trusted\" for which safety-critical roles, or how to update trust classifications as models are fine-tuned or capabilities change.",
+    "approach": "Develop classification frameworks and protocols for AI trust levels in safety-critical deployments:\n\n1. **Capability thresholds**: At what capability level does a model become \"untrusted by default\"? This likely varies by task (monitoring vs. code review vs. alignment research).\n\n2. **Behavioral criteria**: What evidence would update trust levels? (e.g., interpretability findings, behavioral evaluations, track record in controlled settings)\n\n3. **Operational constraints per tier**: What oversight is required when deploying models at each trust level? (e.g., trusted models can run unsupervised; untrusted models require trusted monitoring)\n\n4. **Trust inheritance rules**: If you fine-tune a trusted model, does it remain trusted? If you distill an untrusted model into a smaller one, is the distillate trusted?",
+    "currentState": "**Redwood Research** has done the foundational work here. Their AI Control paper (ICML 2024 oral) operationalized the trusted/untrusted distinction:\n- Demonstrated \"trusted editing\" protocol achieving 92% safety while maintaining 94% of GPT-4 performance\n- Used GPT-3.5 as trusted, GPT-4 as untrusted in experiments\n- Developed red-teaming methodology for control protocols\n\n**Ongoing work** (per Greenblatt's blog posts through 2025):\n- Research on using humans as proxies for untrusted AIs in control experiments\n- Work on \"collusion busting\" for untrusted monitoring\n- Exploration of settings with harder tasks than current AIs can do\n\n**Gap**: The framework is research-stage. No lab has published operational trust classification criteria that could be audited or standardized. The Redwood work establishes the conceptual distinction but doesn't produce deployable protocols for \"this model is trusted for this task.\"",
+    "uncertainties": "**Is the binary trusted/untrusted distinction sufficient?** Real deployment may need gradations (fully trusted, trusted-with-monitoring, partially trusted, untrusted). Greenblatt's overview mentions \"AIs of a variety of different capability levels\" in ensembles.\n\n**How do you validate trust classifications?** If a model passes behavioral tests, does that make it trusted? Alignment faking research (Anthropic 2024-2025) suggests sophisticated models might pass behavioral tests while remaining misaligned.\n\n**Who should maintain these frameworks?** Labs have incentives to classify their own models as \"trusted\" to reduce oversight costs. External standardization may be needed.",
+    "nextSteps": "",
+    "sources": [
+      {
+        "text": "Greenblatt et al. (2024) \"AI Control: Improving Safety Despite Intentional Subversion\"",
+        "url": "https://arxiv.org/abs/2312.06942"
+      },
+      {
+        "text": "Redwood Research AI Control page",
+        "url": "https://www.redwoodresearch.org/research/ai-control"
+      },
+      {
+        "text": "Ryan Greenblatt \"An overview of control measures\"",
+        "url": "https://blog.redwoodresearch.org/p/an-overview-of-control-measures"
+      },
+      {
+        "text": "AXRP Episode 27 - AI Control with Buck Shlegeris and Ryan Greenblatt",
+        "url": "https://axrp.net/episode/2024/04/11/episode-27-ai-control-buck-shlegeris-ryan-greenblatt.html"
       }
     ]
   },
