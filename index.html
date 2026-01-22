@@ -480,6 +480,14 @@
                     <option value="Society">Society</option>
                     <option value="Policy">Policy</option>
                 </select>
+                <select class="filter-select" id="status-filter">
+                    <option value="all">All Stages</option>
+                    <option value="Research">Research</option>
+                    <option value="Implementation">Implementation/Scale</option>
+                    <option value="Coordination">Coordination</option>
+                    <option value="Pilot">Pilot</option>
+                    <option value="Idea">Idea</option>
+                </select>
             </div>
 
             <div class="results-row">
@@ -574,7 +582,7 @@
                 ]);
                 interventions = await intRes.json();
                 sources = await srcRes.json();
-                renderInterventions();
+                renderInterventions('all', 'all', '');
                 renderSources();
             } catch (e) {
                 console.error('Failed to load data:', e);
@@ -582,27 +590,31 @@
             }
         }
 
-        function renderInterventions(filter = 'all', search = '') {
+        function renderInterventions(filter = 'all', statusFilter = 'all', search = '') {
             const container = document.getElementById('interventions-list');
             const filtered = interventions.filter(i => {
                 const matchesFilter = filter === 'all' || i.tag === filter;
+                const matchesStatus = statusFilter === 'all' ||
+                    (i.status && i.status.toLowerCase().includes(statusFilter.toLowerCase()));
+                const searchText = (i.problem || i.whatItIs || '').toLowerCase();
                 const matchesSearch = !search ||
                     i.title.toLowerCase().includes(search.toLowerCase()) ||
-                    i.whatItIs.toLowerCase().includes(search.toLowerCase());
-                return matchesFilter && matchesSearch;
+                    searchText.includes(search.toLowerCase());
+                return matchesFilter && matchesStatus && matchesSearch;
             });
 
             document.getElementById('count').textContent = `${filtered.length} recommendations`;
 
             container.innerHTML = filtered.map(i => {
                 const sourceCount = i.sources ? i.sources.length : 0;
+                const summary = i.problem || i.whatItIs || '';
                 return `
                 <div class="table-row" data-filename="${i.filename}">
                     <div class="col col-intervention">${i.title}</div>
                     <div class="col col-org">
                         <span class="tag tag-${i.tag.toLowerCase()}">${i.tag}</span>
                     </div>
-                    <div class="col col-summary">${stripMarkdown(i.whatItIs || '').substring(0, 300)}...</div>
+                    <div class="col col-summary">${stripMarkdown(summary).substring(0, 300)}...</div>
                     <div class="col col-sources">
                         <span class="source-pill">${sourceCount} source${sourceCount !== 1 ? 's' : ''}</span>
                     </div>
@@ -681,14 +693,49 @@
             tagEl.textContent = item.tag;
             tagEl.className = `tag tag-${item.tag.toLowerCase()}`;
 
-            let bodyHtml = `
-                <div class="modal-section">
-                    <h3>What it is</h3>
-                    <div>${formatMarkdown(item.whatItIs)}</div>
-                </div>
-            `;
+            let bodyHtml = '';
 
-            if (item.whyItMatters && item.whyItMatters.length && item.whyItMatters[0] !== 'See uncertainties above') {
+            // Problem section (or whatItIs for backwards compatibility)
+            const problemContent = item.problem || item.whatItIs;
+            if (problemContent) {
+                bodyHtml += `
+                    <div class="modal-section">
+                        <h3>Problem</h3>
+                        <div>${formatMarkdown(problemContent)}</div>
+                    </div>
+                `;
+            }
+
+            // Approach section
+            if (item.approach) {
+                bodyHtml += `
+                    <div class="modal-section">
+                        <h3>Approach</h3>
+                        <div>${formatMarkdown(item.approach)}</div>
+                    </div>
+                `;
+            }
+
+            // Current State section
+            if (item.currentState) {
+                bodyHtml += `
+                    <div class="modal-section">
+                        <h3>Current State</h3>
+                        <div>${formatMarkdown(item.currentState)}</div>
+                    </div>
+                `;
+            }
+
+            // Uncertainties section
+            if (item.uncertainties) {
+                bodyHtml += `
+                    <div class="modal-section">
+                        <h3>Uncertainties</h3>
+                        <div>${formatMarkdown(item.uncertainties)}</div>
+                    </div>
+                `;
+            } else if (item.whyItMatters && item.whyItMatters.length && item.whyItMatters[0] !== 'See uncertainties above') {
+                // Backwards compatibility
                 bodyHtml += `
                     <div class="modal-section">
                         <h3>Key Uncertainties</h3>
@@ -697,16 +744,18 @@
                 `;
             }
 
-            if (item.currentState) {
+            // Next Steps section
+            if (item.nextSteps) {
                 bodyHtml += `
                     <div class="modal-section">
-                        <h3>Current state</h3>
-                        <div>${formatMarkdown(item.currentState)}</div>
+                        <h3>Next Steps</h3>
+                        <div>${formatMarkdown(item.nextSteps)}</div>
                     </div>
                 `;
             }
 
-            if (item.whoWorking && item.whoWorking !== '- Not specified') {
+            // Who's working on it (backwards compatibility)
+            if (item.whoWorking && item.whoWorking !== '- Not specified' && item.whoWorking.trim()) {
                 bodyHtml += `
                     <div class="modal-section">
                         <h3>Who's working on it</h3>
@@ -715,10 +764,11 @@
                 `;
             }
 
+            // Sources section
             if (item.sources && item.sources.length) {
                 bodyHtml += `
                     <div class="modal-section">
-                        <h3>Research Links (${item.sources.length})</h3>
+                        <h3>Sources (${item.sources.length})</h3>
                         <ul>${item.sources.map(s => {
                             if (s.url && s.url.startsWith('http')) {
                                 return `<li><a href="${s.url}" target="_blank">${s.text}</a></li>`;
@@ -770,12 +820,27 @@
         });
 
         document.getElementById('category-filter').addEventListener('change', (e) => {
-            renderInterventions(e.target.value, document.getElementById('search').value);
+            renderInterventions(
+                e.target.value,
+                document.getElementById('status-filter').value,
+                document.getElementById('search').value
+            );
+        });
+
+        document.getElementById('status-filter').addEventListener('change', (e) => {
+            renderInterventions(
+                document.getElementById('category-filter').value,
+                e.target.value,
+                document.getElementById('search').value
+            );
         });
 
         document.getElementById('search').addEventListener('input', (e) => {
-            const activeFilter = document.getElementById('category-filter').value;
-            renderInterventions(activeFilter, e.target.value);
+            renderInterventions(
+                document.getElementById('category-filter').value,
+                document.getElementById('status-filter').value,
+                e.target.value
+            );
         });
 
         document.getElementById('source-search').addEventListener('input', (e) => {
