@@ -4,18 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ListofListofLists is a curated database of AI safety, biosecurity, and resilience interventions. It aggregates solution-oriented ideas from 40+ sources (research papers, policy documents, gap analyses) into a searchable web interface.
+ListofListofLists is a curated database of AI safety, biosecurity, and resilience projects. It aggregates solution-oriented ideas from 40+ sources (research papers, policy documents, gap analyses) into a searchable web interface.
 
-**Data flow:** Markdown intervention files (in resilience-proposals) → `generate_from_resilience.py` → JSON → `index.html` web UI
+**Data flow:** Markdown project files (in resilience-proposals) → `generate_from_resilience.py` → JSON → `index.html` web UI
 
-## Updating Interventions
+## Updating Projects
 
-The source of truth for interventions is:
+The source of truth for projects is:
 ```
 ~/Desktop/Claude Code/projects/resilience-proposals/interventions-new-new/entries/
 ```
 
-To update the website with new/modified interventions:
+To update the website with new/modified projects:
 
 ```bash
 # 1. Run the generator script (from ListofListofLists directory)
@@ -26,25 +26,25 @@ python3 -m http.server 8001
 # Open http://localhost:8001
 
 # 3. Commit and push
-git add data/interventions-v2.json
-git commit -m "Update interventions from resilience-proposals"
+git add data/projects-v2.json
+git commit -m "Update projects from resilience-proposals"
 git push
 ```
 
-**Important:** Do NOT edit `data/interventions-v2.json` directly - it is generated from the markdown files.
+**Important:** Do NOT edit `data/projects-v2.json` directly - it is generated from the markdown files.
 
 ## Architecture
 
 ```
 data/
-  interventions-v2.json  # Generated from resilience-proposals (do not edit directly)
+  projects-v2.json       # Generated from resilience-proposals (do not edit directly)
   sources.json           # Source metadata (manually curated)
 index.html               # Single-page web UI (vanilla JS, no build step)
 generate_from_resilience.py  # Parser: resilience-proposals markdown → JSON
-sources/                 # Peregrine and other source extractions (linked from interventions)
+sources/                 # Peregrine and other source extractions (linked from projects)
 ```
 
-## Intervention Format (in resilience-proposals)
+## Project Format (in resilience-proposals)
 
 Each markdown file follows this structure:
 

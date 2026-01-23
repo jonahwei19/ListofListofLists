@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Safety Interventions Database</title>
+    <title>AI Safety Projects Database</title>
     <link rel="icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -192,7 +192,7 @@
         }
 
         /* Column widths */
-        .col-intervention {
+        .col-project {
             width: 18%;
             font-weight: 500;
             font-size: 14px;
@@ -462,7 +462,7 @@
             .table-header, .table-row {
                 flex-wrap: wrap;
             }
-            .col-intervention { width: 100%; }
+            .col-project { width: 100%; }
             .col-org { width: 50%; }
             .col-topic { width: 50%; }
             .col-summary { width: 100%; }
@@ -481,21 +481,21 @@
 
     <div class="container">
         <header>
-            <h1 class="page-title">AI Safety Interventions Database</h1>
+            <h1 class="page-title">AI Safety Projects Database</h1>
             <p><i>A research compilation project</i></p>
             <p class="description">
-                This database catalogs intervention areas for AI safety, biosecurity, and societal resilience.
-                The interventions are compiled from published research, policy proposals, and expert recommendations.
+                This database catalogs project areas for AI safety, biosecurity, and societal resilience.
+                The projects are compiled from published research, policy proposals, and expert recommendations.
                 Click on a recommendation to learn more about it.
             </p>
         </header>
 
         <div class="tabs">
-            <button class="tab active" data-tab="interventions">Interventions</button>
+            <button class="tab active" data-tab="projects">Projects</button>
             <button class="tab" data-tab="sources">Sources</button>
         </div>
 
-        <div id="interventions-tab" class="tab-content active">
+        <div id="projects-tab" class="tab-content active">
             <div class="search-filter-row">
                 <div class="search-wrapper">
                     <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -536,8 +536,8 @@
             <div class="database-container">
                 <div class="table-wrapper">
                     <div class="table-header">
-                        <div class="col col-intervention" data-sort="title">
-                            <span>Intervention</span>
+                        <div class="col col-project" data-sort="title">
+                            <span>Project</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="m6 9 6 6 6-6"></path>
                             </svg>
@@ -564,7 +564,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="table-body" id="interventions-list"></div>
+                    <div class="table-body" id="projects-list"></div>
                 </div>
             </div>
         </div>
@@ -587,7 +587,7 @@
     </div>
 
     <footer>
-        <p>AI Safety Interventions Database</p>
+        <p>AI Safety Projects Database</p>
     </footer>
 
     <!-- Modal -->
@@ -605,28 +605,28 @@
     </div>
 
     <script>
-        let interventions = [];
+        let projects = [];
         let sources = [];
 
         async function loadData() {
             try {
                 const [intRes, srcRes] = await Promise.all([
-                    fetch('data/interventions-v2.json?v=' + Date.now()),
+                    fetch('data/projects-v2.json?v=' + Date.now()),
                     fetch('data/sources.json')
                 ]);
-                interventions = await intRes.json();
+                projects = await intRes.json();
                 sources = await srcRes.json();
-                renderInterventions('all', 'all', '');
+                renderProjects('all', 'all', '');
                 renderSources();
             } catch (e) {
                 console.error('Failed to load data:', e);
-                document.getElementById('interventions-list').innerHTML = '<div style="padding: 40px; text-align: center; color: #6b7280;">Failed to load data. Please try again.</div>';
+                document.getElementById('projects-list').innerHTML = '<div style="padding: 40px; text-align: center; color: #6b7280;">Failed to load data. Please try again.</div>';
             }
         }
 
-        function renderInterventions(filter = 'all', statusFilter = 'all', search = '') {
-            const container = document.getElementById('interventions-list');
-            const filtered = interventions.filter(i => {
+        function renderProjects(filter = 'all', statusFilter = 'all', search = '') {
+            const container = document.getElementById('projects-list');
+            const filtered = projects.filter(i => {
                 const matchesFilter = filter === 'all' || i.tag === filter;
                 const matchesStatus = statusFilter === 'all' ||
                     (i.status && i.status.toLowerCase().includes(statusFilter.toLowerCase()));
@@ -646,7 +646,7 @@
                 const stageLabel = getStageLabel(i.status);
                 return `
                 <div class="table-row" data-filename="${i.filename}">
-                    <div class="col col-intervention">${i.title}</div>
+                    <div class="col col-project">${i.title}</div>
                     <div class="col col-org">
                         <span class="tag tag-${i.tag.toLowerCase()}">${i.tag}</span>
                     </div>
@@ -662,7 +662,7 @@
 
             container.querySelectorAll('.table-row').forEach(row => {
                 row.addEventListener('click', () => {
-                    const data = interventions.find(i => i.filename === row.dataset.filename);
+                    const data = projects.find(i => i.filename === row.dataset.filename);
                     if (data) showModal(data);
                 });
             });
@@ -715,7 +715,7 @@
 
         let currentSort = { field: null, asc: true };
 
-        function sortInterventions(field) {
+        function sortProjects(field) {
             if (currentSort.field === field) {
                 currentSort.asc = !currentSort.asc;
             } else {
@@ -723,7 +723,7 @@
                 currentSort.asc = true;
             }
 
-            interventions.sort((a, b) => {
+            projects.sort((a, b) => {
                 let valA, valB;
                 if (field === 'title') {
                     valA = a.title || '';
@@ -751,7 +751,7 @@
                 }
             });
 
-            renderInterventions(
+            renderProjects(
                 document.getElementById('category-filter').value,
                 document.getElementById('status-filter').value,
                 document.getElementById('search').value
@@ -897,7 +897,7 @@
 
         function downloadCSV() {
             const headers = ['Title', 'Category', 'Summary', 'Sources'];
-            const rows = interventions.map(i => [
+            const rows = projects.map(i => [
                 i.title,
                 i.tag,
                 stripMarkdown(i.whatItIs).substring(0, 500),
@@ -910,7 +910,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'interventions.csv';
+            a.download = 'projects.csv';
             a.click();
             URL.revokeObjectURL(url);
         }
@@ -926,7 +926,7 @@
         });
 
         document.getElementById('category-filter').addEventListener('change', (e) => {
-            renderInterventions(
+            renderProjects(
                 e.target.value,
                 document.getElementById('status-filter').value,
                 document.getElementById('search').value
@@ -934,7 +934,7 @@
         });
 
         document.getElementById('status-filter').addEventListener('change', (e) => {
-            renderInterventions(
+            renderProjects(
                 document.getElementById('category-filter').value,
                 e.target.value,
                 document.getElementById('search').value
@@ -942,7 +942,7 @@
         });
 
         document.getElementById('search').addEventListener('input', (e) => {
-            renderInterventions(
+            renderProjects(
                 document.getElementById('category-filter').value,
                 document.getElementById('status-filter').value,
                 e.target.value
@@ -959,7 +959,7 @@
         // Sortable headers
         document.querySelectorAll('.table-header .col[data-sort]').forEach(col => {
             col.addEventListener('click', () => {
-                sortInterventions(col.dataset.sort);
+                sortProjects(col.dataset.sort);
             });
         });
         document.getElementById('modal').addEventListener('click', (e) => {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate interventions-v2.json from resilience-proposals markdown files.
+"""Generate projects-v2.json from resilience-proposals markdown files.
 Preserves all rich content: Problem, Approach, Current State, Uncertainties, Next Steps, Sources.
 """
 import json
@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 SOURCE_DIR = Path('/Users/jonahweinbaum/Desktop/Claude Code/projects/resilience-proposals/interventions-new-new/entries')
-OUTPUT_FILE = Path('/Users/jonahweinbaum/Desktop/Claude Code/projects/ListofListofLists/data/interventions-v2.json')
+OUTPUT_FILE = Path('/Users/jonahweinbaum/Desktop/Claude Code/projects/ListofListofLists/data/projects-v2.json')
 
 GITHUB_BASE = 'https://github.com/jonahwei19/ListofListofLists/blob/main'
 
@@ -154,7 +154,7 @@ def main():
     with open(OUTPUT_FILE, 'w') as f:
         json.dump(interventions, f, indent=2)
 
-    print(f"Generated {len(interventions)} interventions to {OUTPUT_FILE}")
+    print(f"Generated {len(interventions)} projects to {OUTPUT_FILE}")
 
 
 if __name__ == '__main__':
